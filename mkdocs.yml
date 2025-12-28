@@ -1,0 +1,62 @@
+site_name: Odoo CE – Advanced Financial Close
+site_description: Enterprise-grade financial close documentation for Odoo Community Edition + OCA modules
+site_author: InsightPulse AI Finance Team
+site_url: https://github.com/USERNAME/odoo-financial-close-docs
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Current State & Target: 01-current-state-and-target.md
+      - Module Landscape: 02-module-landscape.md
+  - Governance:
+      - Roles & SoD Matrix: 03-roles-and-sod-matrix.md
+      - Close Calendar & Phases: 04-close-calendar-and-phases.md
+      - Change Management: 11-change-management.md
+  - Operational Templates:
+      - Month-End Tasks: 05-month-end-task-template.md
+      - Year-End Tasks: 06-year-end-task-template.md
+      - BIR Tax Filing: 07-bir-tax-filing-process.md
+  - Implementation:
+      - Odoo Configuration Guide: 08-odoo-config-guide.md
+      - Runbook - Monthly Close: 09-runbook-monthly-close.md
+      - Runbook - BIR Filing: 10-runbook-bir-filing.md
+  - Reference:
+      - Data Dictionary: 99-appendix-data-dictionary.md
+
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/USERNAME/odoo-financial-close-docs
