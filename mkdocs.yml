@@ -35,6 +35,11 @@ nav:
       - Odoo Configuration Guide: 08-odoo-config-guide.md
       - Runbook - Monthly Close: 09-runbook-monthly-close.md
       - Runbook - BIR Filing: 10-runbook-bir-filing.md
+  - HR Processes:
+      - Hire-to-Retire Overview: HR-Processes/hire-to-retire-overview.md
+      - Final Pay Calculation: HR-Processes/final-pay-calculation.md
+      - Clearance Workflow: HR-Processes/clearance-workflow.md
+      - COE Generation: HR-Processes/coe-generation.md
   - Reference:
       - Data Dictionary: 99-appendix-data-dictionary.md
 
