@@ -272,68 +272,53 @@ psql "$POSTGRES_URL" -c \
 
 ### 3.2 Operating Unit (Agency) Configuration
 
-Operating Units represent legal entities / agencies (e.g. TBWA\SMP, OMC, partner studios).
-They must **not** use employee codes (CKVC, RIM, BOM, JPAL, JLI, JAP, LAS, RMQB, etc.) and must not encode people in the OU dimension.
+**This is a SINGLE AGENCY configuration** for one legal entity.
 
-**Configure Operating Units as follows:**
+Operating Units (OUs) must **not** use employee codes (CKVC, RIM, BOM, JPAL, JLI, JAP, LAS, RMQB, etc.) as these represent people, not legal entities.
+
+**Configure the Primary Operating Unit:**
 
 | OU Code | Operating Unit Name                 | Legal Entity / TIN        | Default Finance Role       |
 |--------:|-------------------------------------|---------------------------|----------------------------|
-| SMP     | TBWA\Santiago Mangada Puno         | <SMP TIN HERE>            | Finance Director           |
-| OMC     | Omnicom Media Company (Philippines)| <OMC TIN HERE>            | Finance Supervisor         |
-| W9      | W9 / Shared Services Hub           | <W9 TIN HERE>             | Senior Finance Manager     |
-| PROD    | Production / Studio Entity         | <Production TIN HERE>     | Finance Supervisor         |
-| DIGI    | Digital / Tech Unit                | <Digital TIN HERE>        | Senior Finance Manager     |
-| MEDIA   | Media Trading Unit (if any)        | <Media TIN HERE>          | Finance Controller         |
-| INTL    | International / Regional Entity    | <Intl TIN HERE>           | Finance Director           |
-| HOLD    | Holding / Parent Company           | <Holding TIN HERE>        | CFO / Group Finance Head   |
+| MAIN    | <Your Company Name Here>           | <Company TIN HERE>        | Finance Director           |
 
 > 📝 **Note**
 > - Employee codes such as `CKVC`, `RIM`, `BOM`, `LAS`, `RMQB`, `JAP`, `JPAL`, `JLI` belong in `hr.employee` / `res.users`.
-> - Their assignment to Operating Units and approval levels is defined in the **Roles & SoD Matrix** (Section 3.3), not in this table.
+> - Their approval levels are defined in the **Roles & SoD Matrix** (Section 3.3), not in this table.
 
-**Setup Procedure (per Operating Unit):**
+**Setup Procedure:**
 
 ```python
-# Python script for batch Operating Unit creation
+# Python script for single Operating Unit creation
 # Execute via Odoo shell: odoo-bin shell -d production
 
-operating_units = [
-    {'code': 'SMP', 'name': 'TBWA\\Santiago Mangada Puno', 'tin': '<SMP TIN HERE>'},
-    {'code': 'OMC', 'name': 'Omnicom Media Company (Philippines)', 'tin': '<OMC TIN HERE>'},
-    {'code': 'W9', 'name': 'W9 / Shared Services Hub', 'tin': '<W9 TIN HERE>'},
-    {'code': 'PROD', 'name': 'Production / Studio Entity', 'tin': '<Production TIN HERE>'},
-    {'code': 'DIGI', 'name': 'Digital / Tech Unit', 'tin': '<Digital TIN HERE>'},
-    {'code': 'MEDIA', 'name': 'Media Trading Unit (if any)', 'tin': '<Media TIN HERE>'},
-    {'code': 'INTL', 'name': 'International / Regional Entity', 'tin': '<Intl TIN HERE>'},
-    {'code': 'HOLD', 'name': 'Holding / Parent Company', 'tin': '<Holding TIN HERE>'},
-]
-
 env = self.env
-for ou in operating_units:
-    operating_unit = env['operating.unit'].create({
-        'name': ou['name'],
-        'code': ou['code'],
-        'company_id': env.ref('base.main_company').id,
-        'partner_id': env['res.partner'].create({
-            'name': ou['name'],
-            'vat': ou['tin'],
-            'is_company': True,
-            'company_type': 'company',
-        }).id,
-    })
-    print(f"✅ Created operating unit: {ou['code']} - {ou['name']}")
+
+# Create the single primary Operating Unit
+operating_unit = env['operating.unit'].create({
+    'name': '<Your Company Name Here>',
+    'code': 'MAIN',
+    'company_id': env.ref('base.main_company').id,
+    'partner_id': env['res.partner'].create({
+        'name': '<Your Company Name Here>',
+        'vat': '<Company TIN HERE>',
+        'is_company': True,
+        'company_type': 'company',
+    }).id,
+})
+
+print(f"✅ Created operating unit: {operating_unit.code} - {operating_unit.name}")
 ```
 
 **Manual UI Method (Alternative):**
 
 1. **Navigate to:** Settings → Technical → Operating Units → Create
 2. **Fill fields:**
-   - Name: [Operating Unit Name]
-   - Code: [OU Code]
-   - Company: InsightPulse AI Holdings
+   - Name: <Your Company Name Here>
+   - Code: MAIN
+   - Company: <Your Company Name>
    - Partner: Create new → Fill TIN and address
-3. **Save** and repeat for all Operating Units
+3. **Save**
 
 ### 3.3 User Role Assignment
 
