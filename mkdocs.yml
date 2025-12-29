@@ -50,6 +50,7 @@ nav:
       - SoD Matrix Artifact: IT-Controls/03-sod-matrix-artifact.md
       - Physical Security Controls: IT-Controls/04-physical-security-controls.md
       - IT Asset Management: IT-Controls/05-it-asset-management.md
+      - Merge Conflict Resolution: IT-Controls/06-merge-conflict-resolution.md
   - Reference:
       - Data Dictionary: 99-appendix-data-dictionary.md
 
