@@ -25,7 +25,7 @@ This documentation provides comprehensive guidance for implementing enterprise-l
 
 1. **Clone this repository**
    ```bash
-   git clone https://github.com/<your-username>/odoo-financial-close-docs.git
+   git clone https://github.com/jgtolentino/odoo-financial-close-docs.git
    cd odoo-financial-close-docs
    ```
 
@@ -135,6 +135,14 @@ For questions or issues:
 
 ---
 
-**Version**: 0.1.0-foundation
-**Last Updated**: 2025-01-29
-**Maintained By**: Odoo Financial Close Documentation Contributors
+**Version**: 0.2.0-sap-afc-parity
+**Last Updated**: 2025-12-29
+**Maintained By**: InsightPulse AI – Finance Close Team
+
+## Implementation Repo
+
+This docs portal is code-agnostic.
+
+For the actual Odoo CE + OCA implementation (custom modules, seeds, scripts), see:
+
+- https://github.com/jgtolentino/odoo-ce-close-mono

@@ -411,6 +411,17 @@ This documentation portal provides a comprehensive blueprint for implementing en
 3. Follow implementation roadmap (20 weeks, 5 phases) with acceptance criteria validation
 4. Establish success metrics dashboard and continuous improvement process
 
+## GitHub Spec Kit
+
+The Odoo CE close solution is governed by a GitHub Spec Kit in the implementation repo:
+
+- `spec/financial-close/constitution.md`
+- `spec/financial-close/prd.md`
+- `spec/financial-close/plan.md`
+- `spec/financial-close/tasks.md`
+
+This documentation portal reflects those specs and provides the human-readable version for Finance, Audit, and IT.
+
 **Revision History**:
 
 - 2025-01-12: Initial release (v1.0.0) - Foundation documentation for Odoo 18.0 financial close
