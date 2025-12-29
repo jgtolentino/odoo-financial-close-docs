@@ -257,11 +257,11 @@ FINAL PAY: ₱88,113.70 - ₱21,244.32 = ₱66,869.38
 
 ## Approval Workflow
 
-1. **Preparation**: Finance Shared Services calculates final pay using Odoo payroll module
-2. **Review**: Finance Supervisor reviews calculation for accuracy
+1. **Preparation**: Finance Supervisor calculates final pay using Odoo payroll module
+2. **Review**: Senior Finance Manager reviews calculation for accuracy
 3. **Approval**: Finance Director approves final pay
 4. **Escalation**: If final pay >₱100,000, COO/MD approval required
-5. **Payment**: Finance executes payment via bank transfer or check
+5. **Payment**: Finance Department executes payment via bank transfer or check
 
 ## Quality Gates
 

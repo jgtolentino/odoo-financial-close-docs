@@ -26,7 +26,7 @@ The hire-to-retire process consists of 5 distinct phases:
 ### Phase 1: Hiring
 - Staffing need identification
 - Requisition submission and approval
-- Budget approval (Finance Shared Services)
+- Budget approval (Finance Director)
 - Candidate selection and offer
 - Employee master data creation
 
@@ -66,7 +66,7 @@ The hire-to-retire process consists of 5 distinct phases:
 | Role | Responsibility |
 |------|---------------|
 | **HR Director** | Employee master data, leave policies, COE approval |
-| **Finance Shared Services Director** | Payroll, final pay calculation, final pay approval |
+| **Finance Director** | Payroll, final pay calculation, final pay approval |
 | **HR Operations** | Leave balance verification, clearance coordination |
 | **IT Administrator** | System access revocation, asset return tracking |
 | **Admin Manager** | Physical asset clearance (IDs, keys, badges) |

@@ -37,7 +37,7 @@ This document defines the multi-department clearance process for separating empl
 
 ### Finance Clearance
 
-**Responsible**: Finance Shared Services
+**Responsible**: Finance Supervisor
 
 **Checklist Items**:
 - [ ] All cash advances fully liquidated
@@ -348,7 +348,7 @@ All Clearances Completed
         ↓
 Clearance Completion Date Recorded
         ↓
-Finance Shared Services Notified (Mattermost)
+Finance Department Notified (Mattermost)
         ↓
 Final Pay Calculation Initiated
         ↓
