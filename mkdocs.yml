@@ -40,6 +40,8 @@ nav:
       - Final Pay Calculation: HR-Processes/final-pay-calculation.md
       - Clearance Workflow: HR-Processes/clearance-workflow.md
       - COE Generation: HR-Processes/coe-generation.md
+  - IT Controls & Audit:
+      - IT Audit & SoD Deployment: it-controls/it-audit-sod-deployment.md
   - Reference:
       - Data Dictionary: 99-appendix-data-dictionary.md
 
