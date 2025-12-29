@@ -12,6 +12,7 @@ This section contains documentation for IT General Controls (GITC), Separation o
 | [Physical Security Controls](04-physical-security-controls.md) | Visitor management, access control, clean desk policy | Facilities Lead |
 | [IT Asset Management](05-it-asset-management.md) | Asset lifecycle tracking and reconciliation procedures | IT Asset Manager |
 | [Merge Conflict Resolution](06-merge-conflict-resolution.md) | Git merge conflict workflow for Claude Code web sessions | DevOps / IT Market Director |
+| [AI Codebase Awareness](07-ai-codebase-awareness.md) | Configure AI assistants for context-aware development | DevOps / IT Market Director |
 
 ## Data Files
 

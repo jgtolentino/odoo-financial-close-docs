@@ -51,6 +51,7 @@ nav:
       - Physical Security Controls: IT-Controls/04-physical-security-controls.md
       - IT Asset Management: IT-Controls/05-it-asset-management.md
       - Merge Conflict Resolution: IT-Controls/06-merge-conflict-resolution.md
+      - AI Codebase Awareness: IT-Controls/07-ai-codebase-awareness.md
   - Deployment:
       - Overview: Deployment/index.md
       - AFC N8N Production: Deployment/01-afc-n8n-production-deployment.md
