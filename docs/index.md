@@ -102,45 +102,81 @@ n8n open-source automation platform orchestrates end-to-end financial close work
 
 ### System Components
 
+```mermaid
+graph TB
+    subgraph "Odoo CE 18.0 Core ERP"
+        ACC[Accounting<br/>GL, AR/AP, Assets]
+        PROJ[Projects<br/>Tasks, Timesheet, Gantt]
+        MULTI[Multi-Company<br/>Consolidation, Intercompany, FX]
+        OCA[OCA Modules 42 Must Have<br/>Financial Reports | Reconciliation | Tier Validation<br/>Task Dependencies | Auditlog | Multi-Currency]
+    end
+
+    subgraph "n8n Workflow Automation"
+        APPROVE[Approval Routing<br/>Expense/Invoice Approvals]
+        BIR[BIR Filing Automation<br/>1601-C, 2550Q, 1702-RT]
+        CLOSE[Month-End Close<br/>Task Orchestration]
+    end
+
+    subgraph "Supabase PostgreSQL 15"
+        QUEUE[Task Queue<br/>Routing, Status]
+        ETL[ETL Staging<br/>Bronze, Silver]
+        MARTS[Analytics Marts<br/>Gold, Platinum, BI Aggregates]
+    end
+
+    subgraph "Apache Superset Analytics"
+        DASH[Financial Dashboards<br/>KPI Monitoring<br/>Drill-Down Reports]
+    end
+
+    subgraph "External Services"
+        MM[Mattermost<br/>Notifications]
+        OCR[PaddleOCR-VL<br/>Receipt Extraction]
+    end
+
+    %% Core data flow
+    ACC --> |XML-RPC/REST| APPROVE
+    PROJ --> |XML-RPC/REST| CLOSE
+    MULTI --> |XML-RPC/REST| CLOSE
+
+    APPROVE --> |PostgreSQL| QUEUE
+    BIR --> |PostgreSQL| QUEUE
+    CLOSE --> |PostgreSQL| QUEUE
+
+    QUEUE --> |ETL Pipeline| ETL
+    ETL --> |Data Quality Gates| MARTS
+    MARTS --> |REST API| DASH
+
+    %% Notification flows
+    APPROVE --> |Webhooks| MM
+    BIR --> |Webhooks| MM
+    CLOSE --> |Webhooks| MM
+
+    %% OCR integration
+    OCR --> |HTTP POST| APPROVE
+
+    %% Styling
+    classDef odooStyle fill:#714B67,stroke:#875A7B,stroke-width:2px,color:#fff
+    classDef n8nStyle fill:#EA4B71,stroke:#C41E3A,stroke-width:2px,color:#fff
+    classDef supabaseStyle fill:#3ECF8E,stroke:#249968,stroke-width:2px,color:#000
+    classDef supersetStyle fill:#20A7C9,stroke:#1A8BA6,stroke-width:2px,color:#fff
+    classDef externalStyle fill:#6c757d,stroke:#495057,stroke-width:2px,color:#fff
+
+    class ACC,PROJ,MULTI,OCA odooStyle
+    class APPROVE,BIR,CLOSE n8nStyle
+    class QUEUE,ETL,MARTS supabaseStyle
+    class DASH supersetStyle
+    class MM,OCR externalStyle
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                     Odoo CE 18.0 Core ERP                       │
-│  ┌──────────────┐  ┌──────────────┐  ┌─────────────────────┐   │
-│  │  Accounting  │  │   Projects   │  │  Multi-Company      │   │
-│  │  - GL        │  │  - Tasks     │  │  - Consolidation    │   │
-│  │  - AR/AP     │  │  - Timesheet │  │  - Intercompany     │   │
-│  │  - Assets    │  │  - Gantt     │  │  - FX Translation   │   │
-│  └──────────────┘  └──────────────┘  └─────────────────────┘   │
-│                                                                  │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │             OCA Modules (42 Must Have)                   │   │
-│  │  Financial Reports | Reconciliation | Tier Validation   │   │
-│  │  Task Dependencies | Auditlog | Multi-Currency          │   │
-│  └──────────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────┘
-                              ↕ XML-RPC / REST API
-┌─────────────────────────────────────────────────────────────────┐
-│                    n8n Workflow Automation                      │
-│  ┌─────────────┐  ┌──────────────┐  ┌────────────────────┐     │
-│  │  Approval   │  │  BIR Filing  │  │  Month-End Close   │     │
-│  │  Routing    │  │  Automation  │  │  Orchestration     │     │
-│  └─────────────┘  └──────────────┘  └────────────────────┘     │
-└─────────────────────────────────────────────────────────────────┘
-                              ↕ PostgreSQL
-┌─────────────────────────────────────────────────────────────────┐
-│                   Supabase PostgreSQL 15                        │
-│  ┌──────────────┐  ┌──────────────┐  ┌─────────────────────┐   │
-│  │  Task Queue  │  │  ETL Staging │  │  Analytics Marts    │   │
-│  │  - Routing   │  │  - Bronze    │  │  - Gold/Platinum    │   │
-│  │  - Status    │  │  - Silver    │  │  - BI Aggregates    │   │
-│  └──────────────┘  └──────────────┘  └─────────────────────┘   │
-└─────────────────────────────────────────────────────────────────┘
-                              ↕ REST API
-┌─────────────────────────────────────────────────────────────────┐
-│                   Apache Superset Analytics                     │
-│  Financial Dashboards | KPI Monitoring | Drill-Down Reports     │
-└─────────────────────────────────────────────────────────────────┘
-```
+
+**Technology Stack**:
+
+| Component | Technology | Purpose | Port/URL |
+|-----------|-----------|---------|----------|
+| **Core ERP** | Odoo CE 18.0 | Accounting, Projects, Multi-Company | 8069 |
+| **Workflow Engine** | n8n | Approval routing, BIR automation, month-end orchestration | 5678 |
+| **Database** | Supabase PostgreSQL 15 | Operational data, ETL staging, analytics | 6543 (pooler) |
+| **BI Platform** | Apache Superset | Financial dashboards, KPI monitoring | 8088 |
+| **Collaboration** | Mattermost | Notifications, approvals, alerts | 8065 |
+| **OCR Engine** | PaddleOCR-VL-900M | Receipt extraction, document processing | DigitalOcean App |
 
 ### Data Flow: Month-End Close
 
