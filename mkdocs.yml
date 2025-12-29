@@ -42,6 +42,14 @@ nav:
       - COE Generation: HR-Processes/coe-generation.md
   - IT Controls & Audit:
       - IT Audit & SoD Deployment: it-controls/it-audit-sod-deployment.md
+  - Development:
+      - AFC Module Architecture: development/afc-module-architecture.md
+      - Database Schema (DBML): development/database-schema.md
+      - Error Codes Reference: development/error-codes.md
+  - Infrastructure:
+      - Docker Deployment: infrastructure/docker-deployment.md
+  - Automation:
+      - N8N Workflows: automation/n8n-workflows.md
   - Reference:
       - Data Dictionary: 99-appendix-data-dictionary.md
 
