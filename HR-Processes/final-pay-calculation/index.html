@@ -1,0 +1,2031 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise-grade financial close documentation for Odoo Community Edition + OCA modules">
+      
+      
+        <meta name="author" content="InsightPulse AI Finance Team">
+      
+      
+        <link rel="canonical" href="https://github.com/USERNAME/odoo-financial-close-docs/HR-Processes/final-pay-calculation/">
+      
+      
+        <link rel="prev" href="../hire-to-retire-overview/">
+      
+      
+        <link rel="next" href="../clearance-workflow/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Final Pay Calculation - Odoo CE – Advanced Financial Close</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#final-pay-calculation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Odoo CE – Advanced Financial Close" class="md-header__button md-logo" aria-label="Odoo CE – Advanced Financial Close" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Odoo CE – Advanced Financial Close
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Final Pay Calculation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-current-state-and-target/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-roles-and-sod-matrix/" class="md-tabs__link">
+          
+  
+  
+  Governance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05-month-end-task-template/" class="md-tabs__link">
+          
+  
+  
+  Operational Templates
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../08-odoo-config-guide/" class="md-tabs__link">
+          
+  
+  
+  Implementation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../hire-to-retire-overview/" class="md-tabs__link">
+          
+  
+  
+  HR Processes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../it-controls/it-audit-sod-deployment/" class="md-tabs__link">
+          
+  
+  
+  IT Controls & Audit
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../99-appendix-data-dictionary/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Odoo CE – Advanced Financial Close" class="md-nav__button md-logo" aria-label="Odoo CE – Advanced Financial Close" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Odoo CE – Advanced Financial Close
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-current-state-and-target/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current State & Target
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-module-landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-roles-and-sod-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles & SoD Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-close-calendar-and-phases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Close Calendar & Phases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-change-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operational Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-month-end-task-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month-End Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-year-end-task-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Year-End Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-bir-tax-filing-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BIR Tax Filing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-odoo-config-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Odoo Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-runbook-monthly-close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook - Monthly Close
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-runbook-bir-filing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook - BIR Filing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HR Processes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    HR Processes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hire-to-retire-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hire-to-Retire Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Pay Calculation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Pay Calculation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculation-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calculation Timing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-pay-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Pay Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Final Pay Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additions-credit-to-employee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additions (Credit to Employee)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additions (Credit to Employee)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pro-rated-basic-salary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Pro-Rated Basic Salary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-unused-leave-credit-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Unused Leave Credit Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pro-rated-13th-month-pay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Pro-Rated 13th Month Pay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-approved-reimbursements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Approved Reimbursements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-other-benefits-due" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Other Benefits Due
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deductions-debit-from-employee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deductions (Debit from Employee)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deductions (Debit from Employee)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-outstanding-cash-advances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Outstanding Cash Advances
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-unreturned-asset-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Unreturned Asset Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tax-adjustments-bir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Tax Adjustments (BIR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-government-contributions-sss-philhealth-pag-ibig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Government Contributions (SSS, PhilHealth, Pag-IBIG)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-pay-calculation-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Pay Calculation Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approval-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Gates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-errors-and-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Errors and Fixes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odoo-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Odoo Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Queries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clearance-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearance Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coe-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COE Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT Controls & Audit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IT Controls & Audit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it-controls/it-audit-sod-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT Audit & SoD Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../99-appendix-data-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="final-pay-calculation">Final Pay Calculation<a class="headerlink" href="#final-pay-calculation" title="Permanent link">&para;</a></h1>
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
+<p>This document defines the complete final pay calculation methodology for separated employees, ensuring compliance with Philippine DOLE Labor Advisory No. 06-20 and internal TBWA\SMP Champion standards.</p>
+<h2 id="calculation-timing">Calculation Timing<a class="headerlink" href="#calculation-timing" title="Permanent link">&para;</a></h2>
+<p><strong>Statutory Deadline</strong>: ≤30 calendar days from separation date (DOLE requirement)</p>
+<p><strong>Internal SLA</strong>: ≤7 calendar days from Clearance Completed (TBWA standard)</p>
+<h2 id="final-pay-components">Final Pay Components<a class="headerlink" href="#final-pay-components" title="Permanent link">&para;</a></h2>
+<h3 id="additions-credit-to-employee">Additions (Credit to Employee)<a class="headerlink" href="#additions-credit-to-employee" title="Permanent link">&para;</a></h3>
+<h4 id="1-pro-rated-basic-salary">1. Pro-Rated Basic Salary<a class="headerlink" href="#1-pro-rated-basic-salary" title="Permanent link">&para;</a></h4>
+<p><strong>Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Pro-Rated Salary = (Monthly Basic Salary / 22 work days) × Days Worked in Final Month
+</code></pre></div></p>
+<p><strong>Example</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Monthly Basic Salary: ₱30,000
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Last Working Day (LWD): November 15, 2025
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Days Worked: 15 days (Nov 1-15)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Pro-Rated Salary = (₱30,000 / 22) × 15 = ₱20,454.55
+</code></pre></div></p>
+<p><strong>Odoo Field Reference</strong>: <code>hr.contract.wage</code> (Monthly Basic Salary)</p>
+<h4 id="2-unused-leave-credit-conversion">2. Unused Leave Credit Conversion<a class="headerlink" href="#2-unused-leave-credit-conversion" title="Permanent link">&para;</a></h4>
+<p><strong>Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Daily Rate = Monthly Basic Salary / 22 work days
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Vacation Leave (VL) Conversion = VL Balance × Daily Rate
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Sick Leave (SL) Conversion = SL Balance × Daily Rate (if company policy allows)
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Total Leave Conversion = VL Conversion + SL Conversion
+</code></pre></div></p>
+<p><strong>Example</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Monthly Basic Salary: ₱30,000
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Daily Rate: ₱30,000 / 22 = ₱1,363.64
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>VL Balance: 10 days
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>SL Balance: 5 days (assume convertible)
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>VL Conversion: 10 × ₱1,363.64 = ₱13,636.40
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>SL Conversion: 5 × ₱1,363.64 = ₱6,818.20
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Total Leave Conversion: ₱20,454.60
+</code></pre></div></p>
+<p><strong>Odoo Field Reference</strong>:
+- <code>hr_holidays.hr_leave_allocation.number_of_days</code> (Leave Balance)
+- <code>hr_holidays.hr_leave_type.name</code> (Leave Type: VL, SL)</p>
+<p><strong>Policy Note</strong>: Verify company policy on Sick Leave convertibility. Some companies only convert Vacation Leave.</p>
+<h4 id="3-pro-rated-13th-month-pay">3. Pro-Rated 13th Month Pay<a class="headerlink" href="#3-pro-rated-13th-month-pay" title="Permanent link">&para;</a></h4>
+<p><strong>Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Pro-Rated 13th Month = (Total Basic Salary Earned in Calendar Year) / 12
+</code></pre></div></p>
+<p><strong>Example</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Hire Date: January 1, 2025
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Separation Date: November 15, 2025
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Months Worked: 10.5 months
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Total Basic Salary Earned (Jan-Nov 15):
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  Jan-Oct: ₱30,000 × 10 = ₱300,000
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  Nov (pro-rated): ₱20,454.55
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>  Total: ₱320,454.55
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Pro-Rated 13th Month = ₱320,454.55 / 12 = ₱26,704.55
+</code></pre></div></p>
+<p><strong>Legal Reference</strong>: Presidential Decree No. 851 (13th Month Pay Law)</p>
+<p><strong>Odoo Field Reference</strong>: <code>hr.payslip.line</code> with <code>code='GROSS'</code> (Total Basic Salary)</p>
+<h4 id="4-approved-reimbursements">4. Approved Reimbursements<a class="headerlink" href="#4-approved-reimbursements" title="Permanent link">&para;</a></h4>
+<p><strong>Included Items</strong>:
+- Approved expense claims not yet paid
+- Outstanding allowances (transportation, mobile, meal)
+- Work-from-home stipends
+- Client-billed expenses pending reimbursement</p>
+<p><strong>Example</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Approved Expense Claims: ₱5,000
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Outstanding Mobile Allowance (Nov 1-15): ₱500
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Total Reimbursements: ₱5,500
+</code></pre></div></p>
+<p><strong>Odoo Field Reference</strong>:
+- <code>hr.expense.sheet.state='approve'</code> and <code>payment_mode='own_account'</code>
+- <code>hr.expense.total_amount</code> (Approved Amount)</p>
+<p><strong>Validation</strong>: Finance must verify all expense claims are approved before final pay calculation.</p>
+<h4 id="5-other-benefits-due">5. Other Benefits Due<a class="headerlink" href="#5-other-benefits-due" title="Permanent link">&para;</a></h4>
+<p><strong>Included Items</strong>:
+- Performance bonuses declared but unpaid
+- Referral bonuses
+- Project completion incentives
+- Loyalty awards</p>
+<p><strong>Example</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Performance Bonus (Q3 2025): ₱10,000
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Project Completion Incentive: ₱5,000
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Total Other Benefits: ₱15,000
+</code></pre></div></p>
+<p><strong>Odoo Field Reference</strong>: Custom payslip inputs or <code>hr.payslip.input</code></p>
+<h3 id="deductions-debit-from-employee">Deductions (Debit from Employee)<a class="headerlink" href="#deductions-debit-from-employee" title="Permanent link">&para;</a></h3>
+<h4 id="1-outstanding-cash-advances">1. Outstanding Cash Advances<a class="headerlink" href="#1-outstanding-cash-advances" title="Permanent link">&para;</a></h4>
+<p><strong>Included Items</strong>:
+- Unapproved cash advance requests
+- Approved cash advances with incomplete liquidation
+- Salary loans with outstanding balance</p>
+<p><strong>Example</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Cash Advance #1234 (Unliquidated): ₱10,000
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Salary Loan (Remaining Balance): ₱5,000
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Total Outstanding Advances: ₱15,000
+</code></pre></div></p>
+<p><strong>Odoo Field Reference</strong>:
+- <code>hr.expense.sheet.state='post'</code> and <code>liquidation_status!='completed'</code>
+- <code>hr.loan.balance</code> (Salary Loan Balance)</p>
+<p><strong>Validation</strong>: Finance must verify all cash advances and loans before final pay calculation.</p>
+<h4 id="2-unreturned-asset-value">2. Unreturned Asset Value<a class="headerlink" href="#2-unreturned-asset-value" title="Permanent link">&para;</a></h4>
+<p><strong>Included Items</strong>:
+- Company laptop/desktop not returned
+- Mobile phone not returned
+- Office keys, ID, access cards not surrendered
+- Uniforms, tools, equipment not returned</p>
+<p><strong>Example</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Laptop (MacBook Pro 2021): ₱80,000 (if not returned)
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Mobile Phone (iPhone 13): ₱50,000 (if not returned)
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Total Unreturned Asset Value: ₱130,000
+</code></pre></div></p>
+<p><strong>Odoo Field Reference</strong>:
+- <code>asset.asset.employee_id</code> (Assets assigned to employee)
+- <code>asset.asset.value</code> (Current book value)</p>
+<p><strong>Clearance Dependency</strong>: IT clearance must confirm all assets returned before final pay release.</p>
+<h4 id="3-tax-adjustments-bir">3. Tax Adjustments (BIR)<a class="headerlink" href="#3-tax-adjustments-bir" title="Permanent link">&para;</a></h4>
+<p><strong>Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Annualized Taxable Income = Total Taxable Income (Jan-Nov) + Final Pay Taxable Portion
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Tax Due = BIR Tax Table (Annualized Taxable Income)
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Tax Already Withheld = Sum of Monthly Withholding Tax (Jan-Nov)
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Tax Adjustment = Tax Due - Tax Already Withheld
+</code></pre></div></p>
+<p><strong>Example</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Total Taxable Income (Jan-Nov): ₱350,000
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Final Pay Taxable Portion: ₱50,000 (pro-rated salary + leave conversion)
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Annualized Taxable Income: ₱400,000
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>BIR Tax Due (per Tax Table): ₱50,000
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Tax Already Withheld: ₱45,000
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Tax Adjustment: ₱50,000 - ₱45,000 = ₱5,000 (to be withheld)
+</code></pre></div></p>
+<p><strong>Legal Reference</strong>: BIR Revenue Regulations No. 11-2018 (TRAIN Law)</p>
+<p><strong>Odoo Field Reference</strong>: <code>hr.payslip.line</code> with <code>code='WTAX'</code> (Withholding Tax)</p>
+<h4 id="4-government-contributions-sss-philhealth-pag-ibig">4. Government Contributions (SSS, PhilHealth, Pag-IBIG)<a class="headerlink" href="#4-government-contributions-sss-philhealth-pag-ibig" title="Permanent link">&para;</a></h4>
+<p><strong>Pro-Rated Contributions</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>SSS Contribution = Monthly SSS × (Days Worked / 22)
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>PhilHealth Contribution = Monthly PhilHealth × (Days Worked / 22)
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Pag-IBIG Contribution = Monthly Pag-IBIG × (Days Worked / 22)
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Total Government Contributions = SSS + PhilHealth + Pag-IBIG
+</code></pre></div></p>
+<p><strong>Example</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Monthly SSS (Employee Share): ₱1,125
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Monthly PhilHealth (Employee Share): ₱500
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Monthly Pag-IBIG (Employee Share): ₱200
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Days Worked in Final Month: 15 days
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Pro-Rated SSS: ₱1,125 × (15 / 22) = ₱767.05
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>Pro-Rated PhilHealth: ₱500 × (15 / 22) = ₱340.91
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>Pro-Rated Pag-IBIG: ₱200 × (15 / 22) = ₱136.36
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>Total Government Contributions: ₱1,244.32
+</code></pre></div></p>
+<p><strong>Legal Reference</strong>:
+- SSS Law (RA 11199)
+- Universal Health Care Act (RA 11223)
+- Pag-IBIG Law (RA 9679)</p>
+<p><strong>Odoo Field Reference</strong>: <code>hr.payslip.line</code> with codes <code>SSS</code>, <code>PHIC</code>, <code>HDMF</code></p>
+<h2 id="final-pay-calculation-summary">Final Pay Calculation Summary<a class="headerlink" href="#final-pay-calculation-summary" title="Permanent link">&para;</a></h2>
+<p><strong>Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>FINAL PAY =
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  (Pro-Rated Salary + Leave Conversion + 13th Month + Reimbursements + Other Benefits)
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  -
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>  (Outstanding Advances + Unreturned Assets + Tax Adjustment + Government Contributions)
+</code></pre></div></p>
+<p><strong>Example (Full Calculation)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ADDITIONS:
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>  Pro-Rated Salary: ₱20,454.55
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>  Leave Conversion: ₱20,454.60
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>  13th Month Pay: ₱26,704.55
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>  Reimbursements: ₱5,500.00
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>  Other Benefits: ₱15,000.00
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>  SUBTOTAL: ₱88,113.70
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>DEDUCTIONS:
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>  Outstanding Advances: ₱15,000.00
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>  Unreturned Assets: ₱0.00 (all returned)
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>  Tax Adjustment: ₱5,000.00
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>  Government Contributions: ₱1,244.32
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>  SUBTOTAL: ₱21,244.32
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>FINAL PAY: ₱88,113.70 - ₱21,244.32 = ₱66,869.38
+</code></pre></div></p>
+<h2 id="approval-workflow">Approval Workflow<a class="headerlink" href="#approval-workflow" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Preparation</strong>: Finance Supervisor calculates final pay using Odoo payroll module</li>
+<li><strong>Review</strong>: Senior Finance Manager reviews calculation for accuracy</li>
+<li><strong>Approval</strong>: Finance Director approves final pay</li>
+<li><strong>Escalation</strong>: If final pay &gt;₱100,000, COO/MD approval required</li>
+<li><strong>Payment</strong>: Finance Department executes payment via bank transfer or check</li>
+</ol>
+<h2 id="quality-gates">Quality Gates<a class="headerlink" href="#quality-gates" title="Permanent link">&para;</a></h2>
+<p>Before final pay release, verify:
+- ✅ All clearances completed (HR, Finance, IT, Admin)
+- ✅ Leave balance verified by HR Ops
+- ✅ Outstanding advances verified by Finance
+- ✅ Tax computation reviewed by Finance
+- ✅ Government contributions verified
+- ✅ Finance Director approval obtained</p>
+<h2 id="common-errors-and-fixes">Common Errors and Fixes<a class="headerlink" href="#common-errors-and-fixes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Incorrect Daily Rate</strong></td>
+<td>Leave conversion wrong</td>
+<td>Verify <code>Monthly Basic / 22</code>, not <code>/30</code></td>
+</tr>
+<tr>
+<td><strong>Missing 13th Month</strong></td>
+<td>Final pay too low</td>
+<td>Include pro-rated 13th month in calculation</td>
+</tr>
+<tr>
+<td><strong>Wrong Tax Adjustment</strong></td>
+<td>Tax over/under withheld</td>
+<td>Use annualized income, not monthly</td>
+</tr>
+<tr>
+<td><strong>Double-Counted Advances</strong></td>
+<td>Final pay negative</td>
+<td>Verify advances are not already deducted in payslip</td>
+</tr>
+<tr>
+<td><strong>Unreturned Assets Not Deducted</strong></td>
+<td>IT clearance shows missing laptop</td>
+<td>Manually add asset value to deductions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="odoo-configuration">Odoo Configuration<a class="headerlink" href="#odoo-configuration" title="Permanent link">&para;</a></h2>
+<p><strong>Required Payslip Lines</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;hr_payslip_line_final_pay_prorated&quot;</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;hr.salary.rule&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;code&quot;</span><span class="nt">&gt;</span>PRORATED<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Pro-Rated<span class="w"> </span>Basic<span class="w"> </span>Salary<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;category_id&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;hr_payroll.ALW&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;sequence&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;appears_on_payslip&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;python_compute&quot;</span><span class="nt">&gt;</span>result<span class="w"> </span>=<span class="w"> </span>contract.wage<span class="w"> </span>/<span class="w"> </span>22<span class="w"> </span>*<span class="w"> </span>worked_days.WORK100.number_of_days<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="nt">&lt;/record&gt;</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;hr_payslip_line_final_pay_leave&quot;</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;hr.salary.rule&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;code&quot;</span><span class="nt">&gt;</span>LEAVECNV<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Leave<span class="w"> </span>Credit<span class="w"> </span>Conversion<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;category_id&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;hr_payroll.ALW&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;sequence&quot;</span><span class="nt">&gt;</span>20<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;appears_on_payslip&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;python_compute&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">        </span>#<span class="w"> </span>Calculate<span class="w"> </span>leave<span class="w"> </span>conversion<span class="w"> </span>(VL<span class="w"> </span>+<span class="w"> </span>SL)
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">        </span>daily_rate<span class="w"> </span>=<span class="w"> </span>contract.wage<span class="w"> </span>/<span class="w"> </span>22
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">        </span>vl_balance<span class="w"> </span>=<span class="w"> </span>employee.remaining_leaves<span class="w">  </span>#<span class="w"> </span>Vacation<span class="w"> </span>Leave<span class="w"> </span>balance
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">        </span>sl_balance<span class="w"> </span>=<span class="w"> </span>employee.sick_leaves<span class="w">  </span>#<span class="w"> </span>Sick<span class="w"> </span>Leave<span class="w"> </span>balance<span class="w"> </span>(if<span class="w"> </span>convertible)
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">        </span>result<span class="w"> </span>=<span class="w"> </span>(vl_balance<span class="w"> </span>+<span class="w"> </span>sl_balance)<span class="w"> </span>*<span class="w"> </span>daily_rate
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">    </span><span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="nt">&lt;/record&gt;</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;hr_payslip_line_final_pay_13th&quot;</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;hr.salary.rule&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;code&quot;</span><span class="nt">&gt;</span>13THPRO<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Pro-Rated<span class="w"> </span>13th<span class="w"> </span>Month<span class="w"> </span>Pay<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;category_id&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;hr_payroll.ALW&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;sequence&quot;</span><span class="nt">&gt;</span>30<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;appears_on_payslip&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;python_compute&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w">        </span>#<span class="w"> </span>Calculate<span class="w"> </span>pro-rated<span class="w"> </span>13th<span class="w"> </span>month
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a><span class="w">        </span>#<span class="w"> </span>Sum<span class="w"> </span>all<span class="w"> </span>basic<span class="w"> </span>salary<span class="w"> </span>from<span class="w"> </span>Jan<span class="w"> </span>to<span class="w"> </span>separation<span class="w"> </span>date<span class="w"> </span>/<span class="w"> </span>12
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="w">        </span>result<span class="w"> </span>=<span class="w"> </span>payslip.get_ytd_basic_salary()<span class="w"> </span>/<span class="w"> </span>12
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="w">    </span><span class="nt">&lt;/field&gt;</span>
+<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="nt">&lt;/record&gt;</span>
+</code></pre></div></p>
+<h2 id="verification-queries">Verification Queries<a class="headerlink" href="#verification-queries" title="Permanent link">&para;</a></h2>
+<p><strong>Check Pending Expenses</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">expense_name</span><span class="p">,</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="n">total_amount</span><span class="p">,</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="k">state</span><span class="p">,</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="n">employee_id</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">FROM</span><span class="w"> </span><span class="n">hr_expense</span><span class="w"> </span><span class="n">e</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">hr_expense_sheet</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">sheet_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">employee_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="n">employee_id</span><span class="o">&gt;</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;approve&#39;</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">payment_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;own_account&#39;</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">liquidation_status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;completed&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>Check Outstanding Advances</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="n">sheet</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">advance_name</span><span class="p">,</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="n">sheet</span><span class="p">.</span><span class="n">total_amount</span><span class="p">,</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="n">sheet</span><span class="p">.</span><span class="k">state</span><span class="p">,</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="n">sheet</span><span class="p">.</span><span class="n">liquidation_status</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="k">FROM</span><span class="w"> </span><span class="n">hr_expense_sheet</span><span class="w"> </span><span class="n">sheet</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">sheet</span><span class="p">.</span><span class="n">employee_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="n">employee_id</span><span class="o">&gt;</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">sheet</span><span class="p">.</span><span class="n">is_advance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">TRUE</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">sheet</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;post&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">sheet</span><span class="p">.</span><span class="n">liquidation_status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;completed&#39;</span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Check Leave Balances</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="n">lt</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">leave_type</span><span class="p">,</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">al</span><span class="p">.</span><span class="n">number_of_days</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">balance</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">hr_leave_allocation</span><span class="w"> </span><span class="n">al</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">hr_leave_type</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">al</span><span class="p">.</span><span class="n">holiday_status_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lt</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">al</span><span class="p">.</span><span class="n">employee_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="n">employee_id</span><span class="o">&gt;</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">al</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;validate&#39;</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">lt</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Vacation Leave&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Sick Leave&#39;</span><span class="p">)</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">lt</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+</code></pre></div></p>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Configure Odoo payroll rules for final pay calculation</li>
+<li>Test calculation with sample separation scenarios</li>
+<li>Review tax adjustment logic with Finance Director</li>
+<li>Validate leave conversion formula with HR Ops</li>
+<li>Set up approval workflow in Odoo <code>hr.payslip</code> with Finance Director as approver</li>
+</ol>
+<hr />
+<p><strong>Author</strong>: Jake Tolentino
+<strong>Last Updated</strong>: 2025-12-29
+<strong>Version</strong>: 1.0
+<strong>Applies To</strong>: Odoo CE 18.0 + OCA Modules (Single Agency, Philippine Operations)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/USERNAME/odoo-financial-close-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

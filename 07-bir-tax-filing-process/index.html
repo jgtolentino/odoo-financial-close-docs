@@ -1,0 +1,3500 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise-grade financial close documentation for Odoo Community Edition + OCA modules">
+      
+      
+        <meta name="author" content="InsightPulse AI Finance Team">
+      
+      
+        <link rel="canonical" href="https://github.com/USERNAME/odoo-financial-close-docs/07-bir-tax-filing-process/">
+      
+      
+        <link rel="prev" href="../06-year-end-task-template/">
+      
+      
+        <link rel="next" href="../08-odoo-config-guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>BIR Tax Filing - Odoo CE – Advanced Financial Close</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bir-tax-filing-process-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Odoo CE – Advanced Financial Close" class="md-header__button md-logo" aria-label="Odoo CE – Advanced Financial Close" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Odoo CE – Advanced Financial Close
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BIR Tax Filing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-current-state-and-target/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03-roles-and-sod-matrix/" class="md-tabs__link">
+          
+  
+  
+  Governance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../05-month-end-task-template/" class="md-tabs__link">
+          
+  
+  
+  Operational Templates
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../08-odoo-config-guide/" class="md-tabs__link">
+          
+  
+  
+  Implementation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../HR-Processes/hire-to-retire-overview/" class="md-tabs__link">
+          
+  
+  
+  HR Processes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../it-controls/it-audit-sod-deployment/" class="md-tabs__link">
+          
+  
+  
+  IT Controls & Audit
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../99-appendix-data-dictionary/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Odoo CE – Advanced Financial Close" class="md-nav__button md-logo" aria-label="Odoo CE – Advanced Financial Close" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Odoo CE – Advanced Financial Close
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-current-state-and-target/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current State & Target
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-module-landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-roles-and-sod-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles & SoD Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-close-calendar-and-phases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Close Calendar & Phases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-change-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operational Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-month-end-task-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month-End Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-year-end-task-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Year-End Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BIR Tax Filing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BIR Tax Filing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#document-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bir-tax-compliance-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Tax Compliance Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIR Tax Compliance Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tax-forms-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tax Forms Ecosystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-agencymulti-employee-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Agency/Multi-Employee Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bir-form-detailed-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form Detailed Workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIR Form Detailed Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bir-form-1601-c-monthly-withholding-tax-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form 1601-C: Monthly Withholding Tax Return
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIR Form 1601-C: Monthly Withholding Tax Return">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scope-and-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tax-computation-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tax Computation Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-extraction-from-odoo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Extraction from Odoo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bir-form-1601-c-completion-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form 1601-C Completion Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-and-accuracy-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation and Accuracy Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filing-and-payment-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filing and Payment Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bir-form-0619-e-monthly-expanded-withholding-tax-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form 0619-E: Monthly Expanded Withholding Tax Return
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIR Form 0619-E: Monthly Expanded Withholding Tax Return">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scope-and-coverage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tax-computation-methodology_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tax Computation Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-extraction-from-odoo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Extraction from Odoo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bir-form-0619-e-completion-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form 0619-E Completion Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-and-accuracy-checks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation and Accuracy Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filing-and-payment-process_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filing and Payment Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bir-form-2550q-quarterlyannual-income-tax-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form 2550Q: Quarterly/Annual Income Tax Return
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIR Form 2550Q: Quarterly/Annual Income Tax Return">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scope-and-coverage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tax-computation-methodology_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tax Computation Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-extraction-from-odoo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Extraction from Odoo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bir-form-2550q-completion-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form 2550Q Completion Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annual-consolidated-return-april-15-deadline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annual Consolidated Return (April 15 Deadline)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bir-form-1702-rt-annual-corporate-income-tax-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form 1702-RT: Annual Corporate Income Tax Return
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIR Form 1702-RT: Annual Corporate Income Tax Return">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scope-and-coverage_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tax-computation-methodology_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tax Computation Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-extraction-from-odoo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Extraction from Odoo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bir-form-1702-rt-completion-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form 1702-RT Completion Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bir-form-1601-eq1601-fq-quarterly-withholding-tax-returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form 1601-EQ/1601-FQ: Quarterly Withholding Tax Returns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIR Form 1601-EQ/1601-FQ: Quarterly Withholding Tax Returns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scope-and-coverage_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filing-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filing Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bir-form-1604-e-annual-alphalist-of-payees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form 1604-E: Annual Alphalist of Payees
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIR Form 1604-E: Annual Alphalist of Payees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scope-and-coverage_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-extraction-from-odoo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Extraction from Odoo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bir-form-1604-e-completion-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Form 1604-E Completion Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-and-accuracy-checks_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation and Accuracy Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-agencymulti-employee-handling_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Agency/Multi-Employee Handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Agency/Multi-Employee Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consolidated-tracking-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consolidated Tracking Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consolidated-bir-summary-report-monthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consolidated BIR Summary Report (Monthly)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mattermost-notification-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mattermost Notification Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#penalty-calculation-and-avoidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Penalty Calculation and Avoidance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Penalty Calculation and Avoidance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bir-penalty-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Penalty Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#penalty-avoidance-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Penalty Avoidance Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bir-audit-defense-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BIR Audit Defense Preparation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BIR Audit Defense Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audit-triggers-common" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Triggers (Common)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-defense-file-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Defense File Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-response-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Response Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acceptance Criteria Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-success-factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Success Factors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues &amp; Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues &amp; Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-1-bir-calculation-variance-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 1: BIR Calculation Variance &gt;2%
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-2-ebirforms-system-downtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 2: eBIRForms System Downtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-3-missing-payee-information-incomplete-tins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 3: Missing Payee Information (Incomplete TINs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-bir-filing-deadlines-calendar-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A: BIR Filing Deadlines Calendar (2026)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-bir-form-checklist-per-agency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B: BIR Form Checklist (Per Agency)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-revision-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Revision History
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-odoo-config-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Odoo Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-runbook-monthly-close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook - Monthly Close
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-runbook-bir-filing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook - BIR Filing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HR Processes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    HR Processes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/hire-to-retire-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hire-to-Retire Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/final-pay-calculation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Pay Calculation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/clearance-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearance Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/coe-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COE Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT Controls & Audit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IT Controls & Audit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../it-controls/it-audit-sod-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT Audit & SoD Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../99-appendix-data-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="bir-tax-filing-process-documentation">BIR Tax Filing Process Documentation<a class="headerlink" href="#bir-tax-filing-process-documentation" title="Permanent link">&para;</a></h1>
+<h2 id="document-control">Document Control<a class="headerlink" href="#document-control" title="Permanent link">&para;</a></h2>
+<p><strong>Version</strong>: 1.0
+<strong>Last Updated</strong>: 2025-12-29
+<strong>Owner</strong>: Finance SSC Manager
+<strong>Approvers</strong>: Finance Manager, Finance Director, Tax Advisor
+<strong>Review Cycle</strong>: Quarterly (after each BIR filing cycle)</p>
+<hr />
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This document provides comprehensive Philippine BIR (Bureau of Internal Revenue) tax compliance workflows for TBWA Finance SSC, covering 6 primary tax forms, tax computation methodologies, filing deadlines, penalty calculations, and multi-agency/multi-employee handling procedures. The processes ensure ≥98% accuracy in tax calculations and 100% on-time filing compliance.</p>
+<p><strong>Scope</strong>: Philippine tax compliance for 8 agencies with 8 employee withholding agents
+<strong>Critical Forms</strong>: 1601-C, 0619-E, 2550Q, 1702-RT, 1601-EQ, 1601-FQ
+<strong>Accuracy Target</strong>: ≥98% (variance ≤2% between BIR forms and GL)
+<strong>Filing Compliance Target</strong>: 100% on-time submissions (zero penalties)</p>
+<hr />
+<h2 id="bir-tax-compliance-architecture">BIR Tax Compliance Architecture<a class="headerlink" href="#bir-tax-compliance-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="tax-forms-ecosystem">Tax Forms Ecosystem<a class="headerlink" href="#tax-forms-ecosystem" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Monthly Withholding Tax Forms (Due: 10th of following month)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   ├── BIR 1601-C: Withholding Tax on Compensation &amp; Other Payments
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   └── BIR 0619-E: Monthly Remittance of Creditable Income Tax Withheld (Expanded)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Quarterly Income Tax Forms (Due: 60 days after quarter-end)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   ├── BIR 1601-EQ: Quarterly Remittance of Creditable Income Tax Withheld (Expanded)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   ├── BIR 1601-FQ: Quarterly Remittance of Final Income Tax Withheld
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   └── BIR 2550Q: Quarterly/Annual Income Tax Return
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Annual Tax Forms (Due: April 15 following year)
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>   ├── BIR 1702-RT: Annual Income Tax Return (Regular Corporate)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>   └── BIR 1604-E: Annual Information Return (Alphalist of Payees)
+</code></pre></div>
+<h3 id="multi-agencymulti-employee-handling">Multi-Agency/Multi-Employee Handling<a class="headerlink" href="#multi-agencymulti-employee-handling" title="Permanent link">&para;</a></h3>
+<p><strong>8 Agencies</strong>: CKVC, BOM, JPAL, JLI, JAP, LAS, RMQB, RIM
+<strong>8 Employee Withholding Agents</strong>: One per agency (responsible for BIR compliance)</p>
+<p><strong>Aggregation Strategy</strong>:
+- <strong>Monthly Forms (1601-C, 0619-E)</strong>: Filed per employee/agency (8 separate filings per month)
+- <strong>Quarterly Forms (2550Q, 1601-EQ, 1601-FQ)</strong>: Filed per agency (8 separate filings per quarter)
+- <strong>Annual Forms (1702-RT, 1604-E)</strong>: Filed per agency (8 separate filings annually)</p>
+<p><strong>Consolidated Tracking</strong>: Finance SSC Manager maintains consolidated view across all agencies/employees</p>
+<hr />
+<h2 id="bir-form-detailed-workflows">BIR Form Detailed Workflows<a class="headerlink" href="#bir-form-detailed-workflows" title="Permanent link">&para;</a></h2>
+<h3 id="bir-form-1601-c-monthly-withholding-tax-return">BIR Form 1601-C: Monthly Withholding Tax Return<a class="headerlink" href="#bir-form-1601-c-monthly-withholding-tax-return" title="Permanent link">&para;</a></h3>
+<p><strong>Full Form Name</strong>: Monthly Remittance Return of Income Taxes Withheld on Compensation and Final Withholding Taxes</p>
+<p><strong>Filing Frequency</strong>: Monthly
+<strong>Filing Deadline</strong>: 10th day of the following month
+<strong>Who Files</strong>: Each of 8 employee withholding agents (per agency)
+<strong>Penalty for Late Filing</strong>: 25% surcharge + 12% interest per annum (calculated daily)</p>
+<hr />
+<h4 id="scope-and-coverage">Scope and Coverage<a class="headerlink" href="#scope-and-coverage" title="Permanent link">&para;</a></h4>
+<p><strong>Income Payments Subject to Withholding</strong>:</p>
+<p><strong>WC010 - Compensation Income</strong> (Employees):
+- Salaries and wages
+- Bonuses (13th month, performance bonuses)
+- Overtime pay
+- Allowances (taxable portion)
+- Benefits in kind (taxable value)</p>
+<p><strong>WC020 - Professional Fees</strong> (Independent Contractors):
+- Consulting fees
+- Legal/accounting services
+- Medical/dental fees
+- Engineering/architectural services
+- Talent fees (actors, models, influencers)</p>
+<p><strong>WC030 - Rentals</strong>:
+- Office space rental
+- Equipment rental
+- Vehicle rental
+- Property rental (real estate)</p>
+<p><strong>WC040 - Dividends</strong>:
+- Cash dividends
+- Stock dividends (if applicable)</p>
+<p><strong>WC050 - Interest Income</strong>:
+- Bank deposits (if payor is withholding agent)
+- Loans to individuals</p>
+<p><strong>WC060 - Royalties</strong>:
+- Intellectual property royalties
+- Franchise fees
+- Patent/copyright royalties</p>
+<p><strong>WC070 - Prizes and Winnings</strong>:
+- Raffle prizes
+- Contest winnings (&gt;PHP 10,000)</p>
+<p><strong>WC080 - Professional Entertainers/Athletes</strong>:
+- Performance fees
+- Appearance fees
+- Endorsement fees</p>
+<hr />
+<h4 id="tax-computation-methodology">Tax Computation Methodology<a class="headerlink" href="#tax-computation-methodology" title="Permanent link">&para;</a></h4>
+<p><strong>WC010 - Compensation (Progressive Tax Rates)</strong>:</p>
+<p>Tax is withheld using the graduated withholding tax table per RR No. 11-2018 (as amended by TRAIN Law):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Annual Compensation           Tax Rate
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>PHP 0 - 250,000               0%
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>PHP 250,001 - 400,000         15% of excess over PHP 250,000
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>PHP 400,001 - 800,000         PHP 22,500 + 20% of excess over PHP 400,000
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>PHP 800,001 - 2,000,000       PHP 102,500 + 25% of excess over PHP 800,000
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>PHP 2,000,001 - 8,000,000     PHP 402,500 + 30% of excess over PHP 2,000,000
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>PHP 8,000,001 and above       PHP 2,202,500 + 35% of excess over PHP 8,000,000
+</code></pre></div>
+<p><strong>Example (Monthly Withholding)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Employee: Juan Dela Cruz
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Monthly Gross Salary: PHP 50,000
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Annualized: PHP 50,000 × 12 = PHP 600,000
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Annual Tax:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  0 - 250,000: PHP 0
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  250,000 - 400,000: (400,000 - 250,000) × 15% = PHP 22,500
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  400,000 - 600,000: (600,000 - 400,000) × 20% = PHP 40,000
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Total Annual Tax: PHP 62,500
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Monthly Withholding: PHP 62,500 / 12 = PHP 5,208.33
+</code></pre></div></p>
+<p><strong>WC020 - Professional Fees (10% or 15%)</strong>:
+- <strong>10%</strong>: If payee has BIR Authority to Print (ATP) receipts
+- <strong>15%</strong>: If payee has no ATP (informal receipts)</p>
+<p><strong>WC030 - Rentals (5%)</strong>:
+- Rental income × 5% withholding rate</p>
+<p><strong>WC040 - Dividends (10%)</strong>:
+- Cash dividends × 10% final withholding tax</p>
+<p><strong>WC050 - Interest (20%)</strong>:
+- Interest income × 20% final withholding tax</p>
+<p><strong>WC060 - Royalties (10% or 20%)</strong>:
+- <strong>10%</strong>: If royalty is for books, literary works
+- <strong>20%</strong>: Other royalties (patents, franchises)</p>
+<p><strong>WC070 - Prizes (20%)</strong>:
+- Prize amount × 20% final withholding tax</p>
+<hr />
+<h4 id="data-extraction-from-odoo">Data Extraction from Odoo<a class="headerlink" href="#data-extraction-from-odoo" title="Permanent link">&para;</a></h4>
+<p><strong>SQL Query for WC010 (Compensation)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">employee_name</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="n">e</span><span class="p">.</span><span class="n">tin</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">employee_tin</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">date_from</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">date_to</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;BASIC&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">total</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">basic_salary</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ALLOWANCE&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">total</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">taxable_allowances</span><span class="p">,</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;BONUS&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">total</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">bonuses</span><span class="p">,</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;WITHHOLDING&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">total</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tax_withheld</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">FROM</span><span class="w"> </span><span class="n">hr_payslip</span><span class="w"> </span><span class="n">p</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">hr_employee</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">employee_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">hr_payslip_line</span><span class="w"> </span><span class="n">pl</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">slip_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">date_from</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;2025-12-01&#39;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">date_to</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;2025-12-31&#39;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;done&#39;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">date_from</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">date_to</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>SQL Query for WC020 (Professional Fees)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">vendor_name</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">vat</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">vendor_tin</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="n">ai</span><span class="p">.</span><span class="nb">number</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">invoice_number</span><span class="p">,</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">professional_fees</span><span class="p">,</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tax_withheld_10pct</span><span class="p">,</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="k">CASE</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="k">WHEN</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">has_atp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">TRUE</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;With ATP (10%)&#39;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;No ATP (15%)&#39;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">withholding_rate</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account_invoice</span><span class="w"> </span><span class="n">ai</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">res_partner</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">partner_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">account_invoice_line</span><span class="w"> </span><span class="n">ail</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">invoice_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;2025-12-01&#39;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;2025-12-31&#39;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;in_invoice&#39;</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">account_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">account_account</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;6%&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">ILIKE</span><span class="w"> </span><span class="s1">&#39;%professional%&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="p">;</span>
+</code></pre></div></p>
+<hr />
+<h4 id="bir-form-1601-c-completion-steps">BIR Form 1601-C Completion Steps<a class="headerlink" href="#bir-form-1601-c-completion-steps" title="Permanent link">&para;</a></h4>
+<p><strong>Part I: Background Information</strong>
+1. Enter TIN of Withholding Agent (agency TIN)
+2. Enter Registered Name of Withholding Agent (agency legal name)
+3. Enter Registered Address
+4. Enter RDO Code (Revenue District Office where registered)
+5. Enter Line of Business (advertising, consulting, etc.)
+6. Enter Telephone/Mobile Number
+7. Enter Email Address</p>
+<p><strong>Part II: Computation of Income Taxes Withheld</strong></p>
+<p>For each tax code (WC010, WC020, etc.):
+1. <strong>ATC (Alphanumeric Tax Code)</strong>: Select from dropdown (e.g., WC010)
+2. <strong>Nature of Income Payment</strong>: Description (e.g., Compensation, Professional Fees)
+3. <strong>Tax Rate</strong>: Enter applicable rate (e.g., 10%, 15%, 20%)
+4. <strong>Amount of Income Payment</strong>: Gross amount paid (before withholding)
+5. <strong>Tax Withheld</strong>: Amount of tax withheld from payment</p>
+<p><strong>Example Entries</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ATC    Nature                  Tax Rate   Income Payment   Tax Withheld
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>WC010  Compensation            Progressive PHP 500,000     PHP 62,500
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>WC020  Professional Fees       10%        PHP 100,000     PHP 10,000
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>WC030  Rentals                 5%         PHP 50,000      PHP 2,500
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Total                                     PHP 650,000     PHP 75,000
+</code></pre></div></p>
+<p><strong>Part III: Computation of Penalties</strong>
+- Leave blank if filing on time
+- If late, system auto-calculates 25% surcharge + 12% interest p.a.</p>
+<p><strong>Part IV: Summary of Remittance</strong>
+1. <strong>Total Income Tax Withheld</strong>: Sum of all tax withheld (from Part II)
+2. <strong>Add: Penalties</strong> (if late filing): Surcharge + Interest
+3. <strong>Total Amount Payable</strong>: Income Tax + Penalties
+4. <strong>Less: Tax Payments Made</strong> (if any prior payments for this period)
+5. <strong>Tax Still Due/(Overpayment)</strong>: Final amount to remit</p>
+<hr />
+<h4 id="validation-and-accuracy-checks">Validation and Accuracy Checks<a class="headerlink" href="#validation-and-accuracy-checks" title="Permanent link">&para;</a></h4>
+<p><strong>Pre-Submission Validation</strong>:</p>
+<ol>
+<li>
+<p><strong>Reconciliation to GL</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- GL Withholding Tax Liability Account (Month-End Balance)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">SELECT</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">debit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">credit</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gl_withholding_liability</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account_move_line</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">account_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">account_account</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2103&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;2025-12-01&#39;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;2025-12-31&#39;</span><span class="p">;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1">-- Compare to BIR Form Total Tax Withheld</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1">-- Variance = GL Balance - BIR Form Total</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1">-- Target: Variance ≤ 2%</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Alphalist Reconciliation</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Total Tax Withheld (per BIR Form 1601-C) = Sum of Tax Withheld per Payee (per Alphalist)
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>If variance detected → investigate line-by-line
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Payroll Reconciliation (WC010)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Total Compensation (BIR Form) = Total Gross Salaries (Payroll Register)
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Total Tax Withheld (BIR Form) = Total Withholding Tax (Payroll Register)
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Accuracy Target</strong>: ≥98% (variance ≤2%)</p>
+<p><strong>Common Variance Causes</strong>:
+- Timing differences (December salaries paid in January)
+- Accrued expenses not yet paid (professional fees accrued but not invoiced)
+- Manual adjustments not recorded in Odoo
+- Incorrect tax code classification</p>
+<hr />
+<h4 id="filing-and-payment-process">Filing and Payment Process<a class="headerlink" href="#filing-and-payment-process" title="Permanent link">&para;</a></h4>
+<p><strong>Step 1: Generate BIR Form PDF</strong>
+- Use n8n workflow: <code>BIR_1601C_Generator.json</code>
+- Workflow extracts data from Odoo → Populates BIR Form PDF → Saves to Supabase storage</p>
+<p><strong>Step 2: Review and Approve</strong>
+- Finance Supervisor reviews form for accuracy
+- Finance Manager approves form (digital signature in Odoo task record)</p>
+<p><strong>Step 3: File via eBIRForms</strong> (Preferred Method)
+1. Log in to eBIRForms (https://ebir.bir.gov.ph/)
+2. Select BIR Form 1601-C
+3. Upload generated PDF or manually enter data
+4. Submit electronically
+5. Obtain electronic filing confirmation (e-Receipt)</p>
+<p><strong>Alternative: Manual Filing at RDO</strong>
+1. Print BIR Form 1601-C (3 copies: BIR file, taxpayer copy, RDO copy)
+2. Visit Revenue District Office (RDO) where registered
+3. Submit form with payment (if applicable)
+4. Obtain stamped receipt copy</p>
+<p><strong>Step 4: Payment via Authorized Agent Bank (AAB)</strong>
+1. Generate BIR payment form (if paying at bank)
+2. Visit AAB (BDO, BPI, Metrobank, etc.)
+3. Pay total tax withheld amount
+4. Obtain bank-validated receipt (official receipt)</p>
+<p><strong>Alternative Payment Methods</strong>:
+- <strong>eBIRForms</strong>: Pay online via GCash, PayMaya, or bank transfer
+- <strong>Mobile Banking</strong>: Select BIR as biller, enter tax type and amount</p>
+<p><strong>Step 5: Record Filing and Payment in Odoo</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">-- Update BIR submission tracking table</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">ipai_finance_bir_schedule</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">SET</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;filed&#39;</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="n">filing_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2026-01-10&#39;</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="n">filing_reference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;eBIR-1601C-2025-12-12345678&#39;</span><span class="p">,</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="n">payment_reference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;BDO-OR-98765432&#39;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">bir_form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1601-C&#39;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="k">period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2025-12&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+<hr />
+<h3 id="bir-form-0619-e-monthly-expanded-withholding-tax-return">BIR Form 0619-E: Monthly Expanded Withholding Tax Return<a class="headerlink" href="#bir-form-0619-e-monthly-expanded-withholding-tax-return" title="Permanent link">&para;</a></h3>
+<p><strong>Full Form Name</strong>: Monthly Remittance Return of Income Taxes Withheld (Expanded)</p>
+<p><strong>Filing Frequency</strong>: Monthly
+<strong>Filing Deadline</strong>: 10th day of the following month
+<strong>Who Files</strong>: Each of 8 agencies (corporate level, not per employee)
+<strong>Penalty for Late Filing</strong>: 25% surcharge + 12% interest per annum</p>
+<hr />
+<h4 id="scope-and-coverage_1">Scope and Coverage<a class="headerlink" href="#scope-and-coverage_1" title="Permanent link">&para;</a></h4>
+<p><strong>Expanded Withholding Tax (EWT)</strong> applies to income payments to suppliers/service providers:</p>
+<p><strong>WI010 - Professional Services</strong> (10% or 15%):
+- Lawyers, accountants, engineers, architects
+- Consultants, contractors, designers</p>
+<p><strong>WI020 - Professional Entertainers</strong> (10%):
+- Talent fees, performance fees
+- Endorsement fees, appearance fees</p>
+<p><strong>WI030 - Directors' Fees</strong> (10%):
+- Fees paid to Board of Directors
+- Committee meeting fees</p>
+<p><strong>WI040 - Management/Technical Consultancy</strong> (10%):
+- Management consulting fees
+- IT consulting, technical advisory</p>
+<p><strong>WI050 - Commission to Agents</strong> (10%):
+- Sales commissions
+- Broker commissions</p>
+<p><strong>WI060 - Tolling Fees</strong> (1%):
+- Manufacturing tolling arrangements</p>
+<p><strong>WI070 - Rentals</strong> (5%):
+- Real estate rentals (land, buildings)
+- Equipment/machinery rentals</p>
+<p><strong>WI080 - Income Payments to Government Personnel</strong> (1-10%):
+- Fees to government employees (moonlighting)</p>
+<p><strong>WI090 - Income Payments to Certain Professionals</strong> (10% or 15%):
+- Medical/dental practitioners
+- Veterinarians</p>
+<p><strong>WI100 - Income Distributed to Beneficiaries</strong> (15%):
+- Estate/trust income distribution</p>
+<hr />
+<h4 id="tax-computation-methodology_1">Tax Computation Methodology<a class="headerlink" href="#tax-computation-methodology_1" title="Permanent link">&para;</a></h4>
+<p><strong>General Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Tax Withheld = Gross Payment × Withholding Rate
+</code></pre></div></p>
+<p><strong>Example (Professional Fees - WI010)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Service Provider: ABC Consulting Corp.
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Invoice Amount: PHP 100,000 (professional consulting services)
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Withholding Rate: 10% (has BIR ATP)
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Tax Withheld: PHP 100,000 × 10% = PHP 10,000
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Payment to Vendor:
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  Invoice Amount: PHP 100,000
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>  Less: EWT (10%): (PHP 10,000)
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>  Net Payment: PHP 90,000
+</code></pre></div></p>
+<p><strong>Withholding Rate Determination</strong>:
+- <strong>With ATP (Authority to Print)</strong>: 10%
+- <strong>Without ATP</strong>: 15%
+- <strong>Government/VAT-Registered</strong>: 10%</p>
+<hr />
+<h4 id="data-extraction-from-odoo_1">Data Extraction from Odoo<a class="headerlink" href="#data-extraction-from-odoo_1" title="Permanent link">&para;</a></h4>
+<p><strong>SQL Query for EWT (All Suppliers)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">supplier_name</span><span class="p">,</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">vat</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">supplier_tin</span><span class="p">,</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="p">,</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="n">ai</span><span class="p">.</span><span class="nb">number</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">invoice_number</span><span class="p">,</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="n">ail</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">service_description</span><span class="p">,</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gross_amount</span><span class="p">,</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">  </span><span class="n">awt</span><span class="p">.</span><span class="n">code</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tax_code</span><span class="p">,</span><span class="w">  </span><span class="c1">-- e.g., WI010, WI020</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">  </span><span class="n">awt</span><span class="p">.</span><span class="n">amount</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">withholding_rate</span><span class="p">,</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">  </span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">awt</span><span class="p">.</span><span class="n">amount</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tax_withheld</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account_invoice</span><span class="w"> </span><span class="n">ai</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">res_partner</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">partner_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">account_invoice_line</span><span class="w"> </span><span class="n">ail</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">invoice_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">account_tax</span><span class="w"> </span><span class="n">awt</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">invoice_line_tax_ids</span><span class="w"> </span><span class="o">@&gt;</span><span class="w"> </span><span class="nb">ARRAY</span><span class="p">[</span><span class="n">awt</span><span class="p">.</span><span class="n">id</span><span class="p">]</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;2025-12-01&#39;</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;2025-12-31&#39;</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;in_invoice&#39;</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">awt</span><span class="p">.</span><span class="n">type_tax_use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;purchase&#39;</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">awt</span><span class="p">.</span><span class="n">tax_group_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">account_tax_group</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Withholding Tax&#39;</span><span class="p">)</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+</code></pre></div></p>
+<hr />
+<h4 id="bir-form-0619-e-completion-steps">BIR Form 0619-E Completion Steps<a class="headerlink" href="#bir-form-0619-e-completion-steps" title="Permanent link">&para;</a></h4>
+<p><strong>Part I: Background Information</strong>
+- Same as BIR 1601-C (TIN, name, address, RDO code)</p>
+<p><strong>Part II: Computation of Expanded Withholding Taxes</strong></p>
+<p>For each ATC (WI010, WI020, etc.):
+1. <strong>ATC</strong>: Select from dropdown (e.g., WI010)
+2. <strong>Nature of Income Payment</strong>: Description (e.g., Professional Services)
+3. <strong>Tax Rate</strong>: Enter applicable rate (e.g., 10%)
+4. <strong>Amount of Income Payment</strong>: Gross amount paid (before withholding)
+5. <strong>Tax Withheld</strong>: Amount of tax withheld</p>
+<p><strong>Example Entries</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ATC    Nature                         Tax Rate   Income Payment   Tax Withheld
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>WI010  Professional Services          10%        PHP 500,000     PHP 50,000
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>WI040  Management Consultancy         10%        PHP 200,000     PHP 20,000
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>WI070  Rentals                        5%         PHP 100,000     PHP 5,000
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Total                                            PHP 800,000     PHP 75,000
+</code></pre></div></p>
+<p><strong>Part III: Summary of Remittance</strong>
+- Same as BIR 1601-C (total tax withheld, penalties, payments, net due)</p>
+<hr />
+<h4 id="validation-and-accuracy-checks_1">Validation and Accuracy Checks<a class="headerlink" href="#validation-and-accuracy-checks_1" title="Permanent link">&para;</a></h4>
+<p><strong>Reconciliation to GL</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">-- GL EWT Payable Account (Month-End Balance)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">SELECT</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">debit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">credit</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gl_ewt_payable</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account_move_line</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">account_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">account_account</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2104&#39;</span><span class="p">)</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;2025-12-01&#39;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;2025-12-31&#39;</span><span class="p">;</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="c1">-- Compare to BIR Form Total Tax Withheld</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="c1">-- Variance = GL Balance - BIR Form Total</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="c1">-- Target: Variance ≤ 2%</span>
+</code></pre></div></p>
+<p><strong>Supplier Confirmation</strong>:
+- Send BIR Form 2307 (Certificate of Creditable Tax Withheld at Source) to each supplier
+- Supplier validates tax withheld matches their records
+- File signed 2307 with supplier confirmations in audit file</p>
+<hr />
+<h4 id="filing-and-payment-process_1">Filing and Payment Process<a class="headerlink" href="#filing-and-payment-process_1" title="Permanent link">&para;</a></h4>
+<p><strong>Same as BIR 1601-C</strong>:
+1. Generate form PDF via n8n workflow
+2. Review and approve (Finance Supervisor → Finance Manager)
+3. File via eBIRForms or manual filing at RDO
+4. Pay via AAB or online banking
+5. Record filing and payment in Odoo</p>
+<p><strong>Deadline</strong>: 10th day of following month (same as 1601-C)</p>
+<hr />
+<h3 id="bir-form-2550q-quarterlyannual-income-tax-return">BIR Form 2550Q: Quarterly/Annual Income Tax Return<a class="headerlink" href="#bir-form-2550q-quarterlyannual-income-tax-return" title="Permanent link">&para;</a></h3>
+<p><strong>Full Form Name</strong>: Quarterly/Annual Income Tax Return for Individuals, Estates and Trusts (also used by corporations on OSD)</p>
+<p><strong>Filing Frequency</strong>: Quarterly and Annually
+<strong>Filing Deadline</strong>:
+- <strong>Quarterly</strong>: 60 days after quarter-end (Feb 28/29 for Q4, May 31 for Q1, Aug 31 for Q2, Nov 30 for Q3)
+- <strong>Annual</strong>: April 15 of following year (consolidated)</p>
+<p><strong>Who Files</strong>: Each of 8 agencies (corporate level)
+<strong>Penalty for Late Filing</strong>: 25% surcharge + 20% interest per annum (on unpaid tax)</p>
+<hr />
+<h4 id="scope-and-coverage_2">Scope and Coverage<a class="headerlink" href="#scope-and-coverage_2" title="Permanent link">&para;</a></h4>
+<p><strong>Quarterly Income Tax</strong> is an estimated tax payment based on projected annual income:</p>
+<p><strong>Quarter 1 (Jan-Mar)</strong>: File by May 15 (60 days from Mar 31)
+<strong>Quarter 2 (Apr-Jun)</strong>: File by Aug 15 (60 days from Jun 30)
+<strong>Quarter 3 (Jul-Sep)</strong>: File by Nov 15 (60 days from Sep 30)
+<strong>Quarter 4 (Oct-Dec)</strong>: File by Feb 28/29 (60 days from Dec 31)</p>
+<p><strong>Annual Consolidated</strong>: File by April 15 (summarizing all 4 quarters)</p>
+<hr />
+<h4 id="tax-computation-methodology_2">Tax Computation Methodology<a class="headerlink" href="#tax-computation-methodology_2" title="Permanent link">&para;</a></h4>
+<p><strong>Quarterly Estimated Tax Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Quarterly Taxable Income = (Quarterly Revenue - Quarterly Expenses) × Tax Rate
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Tax Rate = 25% (Regular Corporate Tax) or 20% (Optional Standard Deduction)
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>Quarterly Income Tax = Quarterly Taxable Income × 25%
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>Less: Prior Quarter Payments (if filing Q2, Q3, or Q4)
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>Net Tax Due = Current Quarter Tax - Prior Quarter Payments
+</code></pre></div></p>
+<p><strong>Example (Q1 2025)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Agency: CKVC
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Q1 Revenue (Jan-Mar): PHP 5,000,000
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Q1 Expenses (Jan-Mar): PHP 3,500,000
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>Q1 Net Income: PHP 1,500,000
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>Q1 Taxable Income: PHP 1,500,000
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>Q1 Income Tax (25%): PHP 1,500,000 × 25% = PHP 375,000
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>Net Tax Due (Q1): PHP 375,000 (no prior payments)
+</code></pre></div></p>
+<p><strong>Example (Q2 2025)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Q2 Revenue (Apr-Jun): PHP 6,000,000
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Q2 Expenses (Apr-Jun): PHP 4,000,000
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>Q2 Net Income: PHP 2,000,000
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>YTD Net Income (Jan-Jun): PHP 1,500,000 + PHP 2,000,000 = PHP 3,500,000
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>YTD Income Tax (25%): PHP 3,500,000 × 25% = PHP 875,000
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>Less: Q1 Payment: (PHP 375,000)
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>Net Tax Due (Q2): PHP 500,000
+</code></pre></div></p>
+<hr />
+<h4 id="data-extraction-from-odoo_2">Data Extraction from Odoo<a class="headerlink" href="#data-extraction-from-odoo_2" title="Permanent link">&para;</a></h4>
+<p><strong>SQL Query for Quarterly Income</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">-- Quarterly Revenue</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">SELECT</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">quarterly_revenue</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account_invoice</span><span class="w"> </span><span class="n">ai</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">account_invoice_line</span><span class="w"> </span><span class="n">ail</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">invoice_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;2025-01-01&#39;</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;2025-03-31&#39;</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;out_invoice&#39;</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span><span class="p">;</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="c1">-- Quarterly Expenses</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="k">SELECT</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">quarterly_expenses</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account_invoice</span><span class="w"> </span><span class="n">ai</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">account_invoice_line</span><span class="w"> </span><span class="n">ail</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">invoice_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;2025-01-01&#39;</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;2025-03-31&#39;</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;in_invoice&#39;</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span><span class="p">;</span>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="c1">-- Quarterly Net Income</span>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="k">SELECT</span>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="w">  </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">account_invoice</span><span class="w"> </span><span class="n">ai</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">account_invoice_line</span><span class="w"> </span><span class="n">ail</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">invoice_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;2025-01-01&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;2025-03-31&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;out_invoice&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">-</span>
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="w">  </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">account_invoice</span><span class="w"> </span><span class="n">ai</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">account_invoice_line</span><span class="w"> </span><span class="n">ail</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">invoice_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;2025-01-01&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="s1">&#39;2025-03-31&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;in_invoice&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span><span class="p">)</span>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="w">  </span><span class="k">AS</span><span class="w"> </span><span class="n">quarterly_net_income</span><span class="p">;</span>
+</code></pre></div></p>
+<hr />
+<h4 id="bir-form-2550q-completion-steps">BIR Form 2550Q Completion Steps<a class="headerlink" href="#bir-form-2550q-completion-steps" title="Permanent link">&para;</a></h4>
+<p><strong>Part I: Background Information</strong>
+- TIN, name, address, RDO code (same as other forms)</p>
+<p><strong>Part II: Computation of Quarterly/Annual Income Tax</strong></p>
+<p><strong>For Corporations (Regular)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>1. Gross Income from Operations                 PHP XXX,XXX
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>2. Cost of Sales/Services                       (PHP XXX,XXX)
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>3. Gross Income from Operations                 PHP XXX,XXX
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>4. Ordinary Allowable Deductions                (PHP XXX,XXX)
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>5. Net Income (Loss)                            PHP XXX,XXX
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>6. Add: Non-Deductible Expenses                 PHP XXX,XXX
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>7. Less: Tax-Exempt Income                      (PHP XXX,XXX)
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>8. Taxable Income                               PHP XXX,XXX
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>9. Income Tax Due (25% of line 8)               PHP XXX,XXX
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>10. Less: Tax Credits/Payments                  (PHP XXX,XXX)
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>11. Tax Payable/(Overpayment)                   PHP XXX,XXX
+</code></pre></div></p>
+<p><strong>For Corporations (OSD - Optional Standard Deduction)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>1. Gross Income from Operations                 PHP XXX,XXX
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>2. Less: Optional Standard Deduction (40%)      (PHP XXX,XXX)
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>3. Taxable Income (60% of gross income)         PHP XXX,XXX
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>4. Income Tax Due (25% of line 3)               PHP XXX,XXX
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>5. Less: Tax Credits/Payments                   (PHP XXX,XXX)
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>6. Tax Payable/(Overpayment)                    PHP XXX,XXX
+</code></pre></div></p>
+<p><strong>Part III: Summary of Tax Payments</strong>
+- Prior Quarter Payments (Q1, Q2, Q3)
+- Creditable Withholding Taxes (if applicable)
+- Tax Payments Made (prior quarters)
+- Net Tax Still Due/(Overpayment)</p>
+<hr />
+<h4 id="annual-consolidated-return-april-15-deadline">Annual Consolidated Return (April 15 Deadline)<a class="headerlink" href="#annual-consolidated-return-april-15-deadline" title="Permanent link">&para;</a></h4>
+<p><strong>Annual 2550Q Consolidation</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Quarter   Quarterly Income   Quarterly Tax   YTD Tax   Payment Made
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Q1        PHP 1,500,000     PHP 375,000     PHP 375,000   PHP 375,000
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Q2        PHP 2,000,000     PHP 500,000     PHP 875,000   PHP 500,000
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>Q3        PHP 1,800,000     PHP 450,000     PHP 1,325,000 PHP 450,000
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>Q4        PHP 2,200,000     PHP 550,000     PHP 1,875,000 PHP 550,000
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>Total     PHP 7,500,000     PHP 1,875,000   PHP 1,875,000 PHP 1,875,000
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>Annual Adjustment:
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>  Annual Taxable Income (per audited FS): PHP 7,500,000
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>  Annual Income Tax (25%): PHP 1,875,000
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>  Less: Quarterly Payments: (PHP 1,875,000)
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>  Final Tax Due/(Refundable): PHP 0
+</code></pre></div></p>
+<hr />
+<h3 id="bir-form-1702-rt-annual-corporate-income-tax-return">BIR Form 1702-RT: Annual Corporate Income Tax Return<a class="headerlink" href="#bir-form-1702-rt-annual-corporate-income-tax-return" title="Permanent link">&para;</a></h3>
+<p><strong>Full Form Name</strong>: Annual Income Tax Return for Corporations, Partnerships and Other Non-Individual Taxpayers</p>
+<p><strong>Filing Frequency</strong>: Annually
+<strong>Filing Deadline</strong>: April 15 of following year (or 15th day of 4th month after fiscal year-end)
+<strong>Who Files</strong>: Each of 8 agencies (corporate level)
+<strong>Penalty for Late Filing</strong>: 25% surcharge + 20% interest per annum (on unpaid tax)</p>
+<hr />
+<h4 id="scope-and-coverage_3">Scope and Coverage<a class="headerlink" href="#scope-and-coverage_3" title="Permanent link">&para;</a></h4>
+<p><strong>Annual Income Tax Return</strong> is the definitive tax filing reconciling:
+- Annual accounting income (per audited financial statements)
+- Annual taxable income (per BIR regulations)
+- Annual tax due vs. quarterly estimated payments (BIR 2550Q)</p>
+<p><strong>Tax Rate Options</strong>:
+- <strong>Regular Corporate Tax</strong>: 25% of taxable income (allows itemized deductions)
+- <strong>Optional Standard Deduction (OSD)</strong>: 20% effective rate (60% of gross income taxable at 25%)</p>
+<hr />
+<h4 id="tax-computation-methodology_3">Tax Computation Methodology<a class="headerlink" href="#tax-computation-methodology_3" title="Permanent link">&para;</a></h4>
+<p><strong>Regular Corporate Tax Computation</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Gross Income                                    PHP XXX,XXX,XXX
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>Less: Cost of Sales/Services                    (PHP XXX,XXX,XXX)
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>Gross Income from Operations                    PHP XXX,XXX,XXX
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>Less: Operating Expenses
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>  Salaries and Wages                            (PHP XXX,XXX)
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>  Rent                                          (PHP XXX,XXX)
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>  Utilities                                     (PHP XXX,XXX)
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>  Depreciation                                  (PHP XXX,XXX)
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>  Other Deductible Expenses                     (PHP XXX,XXX)
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>Total Operating Expenses                        (PHP XXX,XXX,XXX)
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>Net Income Before Tax (Accounting)              PHP XXX,XXX,XXX
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>Tax Adjustments:
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>  Add: Non-Deductible Expenses
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>    Entertainment (excess over 0.5% limit)      PHP XXX,XXX
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>    Penalties and Fines                         PHP XXX,XXX
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>    Non-Business Expenses                       PHP XXX,XXX
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>  Less: Tax-Exempt Income
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>    Interest from Government Securities         (PHP XXX,XXX)
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>
+<a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>Taxable Income                                  PHP XXX,XXX,XXX
+<a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a>Income Tax (25%)                                PHP XXX,XXX,XXX
+<a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a>
+<a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>Less: Tax Credits/Payments
+<a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a>  Quarterly Income Tax Payments (2550Q)         (PHP XXX,XXX,XXX)
+<a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>  Creditable Withholding Taxes (if any)         (PHP XXX,XXX)
+<a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a>
+<a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a>Final Tax Payable/(Refundable)                  PHP XXX,XXX,XXX
+</code></pre></div></p>
+<p><strong>OSD Computation</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Gross Income from Operations                    PHP XXX,XXX,XXX
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>Less: Optional Standard Deduction (40%)         (PHP XXX,XXX,XXX)
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>Taxable Income (60% of gross income)            PHP XXX,XXX,XXX
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>Income Tax (25% of taxable income)              PHP XXX,XXX,XXX
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>Less: Tax Credits/Payments
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>  Quarterly Income Tax Payments (2550Q)         (PHP XXX,XXX,XXX)
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>Final Tax Payable/(Refundable)                  PHP XXX,XXX,XXX
+</code></pre></div></p>
+<p><strong>OSD vs. Regular Comparison</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Scenario: Gross Income = PHP 10,000,000, Expenses = PHP 6,000,000
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>Regular:
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>  Taxable Income = PHP 10M - PHP 6M = PHP 4M
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>  Income Tax (25%) = PHP 1M
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>OSD:
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>  Taxable Income = PHP 10M × 60% = PHP 6M
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>  Income Tax (25%) = PHP 1.5M
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>Decision: Choose Regular (lower tax: PHP 1M vs. PHP 1.5M)
+</code></pre></div></p>
+<hr />
+<h4 id="data-extraction-from-odoo_3">Data Extraction from Odoo<a class="headerlink" href="#data-extraction-from-odoo_3" title="Permanent link">&para;</a></h4>
+<p><strong>SQL Query for Annual Income</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1">-- Annual Revenue (Jan-Dec)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">SELECT</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">annual_revenue</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account_invoice</span><span class="w"> </span><span class="n">ai</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">account_invoice_line</span><span class="w"> </span><span class="n">ail</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">invoice_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">EXTRACT</span><span class="p">(</span><span class="k">YEAR</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2025</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;out_invoice&#39;</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span><span class="p">;</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="c1">-- Annual Expenses (Jan-Dec)</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="k">SELECT</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">  </span><span class="n">aa</span><span class="p">.</span><span class="n">code</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">account_code</span><span class="p">,</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="w">  </span><span class="n">aa</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">account_name</span><span class="p">,</span>
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">aml</span><span class="p">.</span><span class="n">debit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">aml</span><span class="p">.</span><span class="n">credit</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">annual_expense</span>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account_move_line</span><span class="w"> </span><span class="n">aml</span>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">account_account</span><span class="w"> </span><span class="n">aa</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">aml</span><span class="p">.</span><span class="n">account_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aa</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">EXTRACT</span><span class="p">(</span><span class="k">YEAR</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">aml</span><span class="p">.</span><span class="nb">date</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2025</span>
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">aa</span><span class="p">.</span><span class="n">code</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;6%&#39;</span><span class="w">  </span><span class="c1">-- Expense accounts</span>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">aa</span><span class="p">.</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">aa</span><span class="p">.</span><span class="n">name</span>
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">aa</span><span class="p">.</span><span class="n">code</span><span class="p">;</span>
+</code></pre></div></p>
+<hr />
+<h4 id="bir-form-1702-rt-completion-steps">BIR Form 1702-RT Completion Steps<a class="headerlink" href="#bir-form-1702-rt-completion-steps" title="Permanent link">&para;</a></h4>
+<p><strong>Part I: Background Information</strong>
+- TIN, name, address, RDO code, fiscal year-end (Dec 31 or other)</p>
+<p><strong>Part II: Computation of Taxable Income</strong>
+- Schedule 1: Gross Revenue
+- Schedule 2: Cost of Sales/Services
+- Schedule 3: Operating Expenses (itemized)
+- Schedule 4: Other Income/Expenses
+- Schedule 5: Non-Deductible Expenses
+- Schedule 6: Tax-Exempt Income</p>
+<p><strong>Part III: Computation of Income Tax Due</strong>
+- Taxable Income (from Part II)
+- Income Tax (25% or 20% OSD)
+- Tax Credits/Payments (quarterly 2550Q, creditable withholding)
+- Final Tax Payable/(Refundable)</p>
+<p><strong>Part IV: Attachments Required</strong>
+- Audited Financial Statements (balance sheet, income statement, notes)
+- Alphalist of Payees (BIR 1604-E)
+- List of Officers, Stockholders, Members
+- SEC Certificate of Filing (GIS/AFS)
+- Tax Credit Certificates (if claiming tax credits)</p>
+<hr />
+<h3 id="bir-form-1601-eq1601-fq-quarterly-withholding-tax-returns">BIR Form 1601-EQ/1601-FQ: Quarterly Withholding Tax Returns<a class="headerlink" href="#bir-form-1601-eq1601-fq-quarterly-withholding-tax-returns" title="Permanent link">&para;</a></h3>
+<p><strong>BIR 1601-EQ</strong>: Quarterly Remittance Return of Creditable Income Taxes Withheld (Expanded)
+<strong>BIR 1601-FQ</strong>: Quarterly Remittance Return of Final Income Taxes Withheld</p>
+<p><strong>Filing Frequency</strong>: Quarterly
+<strong>Filing Deadline</strong>: 30 days after quarter-end (Apr 30, Jul 31, Oct 31, Jan 31)
+<strong>Who Files</strong>: Each of 8 agencies (corporate level)</p>
+<hr />
+<h4 id="scope-and-coverage_4">Scope and Coverage<a class="headerlink" href="#scope-and-coverage_4" title="Permanent link">&para;</a></h4>
+<p><strong>1601-EQ (Expanded Withholding)</strong>:
+- Consolidation of monthly 0619-E returns (3 months per quarter)
+- Same tax codes as 0619-E (WI010-WI100)</p>
+<p><strong>1601-FQ (Final Withholding)</strong>:
+- Consolidation of final withholding taxes from 1601-C (e.g., dividends, interest)
+- Tax codes: WC040 (dividends), WC050 (interest), WC060 (royalties), WC070 (prizes)</p>
+<p><strong>Computation</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Quarter 1 (Jan-Mar):
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>  January 0619-E: PHP 50,000
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>  February 0619-E: PHP 55,000
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>  March 0619-E: PHP 52,000
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>  Q1 1601-EQ Total: PHP 157,000
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>Quarter 2 (Apr-Jun):
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>  April 0619-E: PHP 60,000
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>  May 0619-E: PHP 58,000
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>  June 0619-E: PHP 62,000
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>  Q2 1601-EQ Total: PHP 180,000
+</code></pre></div></p>
+<hr />
+<h4 id="filing-process">Filing Process<a class="headerlink" href="#filing-process" title="Permanent link">&para;</a></h4>
+<p><strong>Same as Monthly Forms</strong>:
+1. Consolidate 3 months of data (month 1 + month 2 + month 3)
+2. Generate quarterly form PDF via n8n workflow
+3. Review and approve
+4. File via eBIRForms or manual filing
+5. Pay via AAB or online banking (if additional payment needed)
+6. Record filing in Odoo</p>
+<hr />
+<h3 id="bir-form-1604-e-annual-alphalist-of-payees">BIR Form 1604-E: Annual Alphalist of Payees<a class="headerlink" href="#bir-form-1604-e-annual-alphalist-of-payees" title="Permanent link">&para;</a></h3>
+<p><strong>Full Form Name</strong>: Annual Information Return of Income Taxes Withheld on Compensation and Final Withholding Taxes</p>
+<p><strong>Filing Frequency</strong>: Annually
+<strong>Filing Deadline</strong>: April 15 of following year (attached to BIR 1702-RT)
+<strong>Who Files</strong>: Each of 8 agencies (corporate level)
+<strong>Format</strong>: Electronic DAT file + PDF summary</p>
+<hr />
+<h4 id="scope-and-coverage_5">Scope and Coverage<a class="headerlink" href="#scope-and-coverage_5" title="Permanent link">&para;</a></h4>
+<p><strong>Alphalist of Payees</strong> is a detailed listing of all payees (employees, suppliers, contractors) subject to withholding tax during the year:</p>
+<p><strong>Schedule 1: Compensation</strong> (Employees)
+- TIN, name, address, gross compensation, tax withheld (per employee)</p>
+<p><strong>Schedule 2: Professional Fees</strong> (Independent Contractors)
+- TIN, name, address, professional fees paid, tax withheld (per payee)</p>
+<p><strong>Schedule 3: Rentals</strong> (Lessors)
+- TIN, name, address, rental income paid, tax withheld (per lessor)</p>
+<p>... (Schedules 4-10 for other income types)</p>
+<hr />
+<h4 id="data-extraction-from-odoo_4">Data Extraction from Odoo<a class="headerlink" href="#data-extraction-from-odoo_4" title="Permanent link">&para;</a></h4>
+<p><strong>SQL Query for Alphalist (All Payees)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1">-- Employees (Schedule 1)</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="k">SELECT</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">  </span><span class="s1">&#39;Schedule 1&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">schedule</span><span class="p">,</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">  </span><span class="n">e</span><span class="p">.</span><span class="n">tin</span><span class="p">,</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">  </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">  </span><span class="n">e</span><span class="p">.</span><span class="n">address</span><span class="p">,</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">pl</span><span class="p">.</span><span class="n">total</span><span class="p">)</span><span class="w"> </span><span class="n">FILTER</span><span class="w"> </span><span class="p">(</span><span class="k">WHERE</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">code</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;BASIC&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ALLOWANCE&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BONUS&#39;</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">gross_compensation</span><span class="p">,</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">pl</span><span class="p">.</span><span class="n">total</span><span class="p">)</span><span class="w"> </span><span class="n">FILTER</span><span class="w"> </span><span class="p">(</span><span class="k">WHERE</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;WITHHOLDING&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tax_withheld</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="k">FROM</span><span class="w"> </span><span class="n">hr_payslip</span><span class="w"> </span><span class="n">p</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">hr_employee</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">employee_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">hr_payslip_line</span><span class="w"> </span><span class="n">pl</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">pl</span><span class="p">.</span><span class="n">slip_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">EXTRACT</span><span class="p">(</span><span class="k">YEAR</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">date_from</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2025</span>
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;done&#39;</span>
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">tin</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">address</span>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="c1">-- Suppliers (Schedule 2 - Professional Fees)</span>
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="k">SELECT</span>
+<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="w">  </span><span class="s1">&#39;Schedule 2&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">schedule</span><span class="p">,</span>
+<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">vat</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tin</span><span class="p">,</span>
+<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">street</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">address</span><span class="p">,</span>
+<a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">professional_fees</span><span class="p">,</span>
+<a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tax_withheld</span>
+<a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account_invoice</span><span class="w"> </span><span class="n">ai</span>
+<a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">res_partner</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">partner_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">account_invoice_line</span><span class="w"> </span><span class="n">ail</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">invoice_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">EXTRACT</span><span class="p">(</span><span class="k">YEAR</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2025</span>
+<a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;in_invoice&#39;</span>
+<a id="__codelineno-27-31" name="__codelineno-27-31" href="#__codelineno-27-31"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">account_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">account_account</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;6%&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">ILIKE</span><span class="w"> </span><span class="s1">&#39;%professional%&#39;</span><span class="p">)</span>
+<a id="__codelineno-27-32" name="__codelineno-27-32" href="#__codelineno-27-32"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span>
+<a id="__codelineno-27-33" name="__codelineno-27-33" href="#__codelineno-27-33"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">vat</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">street</span>
+<a id="__codelineno-27-34" name="__codelineno-27-34" href="#__codelineno-27-34"></a>
+<a id="__codelineno-27-35" name="__codelineno-27-35" href="#__codelineno-27-35"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">schedule</span><span class="p">,</span><span class="w"> </span><span class="n">tin</span><span class="p">;</span>
+</code></pre></div></p>
+<hr />
+<h4 id="bir-form-1604-e-completion-steps">BIR Form 1604-E Completion Steps<a class="headerlink" href="#bir-form-1604-e-completion-steps" title="Permanent link">&para;</a></h4>
+<p><strong>Part I: Background Information</strong>
+- TIN, name, address, RDO code, taxable year (2025)</p>
+<p><strong>Part II: Summary by Schedule</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Schedule   Description                No. of Payees   Total Income    Total Tax Withheld
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>1          Compensation               50             PHP 30,000,000  PHP 3,750,000
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>2          Professional Fees          20             PHP 5,000,000   PHP 500,000
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>3          Rentals                    5              PHP 1,000,000   PHP 50,000
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>...
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>Total                                 75             PHP 36,000,000  PHP 4,300,000
+</code></pre></div></p>
+<p><strong>Part III: Detailed Listing (DAT File)</strong></p>
+<p>Electronic file format (comma-delimited):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>Schedule,TIN,First Name,Middle Name,Last Name,Address,Gross Income,Tax Withheld
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>1,123-456-789,Juan,Dela,Cruz,&quot;123 Main St, Manila&quot;,600000.00,62500.00
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>2,987-654-321,ABC Consulting,,Corp,&quot;456 Ayala Ave, Makati&quot;,100000.00,10000.00
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>...
+</code></pre></div></p>
+<hr />
+<h4 id="validation-and-accuracy-checks_2">Validation and Accuracy Checks<a class="headerlink" href="#validation-and-accuracy-checks_2" title="Permanent link">&para;</a></h4>
+<p><strong>Alphalist to BIR Forms Reconciliation</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Total Tax Withheld (1604-E) = Sum of Monthly 1601-C Tax Withheld (Jan-Dec)
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>Variance Tolerance: 0% (must match exactly)
+</code></pre></div></p>
+<p><strong>Common Variance Causes</strong>:
+- Missing payees (not included in alphalist)
+- Duplicate entries (payee listed twice)
+- Incorrect TIN or name (typos)
+- Incorrect tax withheld amount (calculation errors)</p>
+<hr />
+<h2 id="multi-agencymulti-employee-handling_1">Multi-Agency/Multi-Employee Handling<a class="headerlink" href="#multi-agencymulti-employee-handling_1" title="Permanent link">&para;</a></h2>
+<h3 id="consolidated-tracking-dashboard">Consolidated Tracking Dashboard<a class="headerlink" href="#consolidated-tracking-dashboard" title="Permanent link">&para;</a></h3>
+<p><strong>Supabase Table</strong>: <code>ipai_finance_bir_schedule</code></p>
+<p><strong>Schema</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ipai_finance_bir_schedule</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">uuid_generate_v4</span><span class="p">(),</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">  </span><span class="n">bir_form</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">  </span><span class="c1">-- &#39;1601-C&#39;, &#39;0619-E&#39;, &#39;2550Q&#39;, &#39;1702-RT&#39;, &#39;1601-EQ&#39;, &#39;1601-FQ&#39;, &#39;1604-E&#39;</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">  </span><span class="k">period</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">  </span><span class="c1">-- &#39;YYYY-MM&#39; for monthly, &#39;YYYY-QN&#39; for quarterly, &#39;YYYY&#39; for annual</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">  </span><span class="n">agency</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">  </span><span class="c1">-- &#39;CKVC&#39;, &#39;BOM&#39;, &#39;JPAL&#39;, &#39;JLI&#39;, &#39;JAP&#39;, &#39;LAS&#39;, &#39;RMQB&#39;, &#39;RIM&#39;</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">  </span><span class="n">employee_tin</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">  </span><span class="c1">-- For 1601-C (per employee), NULL for corporate forms</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;not_started&#39;</span><span class="p">,</span><span class="w">  </span><span class="c1">-- &#39;not_started&#39;, &#39;in_progress&#39;, &#39;submitted&#39;, &#39;filed&#39;, &#39;late&#39;</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="w">  </span><span class="n">filing_deadline</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="w">  </span><span class="n">prep_deadline</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">GENERATED</span><span class="w"> </span><span class="n">ALWAYS</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="n">filing_deadline</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="s1">&#39;4 days&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">STORED</span><span class="p">,</span>
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="w">  </span><span class="n">review_deadline</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">GENERATED</span><span class="w"> </span><span class="n">ALWAYS</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="n">filing_deadline</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="s1">&#39;2 days&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">STORED</span><span class="p">,</span>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="w">  </span><span class="n">approval_deadline</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">GENERATED</span><span class="w"> </span><span class="n">ALWAYS</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="n">filing_deadline</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="s1">&#39;1 day&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">STORED</span><span class="p">,</span>
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="w">  </span><span class="n">filing_date</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a><span class="w">  </span><span class="n">filing_reference</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">  </span><span class="c1">-- eBIR confirmation number</span>
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a><span class="w">  </span><span class="n">payment_reference</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">  </span><span class="c1">-- Bank OR number</span>
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="w">  </span><span class="n">total_tax_withheld</span><span class="w"> </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a><span class="w">  </span><span class="n">responsible_person</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">  </span><span class="c1">-- Finance Supervisor, Finance Manager, Finance Director</span>
+<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a><span class="w">  </span><span class="n">created_at</span><span class="w"> </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">(),</span>
+<a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a><span class="w">  </span><span class="n">updated_at</span><span class="w"> </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+<a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a><span class="p">);</span>
+</code></pre></div></p>
+<hr />
+<h3 id="consolidated-bir-summary-report-monthly">Consolidated BIR Summary Report (Monthly)<a class="headerlink" href="#consolidated-bir-summary-report-monthly" title="Permanent link">&para;</a></h3>
+<p><strong>SQL Query</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">  </span><span class="n">bir_form</span><span class="p">,</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">  </span><span class="k">period</span><span class="p">,</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">  </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_filings</span><span class="p">,</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;filed&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">filed_count</span><span class="p">,</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;late&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">late_count</span><span class="p">,</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">total_tax_withheld</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_tax_remitted</span><span class="p">,</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="w">  </span><span class="n">ROUND</span><span class="p">(</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="w">    </span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;filed&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">END</span><span class="p">)::</span><span class="nb">NUMERIC</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="w">    </span><span class="mi">2</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">filing_compliance_pct</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="k">FROM</span><span class="w"> </span><span class="n">ipai_finance_bir_schedule</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2025-12&#39;</span>
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">bir_form</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;1601-C&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;0619-E&#39;</span><span class="p">)</span>
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">bir_form</span><span class="p">,</span><span class="w"> </span><span class="k">period</span>
+<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">bir_form</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>Expected Output</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>BIR Form   Period    Total   Filed   Late   Total Tax        Compliance%
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>1601-C     2025-12   8       8       0      PHP 600,000     100.00%
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>0619-E     2025-12   8       8       0      PHP 500,000     100.00%
+</code></pre></div></p>
+<hr />
+<h3 id="mattermost-notification-workflow">Mattermost Notification Workflow<a class="headerlink" href="#mattermost-notification-workflow" title="Permanent link">&para;</a></h3>
+<p><strong>n8n Workflow</strong>: <code>BIR_Deadline_Alert.json</code></p>
+<p><strong>Triggers</strong>:
+- <strong>7 days before deadline</strong>: Reminder to Finance Supervisor
+- <strong>3 days before deadline</strong>: Escalation to Finance Manager
+- <strong>1 day before deadline</strong>: Escalation to Finance Director
+- <strong>Day of deadline</strong>: Critical alert to all stakeholders</p>
+<p><strong>Notification Format</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>🚨 BIR Filing Alert - 1601-C (Dec 2025)
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>Deadline: January 10, 2026 (3 days remaining)
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>Status: In Progress (6/8 agencies filed)
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>Pending Filings:
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>- JPAL (Finance Supervisor: Analyst C)
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>- RMQB (Finance Supervisor: Analyst G)
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>
+<a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a>Action Required:
+<a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a>- Finance Supervisors: Complete filings by EOD
+<a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>- Finance Manager: Review and approve by Jan 9
+<a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a>
+<a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a>Total Tax Withheld (YTD): PHP 600,000
+<a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a>Filing Compliance (YTD): 94.12% (64/68 filings)
+</code></pre></div></p>
+<hr />
+<h2 id="penalty-calculation-and-avoidance">Penalty Calculation and Avoidance<a class="headerlink" href="#penalty-calculation-and-avoidance" title="Permanent link">&para;</a></h2>
+<h3 id="bir-penalty-structure">BIR Penalty Structure<a class="headerlink" href="#bir-penalty-structure" title="Permanent link">&para;</a></h3>
+<p><strong>Late Filing Penalties</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>Surcharge = 25% of tax due (one-time penalty)
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>Interest = 12% per annum (calculated daily from due date to payment date)
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>Total Penalty = Surcharge + Interest
+</code></pre></div></p>
+<p><strong>Example (1 Month Late)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>Tax Due: PHP 100,000
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>Filing Deadline: January 10, 2026
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>Actual Filing Date: February 10, 2026 (31 days late)
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>Surcharge (25%): PHP 100,000 × 25% = PHP 25,000
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>Interest (12% p.a. × 31/365 days): PHP 100,000 × 12% × (31/365) = PHP 1,019
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>Total Penalty: PHP 25,000 + PHP 1,019 = PHP 26,019
+<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a>
+<a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a>Total Amount Due: PHP 100,000 + PHP 26,019 = PHP 126,019
+</code></pre></div></p>
+<p><strong>Compromise Penalty</strong> (BIR discretion):
+- First-time offenders may request penalty reduction
+- Requires written request to RDO with justification
+- Typical reduction: 25-50% of computed penalty</p>
+<hr />
+<h3 id="penalty-avoidance-strategies">Penalty Avoidance Strategies<a class="headerlink" href="#penalty-avoidance-strategies" title="Permanent link">&para;</a></h3>
+<p><strong>Strategy 1: Early Preparation</strong>
+- Start BIR form preparation 7 days before deadline
+- Complete internal review 3 days before deadline
+- Submit 2 days before deadline (buffer for issues)</p>
+<p><strong>Strategy 2: Automated Reminders</strong>
+- Use Odoo task queue with escalation rules
+- Mattermost notifications at T-7, T-3, T-1 days
+- Email alerts to responsible persons</p>
+<p><strong>Strategy 3: Backup Filing Methods</strong>
+- Primary: eBIRForms (faster processing)
+- Backup: Manual filing at RDO (if eBIRForms down)
+- Contingency: File via authorized tax agent</p>
+<p><strong>Strategy 4: Payment Coordination</strong>
+- Pre-fund bank account with estimated tax amounts
+- Setup online banking BIR billers in advance
+- Keep payment references for audit trail</p>
+<hr />
+<h2 id="bir-audit-defense-preparation">BIR Audit Defense Preparation<a class="headerlink" href="#bir-audit-defense-preparation" title="Permanent link">&para;</a></h2>
+<h3 id="audit-triggers-common">Audit Triggers (Common)<a class="headerlink" href="#audit-triggers-common" title="Permanent link">&para;</a></h3>
+<p><strong>Red Flags for BIR Audit Selection</strong>:
+1. Large tax refunds claimed (&gt;PHP 1 million)
+2. Significant losses reported (multiple consecutive years)
+3. Unusually low gross profit margins (&lt;10%)
+4. High entertainment expenses (&gt;0.5% of revenue)
+5. Related party transactions without proper documentation
+6. Missing or late BIR filings (chronic non-compliance)</p>
+<hr />
+<h3 id="audit-defense-file-structure">Audit Defense File Structure<a class="headerlink" href="#audit-defense-file-structure" title="Permanent link">&para;</a></h3>
+<p><strong>Folder 1: Tax Computation Workpapers</strong>
+- Excel calculation files (all BIR forms)
+- Reconciliation reports (GL to BIR forms)
+- Tax rate justification (regular vs. OSD decision)</p>
+<p><strong>Folder 2: Supporting Documentation</strong>
+- Invoices (all withholding tax payments)
+- Payroll registers (employee compensation)
+- Bank statements (payment validations)
+- Contracts (rental agreements, professional service agreements)</p>
+<p><strong>Folder 3: BIR Filings and Receipts</strong>
+- Filed BIR forms (PDFs with stamps/confirmations)
+- Payment receipts (bank ORs, eBIR confirmations)
+- Alphalists (1604-E DAT files and PDFs)</p>
+<p><strong>Folder 4: Accounting Records</strong>
+- General ledger (all accounts)
+- Trial balance (monthly and annual)
+- Financial statements (audited and internal)</p>
+<p><strong>Folder 5: Transfer Pricing Documentation</strong> (if applicable)
+- Related party transaction listing
+- Transfer pricing study (if transactions &gt;PHP 15M annually)
+- Arm's length pricing justification</p>
+<hr />
+<h3 id="audit-response-protocol">Audit Response Protocol<a class="headerlink" href="#audit-response-protocol" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1: Letter of Authority (LOA) Receipt</strong>
+- BIR sends LOA notifying audit
+- Respond within 10 days acknowledging LOA
+- Coordinate with external tax advisor</p>
+<p><strong>Step 2: Audit Planning Meeting</strong>
+- Meet with BIR examiners to discuss scope
+- Provide audit defense file overview
+- Agree on audit schedule and workspace</p>
+<p><strong>Step 3: Audit Field Work Support</strong>
+- Provide requested documents promptly (same-day response)
+- Answer examiner questions with evidence
+- Escalate significant issues to Finance Director and tax advisor</p>
+<p><strong>Step 4: Audit Findings Review</strong>
+- Review BIR audit findings (deficiency assessment)
+- Validate accuracy of BIR calculations
+- Negotiate immaterial or judgment-based items</p>
+<p><strong>Step 5: Protest or Settlement</strong>
+- If findings material and disagree → file protest within 30 days
+- If findings reasonable → pay deficiency tax and close audit
+- Consult tax advisor before deciding</p>
+<hr />
+<h2 id="acceptance-criteria-summary">Acceptance Criteria Summary<a class="headerlink" href="#acceptance-criteria-summary" title="Permanent link">&para;</a></h2>
+<h3 id="critical-success-factors">Critical Success Factors<a class="headerlink" href="#critical-success-factors" title="Permanent link">&para;</a></h3>
+<p><strong>Filing Compliance</strong>:
+- ✅ 100% on-time filing (zero late submissions)
+- ✅ All 8 agencies/employees filed monthly forms (1601-C, 0619-E)
+- ✅ All 8 agencies filed quarterly forms (2550Q, 1601-EQ, 1601-FQ)
+- ✅ All 8 agencies filed annual forms (1702-RT, 1604-E)</p>
+<p><strong>Accuracy Standards</strong>:
+- ✅ BIR form calculations ≥98% accurate (variance ≤2%)
+- ✅ GL reconciliation variance ≤2%
+- ✅ Alphalist totals match BIR forms (0% variance)</p>
+<p><strong>Documentation Completeness</strong>:
+- ✅ All supporting documents attached (invoices, contracts, payroll)
+- ✅ All filing confirmations obtained (eBIR receipts, bank ORs)
+- ✅ All filings uploaded to Supabase storage for audit trail</p>
+<p><strong>System Integration</strong>:
+- ✅ n8n workflows functional (form generation, deadline alerts)
+- ✅ Odoo BIR tracking table updated (filing status, references)
+- ✅ Mattermost notifications sent (timely alerts to stakeholders)</p>
+<hr />
+<h2 id="common-issues-troubleshooting">Common Issues &amp; Troubleshooting<a class="headerlink" href="#common-issues-troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="issue-1-bir-calculation-variance-2">Issue 1: BIR Calculation Variance &gt;2%<a class="headerlink" href="#issue-1-bir-calculation-variance-2" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom</strong>: BIR form totals do not match GL within 2% tolerance</p>
+<p><strong>Root Causes</strong>:
+- Timing differences (transactions posted after month-end)
+- Incorrect tax code classification (wrong withholding rate)
+- Manual adjustments not recorded in Odoo
+- Data extraction query errors (SQL logic issues)</p>
+<p><strong>Resolution Steps</strong>:
+1. Re-run data extraction queries from Odoo
+2. Compare BIR form line items to GL account detail (line-by-line)
+3. Identify specific transactions causing variance
+4. Book adjusting entries if legitimate (timing differences)
+5. Correct Odoo tax settings if misconfiguration (update tax codes)
+6. Regenerate BIR form with corrected data</p>
+<p><strong>Prevention</strong>:
+- Monthly reconciliation (don't wait until deadline)
+- Automated validation scripts (SQL checks before form generation)
+- Tax code audit (quarterly review of all mappings)</p>
+<hr />
+<h3 id="issue-2-ebirforms-system-downtime">Issue 2: eBIRForms System Downtime<a class="headerlink" href="#issue-2-ebirforms-system-downtime" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom</strong>: eBIRForms portal unavailable on filing deadline</p>
+<p><strong>Root Causes</strong>:
+- BIR system maintenance (unscheduled downtime)
+- High traffic volume (deadline day congestion)
+- Internet connectivity issues (ISP problems)</p>
+<p><strong>Resolution Steps</strong>:
+1. <strong>Immediate</strong>: Switch to manual filing at RDO
+   - Print BIR forms (3 copies)
+   - Visit RDO before 5:00 PM deadline
+   - Submit forms with payment (if applicable)
+   - Obtain stamped receipt copy</p>
+<ol>
+<li><strong>Contingency</strong>: File via authorized tax agent</li>
+<li>Contact tax agent with BIR form data</li>
+<li>Agent files on behalf using their eBIR access</li>
+<li>
+<p>Obtain filing confirmation from agent</p>
+</li>
+<li>
+<p><strong>Documentation</strong>: Note system downtime in filing log</p>
+</li>
+<li>Screenshot eBIRForms error page</li>
+<li>Document alternative filing method used</li>
+<li>Justify manual filing (for audit defense)</li>
+</ol>
+<p><strong>Prevention</strong>:
+- File 2 days before deadline (avoid deadline rush)
+- Pre-test eBIRForms login credentials 1 week before deadline
+- Maintain authorized tax agent relationship (backup option)</p>
+<hr />
+<h3 id="issue-3-missing-payee-information-incomplete-tins">Issue 3: Missing Payee Information (Incomplete TINs)<a class="headerlink" href="#issue-3-missing-payee-information-incomplete-tins" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom</strong>: Alphalist (1604-E) cannot be completed due to missing payee TINs</p>
+<p><strong>Root Causes</strong>:
+- New suppliers/employees not providing TIN during onboarding
+- Odoo partner records incomplete (TIN field blank)
+- Incorrect TIN format (wrong number of digits)</p>
+<p><strong>Resolution Steps</strong>:
+1. Query Odoo for payees with missing TINs:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">payee_name</span><span class="p">,</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">vat</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tin</span><span class="p">,</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">ail</span><span class="p">.</span><span class="n">price_subtotal</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_payments</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account_invoice</span><span class="w"> </span><span class="n">ai</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">res_partner</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">partner_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">account_invoice_line</span><span class="w"> </span><span class="n">ail</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ail</span><span class="p">.</span><span class="n">invoice_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">EXTRACT</span><span class="p">(</span><span class="k">YEAR</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2025</span>
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;in_invoice&#39;</span>
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span>
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">vat</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">vat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">vat</span>
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">total_payments</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div></p>
+<ol>
+<li>Contact payees to request TIN (email or phone)</li>
+<li>Update Odoo partner records with TIN information</li>
+<li>Regenerate alphalist with complete data</li>
+</ol>
+<p><strong>Prevention</strong>:
+- Vendor onboarding checklist (require TIN before payment)
+- Odoo validation rule (block invoice posting if TIN missing)
+- Quarterly vendor master data audit (verify TIN completeness)</p>
+<hr />
+<h2 id="appendix-a-bir-filing-deadlines-calendar-2026">Appendix A: BIR Filing Deadlines Calendar (2026)<a class="headerlink" href="#appendix-a-bir-filing-deadlines-calendar-2026" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>BIR Form</th>
+<th>Filing Frequency</th>
+<th>January</th>
+<th>February</th>
+<th>March</th>
+<th>April</th>
+<th>May</th>
+<th>June</th>
+<th>July</th>
+<th>August</th>
+<th>September</th>
+<th>October</th>
+<th>November</th>
+<th>December</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1601-C</strong></td>
+<td>Monthly</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td><strong>0619-E</strong></td>
+<td>Monthly</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td><strong>2550Q</strong></td>
+<td>Quarterly</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>15 (Q1)</td>
+<td>-</td>
+<td>-</td>
+<td>15 (Q2)</td>
+<td>-</td>
+<td>-</td>
+<td>15 (Q3)</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>1601-EQ</strong></td>
+<td>Quarterly</td>
+<td>31 (Q4)</td>
+<td>-</td>
+<td>-</td>
+<td>30 (Q1)</td>
+<td>-</td>
+<td>-</td>
+<td>31 (Q2)</td>
+<td>-</td>
+<td>-</td>
+<td>31 (Q3)</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>1601-FQ</strong></td>
+<td>Quarterly</td>
+<td>31 (Q4)</td>
+<td>-</td>
+<td>-</td>
+<td>30 (Q1)</td>
+<td>-</td>
+<td>-</td>
+<td>31 (Q2)</td>
+<td>-</td>
+<td>-</td>
+<td>31 (Q3)</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>1702-RT</strong></td>
+<td>Annual</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>15</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>1604-E</strong></td>
+<td>Annual</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>15</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: If deadline falls on weekend/holiday, filing is due on next business day.</p>
+<hr />
+<h2 id="appendix-b-bir-form-checklist-per-agency">Appendix B: BIR Form Checklist (Per Agency)<a class="headerlink" href="#appendix-b-bir-form-checklist-per-agency" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>BIR Form</th>
+<th>Responsible</th>
+<th>Review</th>
+<th>Approve</th>
+<th>Deadline</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1601-C</strong></td>
+<td>Finance Supervisor</td>
+<td>Finance Manager</td>
+<td>Finance Director</td>
+<td>10th of month</td>
+<td>Filed form PDF, payment receipt</td>
+</tr>
+<tr>
+<td><strong>0619-E</strong></td>
+<td>Finance Supervisor</td>
+<td>Finance Manager</td>
+<td>Finance Director</td>
+<td>10th of month</td>
+<td>Filed form PDF, payment receipt</td>
+</tr>
+<tr>
+<td><strong>2550Q (Q1)</strong></td>
+<td>Finance Analyst</td>
+<td>Finance Manager</td>
+<td>Finance Director</td>
+<td>May 15</td>
+<td>Filed form PDF, payment receipt</td>
+</tr>
+<tr>
+<td><strong>2550Q (Q2)</strong></td>
+<td>Finance Analyst</td>
+<td>Finance Manager</td>
+<td>Finance Director</td>
+<td>Aug 15</td>
+<td>Filed form PDF, payment receipt</td>
+</tr>
+<tr>
+<td><strong>2550Q (Q3)</strong></td>
+<td>Finance Analyst</td>
+<td>Finance Manager</td>
+<td>Finance Director</td>
+<td>Nov 15</td>
+<td>Filed form PDF, payment receipt</td>
+</tr>
+<tr>
+<td><strong>2550Q (Q4)</strong></td>
+<td>Finance Analyst</td>
+<td>Finance Manager</td>
+<td>Finance Director</td>
+<td>Feb 28</td>
+<td>Filed form PDF, payment receipt</td>
+</tr>
+<tr>
+<td><strong>1601-EQ (Q1)</strong></td>
+<td>Finance Analyst</td>
+<td>Finance Manager</td>
+<td>Finance Director</td>
+<td>Apr 30</td>
+<td>Filed form PDF</td>
+</tr>
+<tr>
+<td><strong>1601-EQ (Q2)</strong></td>
+<td>Finance Analyst</td>
+<td>Finance Manager</td>
+<td>Finance Director</td>
+<td>Jul 31</td>
+<td>Filed form PDF</td>
+</tr>
+<tr>
+<td><strong>1601-EQ (Q3)</strong></td>
+<td>Finance Analyst</td>
+<td>Finance Manager</td>
+<td>Finance Director</td>
+<td>Oct 31</td>
+<td>Filed form PDF</td>
+</tr>
+<tr>
+<td><strong>1601-EQ (Q4)</strong></td>
+<td>Finance Analyst</td>
+<td>Finance Manager</td>
+<td>Finance Director</td>
+<td>Jan 31</td>
+<td>Filed form PDF</td>
+</tr>
+<tr>
+<td><strong>1702-RT</strong></td>
+<td>Finance Supervisor</td>
+<td>Finance Manager + Tax Advisor</td>
+<td>Finance Director + Board</td>
+<td>Apr 15</td>
+<td>Filed form PDF, audited FS, payment receipt</td>
+</tr>
+<tr>
+<td><strong>1604-E</strong></td>
+<td>Finance Analyst</td>
+<td>Finance Manager</td>
+<td>Finance Director</td>
+<td>Apr 15</td>
+<td>Filed DAT file, PDF summary</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="document-revision-history">Document Revision History<a class="headerlink" href="#document-revision-history" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>2025-12-29</td>
+<td>Finance SSC Manager</td>
+<td>Initial documentation creation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>End of BIR Tax Filing Process Documentation</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/USERNAME/odoo-financial-close-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

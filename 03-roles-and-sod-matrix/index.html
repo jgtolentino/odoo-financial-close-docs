@@ -1,0 +1,3350 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise-grade financial close documentation for Odoo Community Edition + OCA modules">
+      
+      
+        <meta name="author" content="InsightPulse AI Finance Team">
+      
+      
+        <link rel="canonical" href="https://github.com/USERNAME/odoo-financial-close-docs/03-roles-and-sod-matrix/">
+      
+      
+        <link rel="prev" href="../02-module-landscape/">
+      
+      
+        <link rel="next" href="../04-close-calendar-and-phases/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Roles & SoD Matrix - Odoo CE – Advanced Financial Close</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#03-roles-and-separation-of-duties-matrix" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Odoo CE – Advanced Financial Close" class="md-header__button md-logo" aria-label="Odoo CE – Advanced Financial Close" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Odoo CE – Advanced Financial Close
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Roles & SoD Matrix
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-current-state-and-target/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Governance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../05-month-end-task-template/" class="md-tabs__link">
+          
+  
+  
+  Operational Templates
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../08-odoo-config-guide/" class="md-tabs__link">
+          
+  
+  
+  Implementation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../HR-Processes/hire-to-retire-overview/" class="md-tabs__link">
+          
+  
+  
+  HR Processes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../it-controls/it-audit-sod-deployment/" class="md-tabs__link">
+          
+  
+  
+  IT Controls & Audit
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../99-appendix-data-dictionary/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Odoo CE – Advanced Financial Close" class="md-nav__button md-logo" aria-label="Odoo CE – Advanced Financial Close" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Odoo CE – Advanced Financial Close
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-current-state-and-target/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current State & Target
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-module-landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles & SoD Matrix
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles & SoD Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-nine-role-framework-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Nine-Role Framework Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Nine-Role Framework Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-role-hierarchy-and-reporting-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Role Hierarchy and Reporting Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-detailed-role-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Detailed Role Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Detailed Role Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ap-clerk-accounts-payable-clerk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 AP Clerk (Accounts Payable Clerk)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-ar-clerk-accounts-receivable-clerk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 AR Clerk (Accounts Receivable Clerk)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-gl-accountant-general-ledger-accountant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 GL Accountant (General Ledger Accountant)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-fixed-asset-accountant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Fixed Asset Accountant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-payroll-specialist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Payroll Specialist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-tax-compliance-officer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Tax Compliance Officer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-finance-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Finance Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-finance-director" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Finance Director
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-external-auditor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9 External Auditor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-raci-matrix-for-financial-close-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. RACI Matrix for Financial Close Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. RACI Matrix for Financial Close Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-pre-close-activities-days-5-to-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Pre-Close Activities (Days -5 to -1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-close-execution-days-1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Close Execution (Days 1-3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-review-reconciliation-days-4-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Review &amp; Reconciliation (Days 4-5)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-approval-lock-days-6-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Approval &amp; Lock (Days 6-7)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-reporting-audit-days-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Reporting &amp; Audit (Days 8+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-permission-levels-and-rls-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Permission Levels and RLS Policies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Permission Levels and RLS Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-odoo-security-group-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Odoo Security Group Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-supabase-rls-policy-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Supabase RLS Policy Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-field-level-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Field-Level Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-segregation-of-duties-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Segregation of Duties Controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Segregation of Duties Controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-critical-sod-conflicts-prohibited-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Critical SoD Conflicts (Prohibited Combinations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-compensating-controls-for-unavoidable-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Compensating Controls for Unavoidable Conflicts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-audit-trail-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Audit Trail and Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Audit Trail and Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-mandatory-audit-log-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Mandatory Audit Log Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-anomaly-detection-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Anomaly Detection Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-role-assignment-and-provisioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Role Assignment and Provisioning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Role Assignment and Provisioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-new-user-onboarding-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 New User Onboarding Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-role-change-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Role Change Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-performance-metrics-and-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Performance Metrics and KPIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Performance Metrics and KPIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-role-specific-slas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Role-Specific SLAs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-control-effectiveness-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Control Effectiveness Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-training-and-competency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Training and Competency
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Training and Competency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-mandatory-training-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Mandatory Training Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-annual-attestation-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Annual Attestation Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-governance-and-policy-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Governance and Policy Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Governance and Policy Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-document-review-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Document Review Cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-change-approval-authority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Change Approval Authority
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-external-audit-coordination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 External Audit Coordination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-appendix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Appendix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-glossary-of-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Glossary of Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-related-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Related Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-revision-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Revision History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-close-calendar-and-phases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Close Calendar & Phases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-change-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operational Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-month-end-task-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month-End Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-year-end-task-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Year-End Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-bir-tax-filing-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BIR Tax Filing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-odoo-config-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Odoo Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-runbook-monthly-close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook - Monthly Close
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-runbook-bir-filing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook - BIR Filing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HR Processes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    HR Processes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/hire-to-retire-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hire-to-Retire Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/final-pay-calculation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Pay Calculation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/clearance-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearance Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/coe-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COE Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT Controls & Audit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IT Controls & Audit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../it-controls/it-audit-sod-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT Audit & SoD Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../99-appendix-data-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="03-roles-and-separation-of-duties-matrix">03 - Roles and Separation of Duties Matrix<a class="headerlink" href="#03-roles-and-separation-of-duties-matrix" title="Permanent link">&para;</a></h1>
+<p><strong>Document Version</strong>: 1.0
+<strong>Last Updated</strong>: 2025-01-29
+<strong>Owner</strong>: Finance Director
+<strong>Classification</strong>: Internal - Governance</p>
+<hr />
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This document defines the <strong>9-role separation of duties (SoD) framework</strong> for financial close operations in Odoo 18 CE, ensuring compliance with internal control standards, Philippine BIR requirements, and international audit frameworks (SOX, IFRS). The framework establishes clear accountability boundaries, prevents conflicts of interest, and provides audit trail transparency for all financial transactions.</p>
+<p><strong>Core Principles</strong>:
+- <strong>No single individual controls transaction lifecycle end-to-end</strong> (initiation → approval → recording → reconciliation)
+- <strong>Duty segregation across 4 control points</strong>: Authorization, Custody, Recording, Reconciliation
+- <strong>Role-based access control (RBAC)</strong> enforced through Odoo security groups and Supabase Row-Level Security (RLS)
+- <strong>Minimum dual approval</strong> for transactions exceeding materiality thresholds
+- <strong>Audit trail immutability</strong> for all role actions and permission changes</p>
+<hr />
+<h2 id="1-nine-role-framework-architecture">1. Nine-Role Framework Architecture<a class="headerlink" href="#1-nine-role-framework-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="11-role-hierarchy-and-reporting-structure">1.1 Role Hierarchy and Reporting Structure<a class="headerlink" href="#11-role-hierarchy-and-reporting-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>External Auditor (Independent)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        ├─ Finance Director (Executive)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        │       │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        │       ├─ Finance Manager (Supervisory)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        │       │       │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        │       │       ├─ Tax Compliance Officer (Specialist)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        │       │       ├─ Payroll Specialist (Specialist)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        │       │       ├─ Fixed Asset Accountant (Specialist)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        │       │       ├─ GL Accountant (Specialist)
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        │       │       ├─ AR Clerk (Transactional)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        │       │       └─ AP Clerk (Transactional)
+</code></pre></div>
+<p><strong>Escalation Path</strong>:
+- <strong>Level 1</strong>: Clerks/Specialists → Finance Manager (operational issues)
+- <strong>Level 2</strong>: Finance Manager → Finance Director (exceptions, policy changes)
+- <strong>Level 3</strong>: Finance Director → External Auditor (material misstatements, fraud)</p>
+<hr />
+<h2 id="2-detailed-role-definitions">2. Detailed Role Definitions<a class="headerlink" href="#2-detailed-role-definitions" title="Permanent link">&para;</a></h2>
+<h3 id="21-ap-clerk-accounts-payable-clerk">2.1 <strong>AP Clerk</strong> (Accounts Payable Clerk)<a class="headerlink" href="#21-ap-clerk-accounts-payable-clerk" title="Permanent link">&para;</a></h3>
+<p><strong>Primary Responsibilities</strong>:
+- Vendor invoice receipt and validation
+- Purchase order (PO) matching (2-way or 3-way)
+- Payment preparation and vendor communication
+- Expense report pre-approval and OCR validation</p>
+<p><strong>Separation of Duties</strong>:
+- ✅ <strong>CAN</strong>: Create vendor bills, attach receipts, propose payments, initiate PO matching
+- ❌ <strong>CANNOT</strong>: Approve vendor bills &gt;₱50,000, create vendors (requires Finance Manager), post payments (requires GL Accountant), modify GL accounts</p>
+<p><strong>Odoo Security Groups</strong>:
+- <code>account.group_account_invoice</code> (Bills: Create/Edit)
+- <code>purchase.group_purchase_user</code> (PO: Read-only)
+- <code>base.group_user</code> (Employee access)</p>
+<p><strong>Supabase RLS Policies</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- AP Clerk can only view/edit draft vendor bills for assigned agencies</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">ap_clerk_vendor_bills</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">account_move</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">ALL</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;in_invoice&#39;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;draft&#39;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">company_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">company_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user_agency_assignments</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">auth</span><span class="p">.</span><span class="n">uid</span><span class="p">())</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="k">WITH</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;in_invoice&#39;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;draft&#39;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Key Performance Indicators (KPIs)</strong>:
+- Invoice processing time: ≤2 business days from receipt
+- PO matching accuracy: ≥98%
+- OCR validation correction rate: ≤5%</p>
+<p><strong>Audit Trail Requirements</strong>:
+- All invoice edits logged with timestamp + user ID
+- OCR confidence scores &lt;0.60 flagged for manual review
+- Vendor master changes require Finance Manager approval</p>
+<hr />
+<h3 id="22-ar-clerk-accounts-receivable-clerk">2.2 <strong>AR Clerk</strong> (Accounts Receivable Clerk)<a class="headerlink" href="#22-ar-clerk-accounts-receivable-clerk" title="Permanent link">&para;</a></h3>
+<p><strong>Primary Responsibilities</strong>:
+- Customer invoice generation and delivery
+- Payment application and cash receipt recording
+- Aging report monitoring and customer communication
+- Credit memo preparation (requires approval)</p>
+<p><strong>Separation of Duties</strong>:
+- ✅ <strong>CAN</strong>: Create customer invoices, record payments, generate aging reports, send payment reminders
+- ❌ <strong>CANNOT</strong>: Write off bad debts (requires Finance Manager), modify revenue accounts, approve credit memos &gt;₱25,000, create customers (requires Finance Manager)</p>
+<p><strong>Odoo Security Groups</strong>:
+- <code>account.group_account_invoice</code> (Invoices: Create/Edit)
+- <code>sale.group_sale_user</code> (Sales Orders: Read-only)
+- <code>account.group_account_readonly</code> (Reports: View)</p>
+<p><strong>Supabase RLS Policies</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- AR Clerk can only manage customer invoices for assigned agencies</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">ar_clerk_customer_invoices</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">account_move</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">ALL</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">move_type</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;out_invoice&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;out_refund&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="k">state</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;draft&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">company_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">company_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user_agency_assignments</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">auth</span><span class="p">.</span><span class="n">uid</span><span class="p">())</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="k">WITH</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="n">move_type</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;out_invoice&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;out_refund&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Key Performance Indicators (KPIs)</strong>:
+- Days Sales Outstanding (DSO): ≤45 days
+- Collection effectiveness: ≥95%
+- Invoice error rate: ≤2%</p>
+<p><strong>Audit Trail Requirements</strong>:
+- Payment application reversals logged with justification
+- Credit memos &gt;₱10,000 require supporting documentation
+- Aging report snapshots archived monthly</p>
+<hr />
+<h3 id="23-gl-accountant-general-ledger-accountant">2.3 <strong>GL Accountant</strong> (General Ledger Accountant)<a class="headerlink" href="#23-gl-accountant-general-ledger-accountant" title="Permanent link">&para;</a></h3>
+<p><strong>Primary Responsibilities</strong>:
+- Journal entry creation and posting
+- Account reconciliation (bank, intercompany, suspense)
+- Chart of accounts (CoA) maintenance
+- Month-end close coordination and validation</p>
+<p><strong>Separation of Duties</strong>:
+- ✅ <strong>CAN</strong>: Post journal entries, reconcile accounts, manage CoA, execute accruals/deferrals, initiate close process
+- ❌ <strong>CANNOT</strong>: Approve journal entries &gt;₱100,000 (requires Finance Manager), initiate payments, modify tax configurations, unlock closed periods (requires Finance Director)</p>
+<p><strong>Odoo Security Groups</strong>:
+- <code>account.group_account_user</code> (Accounting: Full access)
+- <code>account.group_account_manager</code> (Advanced features: Reconciliation, Journal management)</p>
+<p><strong>Supabase RLS Policies</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- GL Accountant can create/edit journal entries for assigned agencies</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">gl_accountant_journal_entries</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">account_move</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">ALL</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="k">state</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;draft&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">company_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">company_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user_agency_assignments</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">auth</span><span class="p">.</span><span class="n">uid</span><span class="p">())</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="k">WITH</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;draft&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">amount_total</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">100000</span><span class="p">)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Key Performance Indicators (KPIs)</strong>:
+- Reconciliation completion rate: 100% by Day 5 of close
+- Journal entry error rate: ≤1%
+- Close cycle time contribution: ≤40% of total close time</p>
+<p><strong>Audit Trail Requirements</strong>:
+- All manual journal entries require narrative explanation
+- Reconciliation workpapers attached to account records
+- Period-end close checklist signed off electronically</p>
+<hr />
+<h3 id="24-fixed-asset-accountant">2.4 <strong>Fixed Asset Accountant</strong><a class="headerlink" href="#24-fixed-asset-accountant" title="Permanent link">&para;</a></h3>
+<p><strong>Primary Responsibilities</strong>:
+- Asset capitalization and disposal management
+- Depreciation schedule calculation and validation
+- Asset impairment testing and write-downs
+- Fixed asset register reconciliation to GL</p>
+<p><strong>Separation of Duties</strong>:
+- ✅ <strong>CAN</strong>: Create/edit asset records, calculate depreciation, propose disposals, run impairment tests
+- ❌ <strong>CANNOT</strong>: Approve asset acquisitions &gt;₱500,000 (requires Finance Director), modify depreciation methods without approval, post disposal gains/losses (requires GL Accountant review)</p>
+<p><strong>Odoo Security Groups</strong>:
+- <code>account_asset.group_account_asset</code> (Asset Management: Full access)
+- <code>account.group_account_user</code> (Accounting: Read access)</p>
+<p><strong>Supabase RLS Policies</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- Fixed Asset Accountant manages assets for assigned agencies</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">fa_accountant_assets</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">account_asset</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">ALL</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">company_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">company_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user_agency_assignments</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">auth</span><span class="p">.</span><span class="n">uid</span><span class="p">())</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="k">WITH</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;draft&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;open&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">500000</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Key Performance Indicators (KPIs)</strong>:
+- Asset register accuracy: 100% (variance to GL ≤₱1,000)
+- Depreciation calculation accuracy: ≥99.5%
+- Annual physical verification completion: 100%</p>
+<p><strong>Audit Trail Requirements</strong>:
+- Asset acquisition supporting documents (invoice, PO, delivery receipt)
+- Disposal approvals and fair value assessments
+- Impairment test calculations and management judgments</p>
+<hr />
+<h3 id="25-payroll-specialist">2.5 <strong>Payroll Specialist</strong><a class="headerlink" href="#25-payroll-specialist" title="Permanent link">&para;</a></h3>
+<p><strong>Primary Responsibilities</strong>:
+- Employee payroll processing and validation
+- Statutory deduction calculation (SSS, PhilHealth, Pag-IBIG, BIR withholding)
+- Payroll reconciliation to GL and cash disbursements
+- Government remittance preparation and filing</p>
+<p><strong>Separation of Duties</strong>:
+- ✅ <strong>CAN</strong>: Process payroll, calculate deductions, generate payslips, prepare remittance reports
+- ❌ <strong>CANNOT</strong>: Approve payroll runs &gt;₱1,000,000 (requires Finance Manager), create employees (requires HR), post payroll journal entries (requires GL Accountant), initiate payroll bank transfers (requires Finance Manager)</p>
+<p><strong>Odoo Security Groups</strong>:
+- <code>hr_payroll.group_hr_payroll_user</code> (Payroll: Full access)
+- <code>hr.group_hr_user</code> (Employee data: Read-only)</p>
+<p><strong>Supabase RLS Policies</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">-- Payroll Specialist processes payroll for assigned agencies only</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">payroll_specialist_payslips</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">hr_payslip</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">ALL</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">company_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">company_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user_agency_assignments</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">auth</span><span class="p">.</span><span class="n">uid</span><span class="p">())</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="k">state</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;draft&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="k">WITH</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;draft&#39;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Key Performance Indicators (KPIs)</strong>:
+- Payroll processing accuracy: ≥99.9%
+- On-time payroll delivery: 100%
+- Government remittance timeliness: 100% (before deadlines)</p>
+<p><strong>Audit Trail Requirements</strong>:
+- Payroll register signed off by Finance Manager
+- Statutory deduction reconciliation to remittance returns
+- Payslip distribution acknowledgment records</p>
+<hr />
+<h3 id="26-tax-compliance-officer">2.6 <strong>Tax Compliance Officer</strong><a class="headerlink" href="#26-tax-compliance-officer" title="Permanent link">&para;</a></h3>
+<p><strong>Primary Responsibilities</strong>:
+- BIR tax return preparation (1601-C, 2550Q, 1702-RT, etc.)
+- Tax computation validation and optimization
+- Tax audit coordination and response
+- VAT compliance and eFPS filing</p>
+<p><strong>Separation of Duties</strong>:
+- ✅ <strong>CAN</strong>: Prepare tax returns, compute withholding tax, validate tax accounts, coordinate with BIR
+- ❌ <strong>CANNOT</strong>: Approve tax returns (requires Finance Director), modify tax rates (requires system admin), post tax journal entries (requires GL Accountant), sign tax returns (requires authorized signatory)</p>
+<p><strong>Odoo Security Groups</strong>:
+- <code>account.group_account_user</code> (Accounting: Full access)
+- <code>l10n_ph_bir.group_bir_compliance</code> (BIR Forms: Create/Edit)</p>
+<p><strong>Supabase RLS Policies</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- Tax Compliance Officer manages tax returns for all agencies</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">tax_officer_bir_returns</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">bir_return</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">ALL</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">state</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;draft&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;submitted&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="k">WITH</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;draft&#39;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Key Performance Indicators (KPIs)</strong>:
+- Tax return accuracy: 100% (zero BIR penalties)
+- Filing timeliness: 100% (before statutory deadlines)
+- Tax audit resolution time: ≤90 days</p>
+<p><strong>Audit Trail Requirements</strong>:
+- Tax computation workpapers archived for 10 years (BIR statute of limitations)
+- BIR filing confirmations (eFPS acknowledgment receipts)
+- Tax payment proof (bank validated deposit slips)</p>
+<hr />
+<h3 id="27-finance-manager">2.7 <strong>Finance Manager</strong><a class="headerlink" href="#27-finance-manager" title="Permanent link">&para;</a></h3>
+<p><strong>Primary Responsibilities</strong>:
+- Transaction approval and exception handling
+- Financial statement review and variance analysis
+- Team supervision and workflow coordination
+- Internal control monitoring and policy enforcement</p>
+<p><strong>Separation of Duties</strong>:
+- ✅ <strong>CAN</strong>: Approve transactions within authority limits, review financial statements, create/modify master data, unlock periods (with justification), assign tasks to team
+- ❌ <strong>CANNOT</strong>: Post journal entries without GL Accountant preparation, approve own transactions, modify closed periods without Finance Director, override dual approval requirements</p>
+<p><strong>Odoo Security Groups</strong>:
+- <code>account.group_account_manager</code> (Accounting: Manager privileges)
+- <code>base.group_system</code> (Settings: Limited access for master data)
+- All subordinate role groups (for review purposes)</p>
+<p><strong>Supabase RLS Policies</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">-- Finance Manager approves transactions across all agencies</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">finance_manager_approvals</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">account_move</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;draft&#39;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">amount_total</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">1000000</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="k">WITH</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">approved_by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">auth</span><span class="p">.</span><span class="n">uid</span><span class="p">()</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Authority Limits</strong>:
+- Vendor bills: ₱50,000 - ₱1,000,000
+- Journal entries: ₱100,000 - ₱500,000
+- Credit memos: ₱25,000 - ₱250,000
+- Payroll runs: ₱1,000,000 - ₱5,000,000</p>
+<p><strong>Key Performance Indicators (KPIs)</strong>:
+- Approval turnaround time: ≤4 hours
+- Exception resolution rate: ≥95%
+- Team productivity: Close cycle time ≤5 days</p>
+<p><strong>Audit Trail Requirements</strong>:
+- All approvals electronically timestamped
+- Exception handling documented with business justification
+- Monthly control self-assessment (CSA) attestation</p>
+<hr />
+<h3 id="28-finance-director">2.8 <strong>Finance Director</strong><a class="headerlink" href="#28-finance-director" title="Permanent link">&para;</a></h3>
+<p><strong>Primary Responsibilities</strong>:
+- Financial statement certification and sign-off
+- Strategic financial planning and policy formulation
+- Audit liaison and regulatory compliance oversight
+- Ultimate escalation point for financial decisions</p>
+<p><strong>Separation of Duties</strong>:
+- ✅ <strong>CAN</strong>: Approve all transactions (no limit), unlock/modify closed periods, authorize policy changes, sign tax returns, appoint external auditors
+- ❌ <strong>CANNOT</strong>: Execute transactions without subordinate preparation, override segregation of duties framework, modify audit trail logs</p>
+<p><strong>Odoo Security Groups</strong>:
+- <code>base.group_system</code> (System: Full administrative access)
+- <code>account.group_account_manager</code> (Accounting: Full privileges)
+- All role groups (for oversight)</p>
+<p><strong>Supabase RLS Policies</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">-- Finance Director has full read access, write requires justification</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">finance_director_oversight</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">account_move</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">ALL</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span><span class="k">TRUE</span><span class="p">)</span><span class="w">  </span><span class="c1">-- Can view all transactions</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="k">WITH</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="p">(</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;draft&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">amount_total</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000000</span><span class="p">)</span><span class="w">  </span><span class="c1">-- High-value approvals</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">override_justification</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">)</span><span class="w">  </span><span class="c1">-- Period unlocks</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Authority Limits</strong>:
+- Unlimited transaction approval authority
+- Period unlock authority (requires documented justification)
+- CoA structure modification authority
+- External audit coordination authority</p>
+<p><strong>Key Performance Indicators (KPIs)</strong>:
+- Financial statement accuracy: 100% (zero restatements)
+- Regulatory compliance: 100% (zero penalties/fines)
+- Audit opinion: Unqualified/Clean</p>
+<p><strong>Audit Trail Requirements</strong>:
+- All period unlocks logged with justification and affected transactions
+- Policy changes version-controlled with approval dates
+- Annual financial statement certification signed and archived</p>
+<hr />
+<h3 id="29-external-auditor">2.9 <strong>External Auditor</strong><a class="headerlink" href="#29-external-auditor" title="Permanent link">&para;</a></h3>
+<p><strong>Primary Responsibilities</strong>:
+- Annual financial statement audit
+- Internal control effectiveness assessment
+- Independence verification and fraud risk evaluation
+- Audit opinion issuance and management letter</p>
+<p><strong>Separation of Duties</strong>:
+- ✅ <strong>CAN</strong>: Read-only access to all financial data, request supporting documents, interview personnel, issue audit findings
+- ❌ <strong>CANNOT</strong>: Modify any data, provide advisory services on audited matters, participate in management decisions, approve transactions</p>
+<p><strong>Odoo Security Groups</strong>:
+- <code>account.group_account_readonly</code> (Accounting: Read-only across all companies)
+- Custom group: <code>audit.group_external_auditor</code> (Data export privileges)</p>
+<p><strong>Supabase RLS Policies</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">-- External Auditor has read-only access to all historical data</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">external_auditor_read_only</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">account_move</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">SELECT</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="n">auth</span><span class="p">.</span><span class="n">uid</span><span class="p">()</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">external_auditor_assignments</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">TRUE</span><span class="p">)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Independence Requirements</strong>:
+- No financial interest in audited entities
+- Rotation every 5 years (audit partner) / 7 years (audit firm)
+- Pre-approval required for non-audit services
+- Annual independence declaration</p>
+<p><strong>Audit Trail Requirements</strong>:
+- Audit working papers retained for 10 years
+- Management representation letters archived
+- Audit committee communication records
+- Quality control review documentation</p>
+<hr />
+<h2 id="3-raci-matrix-for-financial-close-tasks">3. RACI Matrix for Financial Close Tasks<a class="headerlink" href="#3-raci-matrix-for-financial-close-tasks" title="Permanent link">&para;</a></h2>
+<p><strong>Legend</strong>:
+- <strong>R</strong> = Responsible (Does the work)
+- <strong>A</strong> = Accountable (Ultimate decision authority)
+- <strong>C</strong> = Consulted (Provides input)
+- <strong>I</strong> = Informed (Kept updated)</p>
+<h3 id="31-pre-close-activities-days-5-to-1">3.1 Pre-Close Activities (Days -5 to -1)<a class="headerlink" href="#31-pre-close-activities-days-5-to-1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>AP Clerk</th>
+<th>AR Clerk</th>
+<th>GL Acct</th>
+<th>FA Acct</th>
+<th>Payroll</th>
+<th>Tax</th>
+<th>Fin Mgr</th>
+<th>Fin Dir</th>
+<th>Ext Audit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vendor invoice processing</strong></td>
+<td>R</td>
+<td>I</td>
+<td>I</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Customer invoice generation</strong></td>
+<td>-</td>
+<td>R</td>
+<td>I</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Payroll run execution</strong></td>
+<td>-</td>
+<td>-</td>
+<td>I</td>
+<td>-</td>
+<td>R</td>
+<td>C</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Asset depreciation calculation</strong></td>
+<td>-</td>
+<td>-</td>
+<td>C</td>
+<td>R</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Tax accrual preparation</strong></td>
+<td>-</td>
+<td>-</td>
+<td>C</td>
+<td>-</td>
+<td>-</td>
+<td>R</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Prepayment/Accrual review</strong></td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>C</td>
+<td>-</td>
+<td>C</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Intercompany reconciliation</strong></td>
+<td>C</td>
+<td>C</td>
+<td>R</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-close-execution-days-1-3">3.2 Close Execution (Days 1-3)<a class="headerlink" href="#32-close-execution-days-1-3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>AP Clerk</th>
+<th>AR Clerk</th>
+<th>GL Acct</th>
+<th>FA Acct</th>
+<th>Payroll</th>
+<th>Tax</th>
+<th>Fin Mgr</th>
+<th>Fin Dir</th>
+<th>Ext Audit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Period-end journal entries</strong></td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Bank reconciliation</strong></td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>AR aging review</strong></td>
+<td>-</td>
+<td>R</td>
+<td>C</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>AP aging review</strong></td>
+<td>R</td>
+<td>-</td>
+<td>C</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Fixed asset register reconciliation</strong></td>
+<td>-</td>
+<td>-</td>
+<td>C</td>
+<td>R</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Payroll reconciliation to GL</strong></td>
+<td>-</td>
+<td>-</td>
+<td>C</td>
+<td>-</td>
+<td>R</td>
+<td>-</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Tax account reconciliation</strong></td>
+<td>-</td>
+<td>-</td>
+<td>C</td>
+<td>-</td>
+<td>-</td>
+<td>R</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-review-reconciliation-days-4-5">3.3 Review &amp; Reconciliation (Days 4-5)<a class="headerlink" href="#33-review-reconciliation-days-4-5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>AP Clerk</th>
+<th>AR Clerk</th>
+<th>GL Acct</th>
+<th>FA Acct</th>
+<th>Payroll</th>
+<th>Tax</th>
+<th>Fin Mgr</th>
+<th>Fin Dir</th>
+<th>Ext Audit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trial balance validation</strong></td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Variance analysis (vs. budget)</strong></td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>A</td>
+<td>C</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Suspense account clearance</strong></td>
+<td>C</td>
+<td>C</td>
+<td>R</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Intercompany elimination review</strong></td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>A</td>
+<td>C</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Management report preparation</strong></td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Financial statement draft</strong></td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>A</td>
+<td>C</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-approval-lock-days-6-7">3.4 Approval &amp; Lock (Days 6-7)<a class="headerlink" href="#34-approval-lock-days-6-7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>AP Clerk</th>
+<th>AR Clerk</th>
+<th>GL Acct</th>
+<th>FA Acct</th>
+<th>Payroll</th>
+<th>Tax</th>
+<th>Fin Mgr</th>
+<th>Fin Dir</th>
+<th>Ext Audit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Financial statement review</strong></td>
+<td>I</td>
+<td>I</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>R</td>
+<td>A</td>
+<td>I</td>
+</tr>
+<tr>
+<td><strong>Adjustment posting (if needed)</strong></td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Close checklist sign-off</strong></td>
+<td>I</td>
+<td>I</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>R</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Period lock execution</strong></td>
+<td>-</td>
+<td>-</td>
+<td>I</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>R</td>
+<td>A</td>
+<td>I</td>
+</tr>
+<tr>
+<td><strong>Period unlock (exceptions)</strong></td>
+<td>-</td>
+<td>-</td>
+<td>I</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>C</td>
+<td>A</td>
+<td>I</td>
+</tr>
+<tr>
+<td><strong>Board package preparation</strong></td>
+<td>I</td>
+<td>I</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>R</td>
+<td>A</td>
+<td>I</td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-reporting-audit-days-8">3.5 Reporting &amp; Audit (Days 8+)<a class="headerlink" href="#35-reporting-audit-days-8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>AP Clerk</th>
+<th>AR Clerk</th>
+<th>GL Acct</th>
+<th>FA Acct</th>
+<th>Payroll</th>
+<th>Tax</th>
+<th>Fin Mgr</th>
+<th>Fin Dir</th>
+<th>Ext Audit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BIR tax return filing</strong></td>
+<td>-</td>
+<td>-</td>
+<td>I</td>
+<td>-</td>
+<td>-</td>
+<td>R</td>
+<td>C</td>
+<td>A</td>
+<td>I</td>
+</tr>
+<tr>
+<td><strong>External audit support</strong></td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>R</td>
+<td>A</td>
+<td>R</td>
+</tr>
+<tr>
+<td><strong>Audit working paper provision</strong></td>
+<td>C</td>
+<td>C</td>
+<td>R</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>A</td>
+<td>I</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Management letter response</strong></td>
+<td>-</td>
+<td>-</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>R</td>
+<td>A</td>
+<td>I</td>
+</tr>
+<tr>
+<td><strong>Control deficiency remediation</strong></td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>R</td>
+<td>A</td>
+<td>I</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-permission-levels-and-rls-policies">4. Permission Levels and RLS Policies<a class="headerlink" href="#4-permission-levels-and-rls-policies" title="Permanent link">&para;</a></h2>
+<h3 id="41-odoo-security-group-mapping">4.1 Odoo Security Group Mapping<a class="headerlink" href="#41-odoo-security-group-mapping" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Security Group</th>
+<th>AP Clerk</th>
+<th>AR Clerk</th>
+<th>GL Acct</th>
+<th>FA Acct</th>
+<th>Payroll</th>
+<th>Tax</th>
+<th>Fin Mgr</th>
+<th>Fin Dir</th>
+<th>Ext Audit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>base.group_user</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>account.group_account_readonly</strong></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>account.group_account_invoice</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>account.group_account_user</strong></td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>account.group_account_manager</strong></td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+<td>✅</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>account_asset.group_account_asset</strong></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+<td>✅</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>hr_payroll.group_hr_payroll_user</strong></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+<td>-</td>
+<td>✅</td>
+<td>✅</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>base.group_system</strong></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+<td>✅</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-supabase-rls-policy-framework">4.2 Supabase RLS Policy Framework<a class="headerlink" href="#42-supabase-rls-policy-framework" title="Permanent link">&para;</a></h3>
+<p><strong>Core RLS Principles</strong>:
+1. <strong>User identity verification</strong>: All policies check <code>auth.uid()</code> against user assignment tables
+2. <strong>Company/agency scoping</strong>: Multi-agency users see only assigned entities
+3. <strong>State-based restrictions</strong>: Draft vs. posted vs. locked transactions have different permissions
+4. <strong>Amount-based approvals</strong>: Materiality thresholds enforce dual approval
+5. <strong>Temporal restrictions</strong>: Closed periods block modifications unless explicitly unlocked</p>
+<p><strong>Example RLS Policy Template</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">-- Generic transaction access policy template</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">role_transaction_access</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">account_move</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="err">{</span><span class="k">SELECT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">DELETE</span><span class="err">}</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="c1">-- User has role assignment</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="n">auth</span><span class="p">.</span><span class="n">uid</span><span class="p">()</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user_role_assignments</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;role_name&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">TRUE</span><span class="p">)</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="c1">-- Transaction is in allowed state</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="k">state</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;allowed_state_1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;allowed_state_2&#39;</span><span class="p">)</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="c1">-- User is assigned to transaction company/agency</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">company_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">company_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user_agency_assignments</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">auth</span><span class="p">.</span><span class="n">uid</span><span class="p">())</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="c1">-- Amount is within authority limit (for approvals)</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">amount_total</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">role_authority_limit</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">approver_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">auth</span><span class="p">.</span><span class="n">uid</span><span class="p">())</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">    </span><span class="c1">-- Period is not locked (unless Finance Director)</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">period_locked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">FALSE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">auth</span><span class="p">.</span><span class="n">uid</span><span class="p">()</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">user_role_assignments</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;finance_director&#39;</span><span class="p">))</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">  </span><span class="p">)</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">  </span><span class="k">WITH</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">    </span><span class="c1">-- Additional constraints for INSERT/UPDATE operations</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">    </span><span class="err">{</span><span class="n">specific_write_constraints</span><span class="err">}</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">  </span><span class="p">);</span>
+</code></pre></div></p>
+<h3 id="43-field-level-access-control">4.3 Field-Level Access Control<a class="headerlink" href="#43-field-level-access-control" title="Permanent link">&para;</a></h3>
+<p><strong>Sensitive Field Restrictions</strong>:
+- <strong>Cost prices</strong>: Hidden from AR Clerk, visible to AP Clerk/GL Accountant
+- <strong>Salary information</strong>: Visible only to Payroll Specialist, Finance Manager, Finance Director
+- <strong>Tax computation details</strong>: Visible to Tax Compliance Officer, Finance Manager, Finance Director
+- <strong>Audit trail fields</strong>: Read-only for all users except system administrators</p>
+<p><strong>Implementation</strong>: Odoo field-level security via <code>groups</code> attribute in model definitions:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">AccountMove</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">_inherit</span> <span class="o">=</span> <span class="s1">&#39;account.move&#39;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="c1"># Only Finance Manager and above can see approval history</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="n">approval_history</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        <span class="n">string</span><span class="o">=</span><span class="s2">&quot;Approval History&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="n">groups</span><span class="o">=</span><span class="s2">&quot;account.group_account_manager&quot;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="p">)</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="c1"># Only Payroll Specialist and above can see employee salary</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>    <span class="n">employee_salary</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Monetary</span><span class="p">(</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>        <span class="n">string</span><span class="o">=</span><span class="s2">&quot;Gross Salary&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>        <span class="n">groups</span><span class="o">=</span><span class="s2">&quot;hr_payroll.group_hr_payroll_user&quot;</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>    <span class="p">)</span>
+</code></pre></div></p>
+<hr />
+<h2 id="5-segregation-of-duties-controls">5. Segregation of Duties Controls<a class="headerlink" href="#5-segregation-of-duties-controls" title="Permanent link">&para;</a></h2>
+<h3 id="51-critical-sod-conflicts-prohibited-combinations">5.1 Critical SoD Conflicts (Prohibited Combinations)<a class="headerlink" href="#51-critical-sod-conflicts-prohibited-combinations" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Conflict Pair</th>
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AP Clerk + Vendor Master Maintenance</strong></td>
+<td>Fictitious vendor creation → unauthorized payments</td>
+<td>Vendor creation restricted to Finance Manager with dual approval</td>
+</tr>
+<tr>
+<td><strong>AR Clerk + Customer Master Maintenance</strong></td>
+<td>Revenue manipulation via fake customers</td>
+<td>Customer creation restricted to Finance Manager with credit checks</td>
+</tr>
+<tr>
+<td><strong>GL Accountant + Payment Approval</strong></td>
+<td>Unauthorized fund transfer after posting JE</td>
+<td>Payment approval restricted to Finance Manager with dual control</td>
+</tr>
+<tr>
+<td><strong>Payroll Specialist + Employee Master Maintenance</strong></td>
+<td>Ghost employee payroll fraud</td>
+<td>Employee creation restricted to HR with Finance Manager validation</td>
+</tr>
+<tr>
+<td><strong>Tax Compliance Officer + Tax Return Signing</strong></td>
+<td>Unapproved tax positions</td>
+<td>Tax return signing restricted to Finance Director with board authorization</td>
+</tr>
+<tr>
+<td><strong>Finance Manager + Period Unlock (without justification)</strong></td>
+<td>Backdated transaction manipulation</td>
+<td>Period unlock requires Finance Director approval with audit trail</td>
+</tr>
+<tr>
+<td><strong>Finance Director + Transaction Execution</strong></td>
+<td>Lack of maker-checker control</td>
+<td>All transactions require subordinate preparation before Director approval</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-compensating-controls-for-unavoidable-conflicts">5.2 Compensating Controls for Unavoidable Conflicts<a class="headerlink" href="#52-compensating-controls-for-unavoidable-conflicts" title="Permanent link">&para;</a></h3>
+<p><strong>Small Organization Challenges</strong>: In organizations with &lt;10 finance staff, certain role combinations may be unavoidable.</p>
+<p><strong>Compensating Control Framework</strong>:
+1. <strong>Enhanced review</strong>: Monthly supervisory review of combined-role activities
+2. <strong>System-enforced dual approval</strong>: Transactions require second approver outside conflict pair
+3. <strong>Periodic rotation</strong>: Rotate conflicting duties every 6 months to limit fraud window
+4. <strong>Audit trail monitoring</strong>: Weekly automated review of conflict-pair transactions
+5. <strong>Whistleblower mechanism</strong>: Anonymous reporting channel for suspected irregularities</p>
+<p><strong>Example Compensating Control</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Odoo workflow constraint: GL Accountant cannot approve own journal entries</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">AccountMove</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="n">_inherit</span> <span class="o">=</span> <span class="s1">&#39;account.move&#39;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="nd">@api</span><span class="o">.</span><span class="n">constrains</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="s1">&#39;create_uid&#39;</span><span class="p">,</span> <span class="s1">&#39;approver_id&#39;</span><span class="p">)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_check_maker_checker_compliance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        <span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>            <span class="k">if</span> <span class="n">move</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;posted&#39;</span> <span class="ow">and</span> <span class="n">move</span><span class="o">.</span><span class="n">create_uid</span> <span class="o">==</span> <span class="n">move</span><span class="o">.</span><span class="n">approver_id</span><span class="p">:</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">has_group</span><span class="p">(</span><span class="s1">&#39;base.group_system&#39;</span><span class="p">):</span>  <span class="c1"># Except Finance Director override</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>                    <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>                        <span class="s2">&quot;Maker-checker violation: You cannot approve your own journal entry. &quot;</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>                        <span class="s2">&quot;Please request approval from Finance Manager.&quot;</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>                    <span class="p">)</span>
+</code></pre></div></p>
+<hr />
+<h2 id="6-audit-trail-and-monitoring">6. Audit Trail and Monitoring<a class="headerlink" href="#6-audit-trail-and-monitoring" title="Permanent link">&para;</a></h2>
+<h3 id="61-mandatory-audit-log-events">6.1 Mandatory Audit Log Events<a class="headerlink" href="#61-mandatory-audit-log-events" title="Permanent link">&para;</a></h3>
+<p><strong>All roles must generate audit logs for</strong>:
+- User login/logout (session tracking)
+- Transaction creation/modification/deletion (before/after values)
+- Master data changes (vendor, customer, employee, CoA)
+- Permission changes (role assignments, group membership)
+- Period lock/unlock operations
+- Exception overrides and approvals
+- Report generation and export (data exfiltration monitoring)</p>
+<p><strong>Audit Log Retention</strong>: 10 years (BIR statute of limitations + 2-year buffer)</p>
+<h3 id="62-anomaly-detection-rules">6.2 Anomaly Detection Rules<a class="headerlink" href="#62-anomaly-detection-rules" title="Permanent link">&para;</a></h3>
+<p><strong>Automated alerts triggered for</strong>:
+- Transaction volume &gt;3 standard deviations from 90-day moving average
+- After-hours transaction posting (weekends, holidays, 10PM-6AM)
+- Sequential transaction reversals (post → cancel → re-post pattern)
+- Dormant account activity (no transactions in &gt;180 days suddenly active)
+- Round-number transactions (e.g., exactly ₱100,000.00 without centavos)
+- Velocity checks (same user posting &gt;50 transactions per hour)
+- Geographic anomalies (IP address outside Philippines for onshore users)</p>
+<p><strong>Alert Routing</strong>:
+- <strong>Low severity</strong>: Email to Finance Manager (daily digest)
+- <strong>Medium severity</strong>: Real-time Mattermost notification to Finance Manager
+- <strong>High severity</strong>: Immediate escalation to Finance Director + External Auditor notification</p>
+<hr />
+<h2 id="7-role-assignment-and-provisioning">7. Role Assignment and Provisioning<a class="headerlink" href="#7-role-assignment-and-provisioning" title="Permanent link">&para;</a></h2>
+<h3 id="71-new-user-onboarding-workflow">7.1 New User Onboarding Workflow<a class="headerlink" href="#71-new-user-onboarding-workflow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>1. HR submits access request (form includes: role, agency assignments, start date, manager approval)
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   ↓
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>2. Finance Manager validates business justification
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>   ↓
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>3. IT provisions Odoo user account (minimum access: base.group_user)
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>   ↓
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>4. Finance Manager assigns security groups in Odoo
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>   ↓
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>5. System Admin creates Supabase RLS user record + agency assignments
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>   ↓
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>6. Finance Manager conducts role training (2-hour session covering SoD, policies, system usage)
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>   ↓
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>7. User signs attestation (understands SoD, confidentiality, fraud reporting)
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>   ↓
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>8. 30-day probation period (enhanced monitoring, daily supervisory review)
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>   ↓
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>9. Finance Manager approves full access activation
+</code></pre></div>
+<p><strong>Provisioning SLA</strong>: ≤2 business days from HR request to account activation</p>
+<h3 id="72-role-change-management">7.2 Role Change Management<a class="headerlink" href="#72-role-change-management" title="Permanent link">&para;</a></h3>
+<p><strong>Triggers for role reassignment</strong>:
+- Promotion/transfer
+- Temporary coverage (leave, illness)
+- Reorganization
+- Performance issues requiring access restriction</p>
+<p><strong>Change Process</strong>:
+1. Manager submits role change request with effective date
+2. Finance Director approves (if role elevation) or Finance Manager approves (if lateral/reduction)
+3. System Admin executes changes in Odoo + Supabase
+4. Previous role access automatically revoked (no legacy permission accumulation)
+5. Audit log entry created with change justification
+6. User re-signs attestation for new role</p>
+<p><strong>Emergency Access</strong>: Finance Director can grant temporary elevated access for ≤48 hours (e.g., key person absence), requires post-approval justification and audit review.</p>
+<hr />
+<h2 id="8-performance-metrics-and-kpis">8. Performance Metrics and KPIs<a class="headerlink" href="#8-performance-metrics-and-kpis" title="Permanent link">&para;</a></h2>
+<h3 id="81-role-specific-slas">8.1 Role-Specific SLAs<a class="headerlink" href="#81-role-specific-slas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Metric</th>
+<th>Target</th>
+<th>Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AP Clerk</strong></td>
+<td>Invoice processing time</td>
+<td>≤2 days</td>
+<td>Median days from receipt to approval-ready</td>
+</tr>
+<tr>
+<td><strong>AR Clerk</strong></td>
+<td>DSO</td>
+<td>≤45 days</td>
+<td>(AR balance / daily sales) × days in period</td>
+</tr>
+<tr>
+<td><strong>GL Accountant</strong></td>
+<td>Reconciliation completion</td>
+<td>100% by Day 5</td>
+<td>% accounts reconciled by close deadline</td>
+</tr>
+<tr>
+<td><strong>Fixed Asset Accountant</strong></td>
+<td>Register accuracy</td>
+<td>100% (±₱1K)</td>
+<td>Variance between asset register and GL</td>
+</tr>
+<tr>
+<td><strong>Payroll Specialist</strong></td>
+<td>Payroll accuracy</td>
+<td>≥99.9%</td>
+<td>(Correct payslips / total payslips) × 100</td>
+</tr>
+<tr>
+<td><strong>Tax Compliance Officer</strong></td>
+<td>Filing timeliness</td>
+<td>100%</td>
+<td>% tax returns filed before statutory deadline</td>
+</tr>
+<tr>
+<td><strong>Finance Manager</strong></td>
+<td>Approval TAT</td>
+<td>≤4 hours</td>
+<td>Median hours from request to approval/rejection</td>
+</tr>
+<tr>
+<td><strong>Finance Director</strong></td>
+<td>Close cycle time</td>
+<td>≤7 days</td>
+<td>Days from month-end to financial statement sign-off</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82-control-effectiveness-metrics">8.2 Control Effectiveness Metrics<a class="headerlink" href="#82-control-effectiveness-metrics" title="Permanent link">&para;</a></h3>
+<p><strong>Monthly Dashboard</strong>:
+- <strong>SoD violation attempts</strong>: Count of system-blocked conflict attempts
+- <strong>Compensating control execution rate</strong>: % of required supervisory reviews completed on time
+- <strong>Audit finding closure rate</strong>: % of prior audit findings remediated by target date
+- <strong>User access review completion</strong>: % of quarterly user access recertifications completed
+- <strong>Training compliance</strong>: % of users completing annual SoD refresher training</p>
+<p><strong>Thresholds for Escalation</strong>:
+- <strong>Green</strong> (satisfactory): ≥95% compliance with all control metrics
+- <strong>Yellow</strong> (monitoring): 85-94% compliance, requires corrective action plan
+- <strong>Red</strong> (unsatisfactory): &lt;85% compliance, triggers management review and potential external audit notification</p>
+<hr />
+<h2 id="9-training-and-competency">9. Training and Competency<a class="headerlink" href="#9-training-and-competency" title="Permanent link">&para;</a></h2>
+<h3 id="91-mandatory-training-programs">9.1 Mandatory Training Programs<a class="headerlink" href="#91-mandatory-training-programs" title="Permanent link">&para;</a></h3>
+<p><strong>Role-Specific Training</strong> (8 hours upon hire, 4 hours annual refresher):
+- SoD framework and personal responsibilities
+- Odoo system navigation and security features
+- Fraud red flags and reporting procedures
+- BIR compliance requirements (for relevant roles)
+- Audit trail and documentation standards</p>
+<p><strong>Scenario-Based Training</strong>:
+- Identifying and reporting SoD conflicts
+- Handling exception approval requests
+- Responding to audit inquiries
+- Escalating suspicious transactions</p>
+<p><strong>Competency Assessment</strong>: Post-training quiz with 80% passing score (retake allowed, max 3 attempts)</p>
+<h3 id="92-annual-attestation-requirements">9.2 Annual Attestation Requirements<a class="headerlink" href="#92-annual-attestation-requirements" title="Permanent link">&para;</a></h3>
+<p><strong>All finance roles must attest annually</strong>:
+- Understanding of SoD framework and own role boundaries
+- No conflicts of interest (financial relationships with vendors/customers)
+- Compliance with confidentiality and data protection policies
+- Awareness of fraud reporting channels and whistleblower protections
+- No knowledge of unreported control deficiencies or irregularities</p>
+<p><strong>Attestation Timing</strong>: Within 30 days of fiscal year-end (aligned with financial statement certification)</p>
+<p><strong>Non-Compliance Consequences</strong>: Failure to complete attestation triggers access suspension until remediated.</p>
+<hr />
+<h2 id="10-governance-and-policy-maintenance">10. Governance and Policy Maintenance<a class="headerlink" href="#10-governance-and-policy-maintenance" title="Permanent link">&para;</a></h2>
+<h3 id="101-document-review-cycle">10.1 Document Review Cycle<a class="headerlink" href="#101-document-review-cycle" title="Permanent link">&para;</a></h3>
+<p><strong>Annual Review</strong> (Finance Director ownership):
+- SoD matrix alignment with organizational changes
+- Role definition updates based on process improvements
+- Authority limit adjustments for inflation and business growth
+- RLS policy optimization based on audit findings
+- KPI target recalibration based on industry benchmarks</p>
+<p><strong>Quarterly Review</strong> (Finance Manager ownership):
+- User access recertification (remove terminated users, validate role assignments)
+- Compensating control effectiveness assessment
+- Anomaly detection rule tuning (reduce false positives)
+- Training material updates</p>
+<h3 id="102-change-approval-authority">10.2 Change Approval Authority<a class="headerlink" href="#102-change-approval-authority" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Change Type</th>
+<th>Approver</th>
+<th>Documentation Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Minor role definition clarification</strong></td>
+<td>Finance Manager</td>
+<td>Email approval + change log entry</td>
+</tr>
+<tr>
+<td><strong>Authority limit adjustment (&lt;20% change)</strong></td>
+<td>Finance Director</td>
+<td>Board memo with business justification</td>
+</tr>
+<tr>
+<td><strong>New role creation</strong></td>
+<td>Finance Director + Board</td>
+<td>Board resolution + SoD impact assessment</td>
+</tr>
+<tr>
+<td><strong>Major SoD framework restructure</strong></td>
+<td>Board + External Auditor consultation</td>
+<td>Comprehensive control impact analysis</td>
+</tr>
+<tr>
+<td><strong>RLS policy modification</strong></td>
+<td>Finance Manager (technical) + Finance Director (approval)</td>
+<td>Security impact assessment + testing results</td>
+</tr>
+</tbody>
+</table>
+<h3 id="103-external-audit-coordination">10.3 External Audit Coordination<a class="headerlink" href="#103-external-audit-coordination" title="Permanent link">&para;</a></h3>
+<p><strong>Annual SoD Control Testing</strong> (External Auditor scope):
+- User access review (sample 25% of active users, validate role assignments match job descriptions)
+- SoD conflict testing (identify any system-allowed prohibited combinations)
+- Compensating control execution testing (validate supervisory reviews performed)
+- Audit trail completeness testing (sample transactions, verify all required logs present)
+- Management override testing (review all Finance Director period unlocks and exception approvals)</p>
+<p><strong>Audit Deliverables</strong>:
+- Management letter with control deficiencies (if any)
+- SoD compliance opinion (satisfactory / needs improvement / unsatisfactory)
+- Recommended policy improvements</p>
+<p><strong>Remediation Tracking</strong>: All audit findings logged in <code>control_deficiency_tracker</code> table with target closure dates and responsible parties.</p>
+<hr />
+<h2 id="11-appendix">11. Appendix<a class="headerlink" href="#11-appendix" title="Permanent link">&para;</a></h2>
+<h3 id="111-glossary-of-terms">11.1 Glossary of Terms<a class="headerlink" href="#111-glossary-of-terms" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Maker-Checker</strong>: Dual control requiring transaction originator different from approver</li>
+<li><strong>Materiality Threshold</strong>: Transaction amount triggering enhanced approval requirements</li>
+<li><strong>Period Lock</strong>: System control preventing modifications to closed accounting periods</li>
+<li><strong>RLS (Row-Level Security)</strong>: Database-level access control restricting visible rows per user</li>
+<li><strong>SoD (Separation of Duties)</strong>: Control framework segregating incompatible duties across different individuals</li>
+</ul>
+<h3 id="112-related-documents">11.2 Related Documents<a class="headerlink" href="#112-related-documents" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>04-close-calendar-and-phases.md</code> - Detailed timeline for role task execution</li>
+<li><code>11-change-management.md</code> - Governance framework for control changes</li>
+<li><code>99-appendix-data-dictionary.md</code> - Technical data model and RLS policy DDL</li>
+</ul>
+<h3 id="113-revision-history">11.3 Revision History<a class="headerlink" href="#113-revision-history" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>2025-01-29</td>
+<td>Finance Director</td>
+<td>Initial 9-role SoD framework creation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Document Classification</strong>: Internal - Governance
+<strong>Review Frequency</strong>: Annual (or upon organizational restructure)
+<strong>Next Review Date</strong>: 2026-01-31
+<strong>Approver</strong>: Finance Director (signature required)</p>
+<p><strong>End of Document</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/USERNAME/odoo-financial-close-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

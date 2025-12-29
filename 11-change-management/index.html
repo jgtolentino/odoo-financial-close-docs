@@ -1,0 +1,3073 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise-grade financial close documentation for Odoo Community Edition + OCA modules">
+      
+      
+        <meta name="author" content="InsightPulse AI Finance Team">
+      
+      
+        <link rel="canonical" href="https://github.com/USERNAME/odoo-financial-close-docs/11-change-management/">
+      
+      
+        <link rel="prev" href="../04-close-calendar-and-phases/">
+      
+      
+        <link rel="next" href="../05-month-end-task-template/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Change Management - Odoo CE – Advanced Financial Close</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11-change-management-and-governance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Odoo CE – Advanced Financial Close" class="md-header__button md-logo" aria-label="Odoo CE – Advanced Financial Close" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Odoo CE – Advanced Financial Close
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Change Management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-current-state-and-target/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../03-roles-and-sod-matrix/" class="md-tabs__link">
+          
+  
+  
+  Governance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../05-month-end-task-template/" class="md-tabs__link">
+          
+  
+  
+  Operational Templates
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../08-odoo-config-guide/" class="md-tabs__link">
+          
+  
+  
+  Implementation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../HR-Processes/hire-to-retire-overview/" class="md-tabs__link">
+          
+  
+  
+  HR Processes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../it-controls/it-audit-sod-deployment/" class="md-tabs__link">
+          
+  
+  
+  IT Controls & Audit
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../99-appendix-data-dictionary/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Odoo CE – Advanced Financial Close" class="md-nav__button md-logo" aria-label="Odoo CE – Advanced Financial Close" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Odoo CE – Advanced Financial Close
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-current-state-and-target/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current State & Target
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-module-landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-roles-and-sod-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles & SoD Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-close-calendar-and-phases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Close Calendar & Phases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-change-management-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Change Management Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Change Management Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-change-classification-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Change Classification Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-change-request-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Change Request Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-change-request-form-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Change Request Form Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-approval-workflows-and-escalation-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Approval Workflows and Escalation Paths
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Approval Workflows and Escalation Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-administrative-change-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Administrative Change Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-operational-change-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Operational Change Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-control-change-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Control Change Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-system-change-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 System Change Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-emergency-change-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Emergency Change Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-risk-assessment-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Risk Assessment Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Risk Assessment Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-risk-evaluation-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Risk Evaluation Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-risk-mitigation-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Risk Mitigation Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-control-impact-analysis-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Control Impact Analysis Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-implementation-and-testing-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Implementation and Testing Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Implementation and Testing Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-user-acceptance-testing-uat-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 User Acceptance Testing (UAT) Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-production-deployment-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Production Deployment Procedures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-rollback-planning-and-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Rollback Planning and Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-communication-and-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Communication and Training
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Communication and Training">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-stakeholder-communication-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Stakeholder Communication Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-training-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Training Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-documentation-update-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Documentation Update Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-audit-trail-and-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Audit Trail and Compliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Audit Trail and Compliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-change-log-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Change Log Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-audit-trail-completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Audit Trail Completeness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-regulatory-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Regulatory Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-continuous-improvement-and-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Continuous Improvement and Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Continuous Improvement and Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-change-management-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Change Management KPIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-change-portfolio-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Change Portfolio Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-lessons-learned-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Lessons Learned Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-special-scenarios-and-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Special Scenarios and Exceptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Special Scenarios and Exceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-period-unlock-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Period Unlock Procedures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-control-deficiency-remediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Control Deficiency Remediation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-disaster-recovery-and-business-continuity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Disaster Recovery and Business Continuity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-governance-and-oversight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Governance and Oversight
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Governance and Oversight">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-change-management-committee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Change Management Committee
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-board-audit-committee-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Board Audit Committee Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-policy-review-and-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Policy Review and Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-appendix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Appendix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-glossary-of-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Glossary of Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-change-request-form-printable-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Change Request Form (Printable Template)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-related-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Related Documents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-revision-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Revision History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operational Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-month-end-task-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month-End Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-year-end-task-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Year-End Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-bir-tax-filing-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BIR Tax Filing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-odoo-config-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Odoo Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-runbook-monthly-close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook - Monthly Close
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-runbook-bir-filing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook - BIR Filing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HR Processes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    HR Processes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/hire-to-retire-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hire-to-Retire Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/final-pay-calculation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Pay Calculation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/clearance-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearance Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/coe-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COE Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT Controls & Audit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IT Controls & Audit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../it-controls/it-audit-sod-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT Audit & SoD Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../99-appendix-data-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="11-change-management-and-governance">11 - Change Management and Governance<a class="headerlink" href="#11-change-management-and-governance" title="Permanent link">&para;</a></h1>
+<p><strong>Document Version</strong>: 1.0
+<strong>Last Updated</strong>: 2025-01-29
+<strong>Owner</strong>: Finance Director
+<strong>Classification</strong>: Internal - Governance</p>
+<hr />
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This document establishes the <strong>governance framework for financial close process changes</strong>, ensuring controlled evolution while maintaining compliance, audit readiness, and operational stability. All modifications to close procedures, system configurations, role assignments, and control frameworks must follow this structured approval and implementation methodology.</p>
+<p><strong>Core Objectives</strong>:
+- <strong>Risk Mitigation</strong>: Prevent unintended consequences from process or system changes
+- <strong>Audit Compliance</strong>: Maintain audit trail for all control modifications
+- <strong>Stakeholder Alignment</strong>: Ensure changes align with business needs and regulatory requirements
+- <strong>Continuity Assurance</strong>: Minimize disruption to close operations during transitions</p>
+<p><strong>Change Categories</strong>:
+1. <strong>Administrative Changes</strong>: Minor procedural updates, documentation corrections (Finance Manager approval)
+2. <strong>Operational Changes</strong>: Task reassignments, timeline adjustments, tool changes (Finance Director approval)
+3. <strong>Control Changes</strong>: SoD modifications, RLS policy updates, authority limit changes (Finance Director + Board approval)
+4. <strong>System Changes</strong>: Odoo module installations, database schema changes (Finance Director + IT approval)
+5. <strong>Emergency Changes</strong>: Critical fixes during close period (Finance Director authorization with post-approval review)</p>
+<p><strong>Key Metrics</strong>:
+- Change success rate: ≥95% (implemented without rollback)
+- Audit finding closure rate: 100% (remediated by target date)
+- Change cycle time: ≤10 business days (request to implementation)</p>
+<hr />
+<h2 id="1-change-management-framework">1. Change Management Framework<a class="headerlink" href="#1-change-management-framework" title="Permanent link">&para;</a></h2>
+<h3 id="11-change-classification-matrix">1.1 Change Classification Matrix<a class="headerlink" href="#11-change-classification-matrix" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Change Type</th>
+<th>Definition</th>
+<th>Examples</th>
+<th>Approval Authority</th>
+<th>Implementation Window</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Administrative</strong></td>
+<td>Documentation updates, minor clarifications with no control impact</td>
+<td>Procedure wording changes, glossary updates, template formatting</td>
+<td>Finance Manager</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td><strong>Operational</strong></td>
+<td>Process improvements, task reassignments, timeline adjustments</td>
+<td>Close task resequencing, workload balancing, calendar adjustments</td>
+<td>Finance Director</td>
+<td>Next close cycle</td>
+</tr>
+<tr>
+<td><strong>Control</strong></td>
+<td>Modifications to segregation of duties, approval authorities, RLS policies</td>
+<td>Role authority limit changes, new approval workflow, RLS policy updates</td>
+<td>Finance Director + Board</td>
+<td>Next quarter</td>
+</tr>
+<tr>
+<td><strong>System</strong></td>
+<td>Technical changes to Odoo, Supabase, integrations, or data structures</td>
+<td>Module installation, database schema changes, API integrations</td>
+<td>Finance Director + IT Manager + External Auditor notification</td>
+<td>Next quarter (after UAT)</td>
+</tr>
+<tr>
+<td><strong>Emergency</strong></td>
+<td>Critical fixes required during active close period to prevent failure</td>
+<td>Period unlock for error correction, urgent RLS fix, critical bug patch</td>
+<td>Finance Director emergency authorization + post-approval review</td>
+<td>Immediate (with rollback plan)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-change-request-lifecycle">1.2 Change Request Lifecycle<a class="headerlink" href="#12-change-request-lifecycle" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. REQUEST INITIATION
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   → Requester submits change request form (Supabase `change_request` table)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   → Automatic notification to Finance Manager
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   ↓
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>2. IMPACT ASSESSMENT
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   → Finance Manager (or assigned analyst) evaluates:
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>      - Business justification and expected benefits
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>      - Risk assessment (operational, compliance, audit)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>      - Effort estimation (hours, resources, cost)
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>      - Stakeholder impact (roles affected, training needs)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>   → Recommendation: Approve / Reject / Request More Information
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>   ↓
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>3. APPROVAL WORKFLOW
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>   → Route to appropriate approver based on change type:
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>      - Administrative → Finance Manager
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>      - Operational → Finance Director
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>      - Control/System → Finance Director + Board (if material)
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>   → Approval decision: Approved / Rejected / Deferred
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>   ↓
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>4. IMPLEMENTATION PLANNING
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>   → Develop implementation plan:
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>      - Detailed task breakdown with owners and deadlines
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>      - Rollback plan (if change fails or causes issues)
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>      - User Acceptance Testing (UAT) plan (for system changes)
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>      - Training and communication plan
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>   → Finance Director approval of implementation plan
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>   ↓
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>5. EXECUTION
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>   → Implement change per approved plan
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>   → Execute UAT (if applicable)
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>   → Monitor for issues during transition period
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>   ↓
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>6. VALIDATION
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>   → Validate change achieved expected benefits
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>   → Confirm no unintended side effects (compliance, audit, operations)
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>   → Update documentation (procedures, training materials)
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>   ↓
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>7. CLOSURE
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>   → Document lessons learned
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>   → Archive change request and supporting documentation
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>   → Communicate completion to stakeholders
+</code></pre></div>
+<h3 id="13-change-request-form-template">1.3 Change Request Form Template<a class="headerlink" href="#13-change-request-form-template" title="Permanent link">&para;</a></h3>
+<p><strong>Required Fields</strong> (Supabase <code>change_request</code> table schema):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">change_request</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="n">BIGSERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">request_number</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">  </span><span class="c1">-- Format: CHG-YYYY-NN (e.g., CHG-2025-01)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">request_date</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">(),</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="n">requester_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">auth</span><span class="p">.</span><span class="n">users</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="n">requester_role</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="c1">-- Classification</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="n">change_type</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">change_type</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;administrative&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;operational&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;control&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;system&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;emergency&#39;</span><span class="p">)),</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="n">change_category</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">  </span><span class="c1">-- E.g., &#39;close_procedure&#39;, &#39;role_definition&#39;, &#39;system_config&#39;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="n">priority</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">priority</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;low&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;medium&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;high&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;critical&#39;</span><span class="p">)),</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="c1">-- Description</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="n">change_title</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="n">current_state</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">  </span><span class="c1">-- Detailed description of current process/configuration</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="n">proposed_state</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">  </span><span class="c1">-- Detailed description of desired future state</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="n">business_justification</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">  </span><span class="c1">-- Why is this change needed?</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="n">expected_benefits</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">  </span><span class="c1">-- Quantifiable benefits (cost savings, time reduction, risk mitigation)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="c1">-- Impact Assessment</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="n">affected_roles</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">[],</span><span class="w">  </span><span class="c1">-- Array of role names (e.g., [&#39;gl_accountant&#39;, &#39;finance_manager&#39;])</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="n">affected_systems</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">[],</span><span class="w">  </span><span class="c1">-- Array of systems (e.g., [&#39;odoo&#39;, &#39;supabase&#39;, &#39;n8n&#39;])</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">  </span><span class="n">risk_level</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">risk_level</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;low&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;medium&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;high&#39;</span><span class="p">)),</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">  </span><span class="n">risk_description</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">  </span><span class="n">mitigation_plan</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">  </span><span class="c1">-- Approvals</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">  </span><span class="n">finance_manager_decision</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">finance_manager_decision</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;approved&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;rejected&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;deferred&#39;</span><span class="p">)),</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">  </span><span class="n">finance_manager_comment</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">  </span><span class="n">finance_manager_decision_date</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">  </span><span class="n">finance_director_decision</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">finance_director_decision</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;approved&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;rejected&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;deferred&#39;</span><span class="p">)),</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">  </span><span class="n">finance_director_comment</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">  </span><span class="n">finance_director_decision_date</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">  </span><span class="n">board_decision</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">board_decision</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;approved&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;rejected&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;not_required&#39;</span><span class="p">)),</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">  </span><span class="n">board_decision_date</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">  </span><span class="c1">-- Implementation</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">  </span><span class="n">implementation_plan</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">  </span><span class="n">implementation_owner_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">auth</span><span class="p">.</span><span class="n">users</span><span class="p">,</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">  </span><span class="n">planned_implementation_date</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">  </span><span class="n">actual_implementation_date</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">  </span><span class="n">rollback_plan</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">  </span><span class="c1">-- Closure</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">  </span><span class="n">status</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;draft&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;submitted&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;under_review&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;approved&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;rejected&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;implemented&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;closed&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;cancelled&#39;</span><span class="p">)),</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">  </span><span class="n">validation_results</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">  </span><span class="n">lessons_learned</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">  </span><span class="n">closure_date</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">  </span><span class="n">created_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">(),</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">  </span><span class="n">updated_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="p">);</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="c1">-- Audit log trigger for all change request updates</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="n">change_request_audit</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="w">  </span><span class="k">AFTER</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">change_request</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">EACH</span><span class="w"> </span><span class="k">ROW</span><span class="w"> </span><span class="k">EXECUTE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">audit_log_trigger</span><span class="p">();</span>
+</code></pre></div></p>
+<hr />
+<h2 id="2-approval-workflows-and-escalation-paths">2. Approval Workflows and Escalation Paths<a class="headerlink" href="#2-approval-workflows-and-escalation-paths" title="Permanent link">&para;</a></h2>
+<h3 id="21-administrative-change-workflow">2.1 Administrative Change Workflow<a class="headerlink" href="#21-administrative-change-workflow" title="Permanent link">&para;</a></h3>
+<p><strong>Scope</strong>: Documentation updates, template modifications, glossary additions</p>
+<p><strong>Approval Authority</strong>: Finance Manager</p>
+<p><strong>Process</strong>:
+1. Requester submits change request (can be informal email for minor changes)
+2. Finance Manager reviews for accuracy and consistency
+3. Finance Manager approves (email confirmation) or requests revisions
+4. Requester implements change and notifies Finance Manager
+5. Change logged in <code>change_request</code> table (status: 'closed')</p>
+<p><strong>Timeline</strong>: ≤2 business days from request to implementation</p>
+<p><strong>Example</strong>: Updating close procedure wording for clarity, adding new account to chart of accounts glossary</p>
+<h3 id="22-operational-change-workflow">2.2 Operational Change Workflow<a class="headerlink" href="#22-operational-change-workflow" title="Permanent link">&para;</a></h3>
+<p><strong>Scope</strong>: Process improvements, task reassignments, close calendar adjustments</p>
+<p><strong>Approval Authority</strong>: Finance Director</p>
+<p><strong>Process</strong>:
+1. Requester submits formal change request (Supabase form)
+2. Finance Manager conducts impact assessment (1-2 days)
+3. Finance Manager recommendation to Finance Director
+4. Finance Director reviews and decides (approve/reject/defer)
+5. If approved:
+   - Implementation owner assigned (typically Finance Manager)
+   - Implementation plan developed (including rollback plan)
+   - Finance Director approves implementation plan
+   - Change implemented at start of next close cycle
+   - Post-implementation review (validate benefits achieved)
+6. Change logged and archived</p>
+<p><strong>Timeline</strong>: ≤10 business days from request to implementation</p>
+<p><strong>Example</strong>: Shifting variance analysis from Day 4 to Day 3, reassigning bank reconciliation from GL Accountant to AR Clerk</p>
+<h3 id="23-control-change-workflow">2.3 Control Change Workflow<a class="headerlink" href="#23-control-change-workflow" title="Permanent link">&para;</a></h3>
+<p><strong>Scope</strong>: Segregation of duties modifications, approval authority changes, RLS policy updates</p>
+<p><strong>Approval Authority</strong>: Finance Director + Board (if material)</p>
+<p><strong>Materiality Threshold</strong>:
+- <strong>Material control change</strong> (requires Board approval): Changes affecting &gt;₱1,000,000 transaction authority, new role creation, SoD framework restructure
+- <strong>Non-material control change</strong> (Finance Director only): Authority limit adjustments &lt;20%, RLS policy optimization (no scope change)</p>
+<p><strong>Process</strong>:
+1. Requester submits formal change request with control impact analysis
+2. Finance Manager conducts detailed risk assessment:
+   - SoD conflict check (identify any prohibited duty combinations)
+   - Compliance impact (BIR, audit, regulatory requirements)
+   - Audit trail adequacy (ensure change is logged and traceable)
+   - Compensating control evaluation (if SoD conflict unavoidable)
+3. Finance Director reviews risk assessment
+4. If material:
+   - Finance Director prepares board memo with recommendation
+   - Board reviews and approves/rejects (typically at quarterly board meeting)
+   - External auditor notified of approved control changes
+5. If approved:
+   - Implementation plan developed (including UAT for system changes)
+   - Training plan for affected roles
+   - Communication to all finance team members
+   - Change implemented at start of next quarter
+   - Post-implementation control testing (validate effectiveness)
+6. Change logged and archived</p>
+<p><strong>Timeline</strong>: ≤30 days from request to implementation (longer if board meeting schedule requires)</p>
+<p><strong>Example</strong>: Increasing Finance Manager vendor bill approval authority from ₱1M to ₱1.2M, modifying RLS policy to allow AR Clerk read-only access to payroll data</p>
+<h3 id="24-system-change-workflow">2.4 System Change Workflow<a class="headerlink" href="#24-system-change-workflow" title="Permanent link">&para;</a></h3>
+<p><strong>Scope</strong>: Odoo module installations, database schema changes, API integrations, infrastructure modifications</p>
+<p><strong>Approval Authority</strong>: Finance Director + IT Manager (+ External Auditor notification for control-relevant changes)</p>
+<p><strong>Process</strong>:
+1. Requester submits formal change request with technical specification
+2. IT Manager conducts technical feasibility assessment:
+   - Compatibility with existing systems (Odoo version, Supabase schema)
+   - Performance impact (database load, API rate limits)
+   - Security implications (authentication, authorization, data encryption)
+   - Backup and recovery plan
+3. Finance Manager conducts business impact assessment:
+   - Close process impact (task dependencies, timeline effects)
+   - User training needs
+   - Data migration requirements (if schema changes)
+4. Finance Director reviews technical and business assessments
+5. If control-relevant (affects financial data integrity, approval workflows, audit trail):
+   - External auditor notified and consulted
+   - Auditor may request control testing post-implementation
+6. If approved:
+   - Development environment (sandbox) change implementation
+   - UAT by Finance Manager and key users (test cases covering all affected workflows)
+   - UAT approval required before production deployment
+   - Production deployment during non-close period (avoid Days -5 to 7)
+   - Monitoring for 1 week post-deployment (daily system health checks)
+   - Post-implementation review (validate functionality and performance)
+7. Change logged and archived</p>
+<p><strong>Timeline</strong>: ≤20 business days from request to production deployment (excluding UAT duration)</p>
+<p><strong>Rollback Requirement</strong>: All system changes MUST have tested rollback plan (database backup, code revert, configuration restore)</p>
+<p><strong>Example</strong>: Installing new Odoo module for enhanced bank reconciliation, modifying Supabase RLS policies for new role, integrating n8n workflow for automated variance alerts</p>
+<h3 id="25-emergency-change-workflow">2.5 Emergency Change Workflow<a class="headerlink" href="#25-emergency-change-workflow" title="Permanent link">&para;</a></h3>
+<p><strong>Scope</strong>: Critical fixes required during active close period (Days -5 to 7) to prevent close failure</p>
+<p><strong>Trigger Conditions</strong>:
+- System outage preventing transaction processing or reconciliation
+- Data corruption requiring immediate correction
+- Critical security vulnerability requiring urgent patch
+- Period unlock needed for material error correction</p>
+<p><strong>Approval Authority</strong>: Finance Director emergency authorization (verbal or email)</p>
+<p><strong>Process</strong>:
+1. <strong>Discovery</strong>: Issue identified and escalated immediately to Finance Director
+2. <strong>Emergency Authorization</strong>:
+   - Finance Director evaluates urgency and impact
+   - If critical, grants verbal/email emergency authorization (documented in email)
+   - Assigns implementation owner and sets deadline
+3. <strong>Implementation</strong>:
+   - Change implemented immediately with minimal delay
+   - Rollback plan prepared concurrently (in case change fails)
+   - All actions logged in real-time (audit trail)
+4. <strong>Post-Approval Review</strong> (within 48 hours):
+   - Formal change request submitted retroactively
+   - Root cause analysis conducted (why did issue occur?)
+   - Finance Director reviews emergency action for appropriateness
+   - If emergency authorization was unjustified, document as exception and prevent recurrence
+   - External auditor notified of emergency change (if control-relevant)
+5. <strong>Lessons Learned</strong>:
+   - Document preventive measures to avoid future emergencies
+   - Update procedures or controls as needed
+6. Change logged with "emergency" flag</p>
+<p><strong>Timeline</strong>: Immediate (within hours of issue discovery)</p>
+<p><strong>Audit Trail Requirements</strong>:
+- Emergency authorization email/message archived
+- All actions logged with timestamp and user ID
+- Root cause analysis documented
+- Preventive measures implemented and validated</p>
+<p><strong>Example</strong>: Period unlock to correct ₱5M journal entry error discovered on Day 6, emergency RLS policy fix for user unable to access critical reconciliation data on Day 2</p>
+<hr />
+<h2 id="3-risk-assessment-framework">3. Risk Assessment Framework<a class="headerlink" href="#3-risk-assessment-framework" title="Permanent link">&para;</a></h2>
+<h3 id="31-risk-evaluation-criteria">3.1 Risk Evaluation Criteria<a class="headerlink" href="#31-risk-evaluation-criteria" title="Permanent link">&para;</a></h3>
+<p><strong>Risk Level Scoring</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Risk Level = (Likelihood × Impact) ÷ 2
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Likelihood Scale:
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>- Low (1): Unlikely to occur (&lt;10% probability)
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>- Medium (2): Possible to occur (10-50% probability)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>- High (3): Likely to occur (&gt;50% probability)
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Impact Scale:
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>- Low (1): Minimal disruption, no compliance impact, &lt;₱50K financial exposure
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>- Medium (2): Moderate disruption, minor compliance concern, ₱50K-₱500K exposure
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>- High (3): Severe disruption, material compliance breach, &gt;₱500K exposure
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Risk Level Calculation:
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>- 1.0-1.5: Low risk (green)
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>- 2.0-2.5: Medium risk (yellow)
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>- 3.0: High risk (red)
+</code></pre></div></p>
+<p><strong>Risk Categories</strong>:
+1. <strong>Operational Risk</strong>: Disruption to close process, deadline misses, workload bottlenecks
+2. <strong>Compliance Risk</strong>: BIR non-compliance, audit finding, regulatory penalty
+3. <strong>Financial Risk</strong>: Material misstatement, loss of funds, revenue leakage
+4. <strong>Security Risk</strong>: Data breach, unauthorized access, privacy violation
+5. <strong>Reputational Risk</strong>: Stakeholder trust erosion, audit opinion qualification</p>
+<h3 id="32-risk-mitigation-planning">3.2 Risk Mitigation Planning<a class="headerlink" href="#32-risk-mitigation-planning" title="Permanent link">&para;</a></h3>
+<p><strong>Required for</strong>: All changes with Medium or High risk level</p>
+<p><strong>Mitigation Plan Components</strong>:
+1. <strong>Preventive Controls</strong>: Actions to reduce likelihood of risk occurring
+   - Example: UAT for system changes reduces likelihood of production errors
+2. <strong>Detective Controls</strong>: Monitoring to identify risk occurrence early
+   - Example: Daily reconciliation variance alerts detect data integrity issues
+3. <strong>Corrective Controls</strong>: Response plan if risk materializes
+   - Example: Rollback plan restores system to prior state if change fails
+4. <strong>Contingency Plans</strong>: Alternative approaches if primary plan fails
+   - Example: Manual workaround if automated reconciliation tool fails</p>
+<p><strong>Risk Acceptance</strong>:
+- <strong>Low risk</strong>: Automatic acceptance (no formal mitigation required)
+- <strong>Medium risk</strong>: Finance Director approval of mitigation plan required
+- <strong>High risk</strong>: Board approval of mitigation plan required (or change rejected)</p>
+<h3 id="33-control-impact-analysis-template">3.3 Control Impact Analysis Template<a class="headerlink" href="#33-control-impact-analysis-template" title="Permanent link">&para;</a></h3>
+<p><strong>Required for</strong>: All Control and System change types</p>
+<p><strong>Analysis Components</strong>:
+1. <strong>Current Control Environment</strong>:
+   - Existing controls affected by change (list with references to <code>03-roles-and-sod-matrix.md</code>)
+   - Control effectiveness rating (satisfactory / needs improvement / unsatisfactory)
+   - Audit findings related to current controls (if any)</p>
+<ol>
+<li><strong>Proposed Control Environment</strong>:</li>
+<li>Modified controls after change</li>
+<li>New controls introduced (if any)</li>
+<li>Removed controls (with justification)</li>
+<li>
+<p>Expected control effectiveness rating</p>
+</li>
+<li>
+<p><strong>Gap Analysis</strong>:</p>
+</li>
+<li>Control gaps introduced by change (if any)</li>
+<li>Compensating controls to address gaps</li>
+<li>
+<p>Residual risk after mitigation</p>
+</li>
+<li>
+<p><strong>Audit Implications</strong>:</p>
+</li>
+<li>Impact on external audit scope (additional testing required?)</li>
+<li>Notification requirements (when to inform auditor?)</li>
+<li>Expected audit opinion impact (none / qualified / adverse)</li>
+</ol>
+<p><strong>Example Control Impact Analysis</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Change: Increase Finance Manager vendor bill approval authority from ₱1M to ₱1.5M
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Current Control: Dual approval required for vendor bills &gt;₱1M (AP Clerk prepares, Finance Manager approves)
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Control Effectiveness: Satisfactory
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Proposed Control: Dual approval threshold increases to ₱1.5M
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>New Authority Limit: Finance Manager approves ₱50K-₱1.5M, Finance Director approves &gt;₱1.5M
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Gap Analysis:
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>- Gap: Finance Manager now approves larger amounts without Finance Director oversight
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>- Compensating Control: Monthly supervisory review by Finance Director of all vendor bills ₱1M-₱1.5M
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>- Residual Risk: Low (monthly review detects anomalies within 30 days)
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>Audit Implications:
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>- External auditor notification required (change affects significant transaction threshold)
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>- No additional audit testing expected (compensating control adequate)
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>- Audit opinion impact: None (control remains effective)
+</code></pre></div></p>
+<hr />
+<h2 id="4-implementation-and-testing-procedures">4. Implementation and Testing Procedures<a class="headerlink" href="#4-implementation-and-testing-procedures" title="Permanent link">&para;</a></h2>
+<h3 id="41-user-acceptance-testing-uat-framework">4.1 User Acceptance Testing (UAT) Framework<a class="headerlink" href="#41-user-acceptance-testing-uat-framework" title="Permanent link">&para;</a></h3>
+<p><strong>Required for</strong>: All System change types (Operational/Control changes may require UAT at Finance Director discretion)</p>
+<p><strong>UAT Phases</strong>:
+1. <strong>Test Case Development</strong> (Finance Manager + Implementation Owner):
+   - Identify all affected workflows (e.g., vendor bill approval, bank reconciliation, period close)
+   - Develop test cases covering:
+     - <strong>Happy path</strong>: Normal expected usage
+     - <strong>Edge cases</strong>: Boundary conditions, unusual scenarios
+     - <strong>Error scenarios</strong>: Invalid inputs, permission violations
+   - Document expected results for each test case</p>
+<ol>
+<li><strong>Test Environment Preparation</strong> (IT Manager):</li>
+<li>Provision UAT environment (separate from production):<ul>
+<li>Odoo UAT database (copy of production schema, anonymized data)</li>
+<li>Supabase UAT project (separate RLS policies, test data)</li>
+</ul>
+</li>
+<li>Deploy change to UAT environment</li>
+<li>
+<p>Validate UAT environment stability</p>
+</li>
+<li>
+<p><strong>UAT Execution</strong> (Finance Manager + Key Users):</p>
+</li>
+<li>Assign test cases to users (preferably users who will use feature in production)</li>
+<li>Execute test cases systematically (document results in test log)</li>
+<li>Log defects in defect tracking system (Supabase <code>uat_defect_log</code> table):<ul>
+<li>Severity: Critical (blocks usage) / High (major functionality broken) / Medium (workaround exists) / Low (cosmetic)</li>
+<li>Responsible party for fix (typically implementation owner or IT)</li>
+</ul>
+</li>
+<li>
+<p>Retest after defect fixes</p>
+</li>
+<li>
+<p><strong>UAT Sign-Off</strong> (Finance Manager):</p>
+</li>
+<li>Review test results (all test cases passed or defects resolved)</li>
+<li>Validate change meets requirements</li>
+<li>Approve production deployment or request additional fixes</li>
+<li>Document UAT approval in <code>change_request</code> table</li>
+</ol>
+<p><strong>UAT Success Criteria</strong>:
+- ✅ All critical and high severity defects resolved
+- ✅ ≥95% of test cases passed (medium/low defects acceptable if documented)
+- ✅ Performance acceptable (no degradation &gt;10% vs. baseline)
+- ✅ Finance Manager sign-off obtained</p>
+<p><strong>UAT Timeline</strong>: Allocate ≥5 business days for UAT (3 days execution, 2 days defect resolution)</p>
+<h3 id="42-production-deployment-procedures">4.2 Production Deployment Procedures<a class="headerlink" href="#42-production-deployment-procedures" title="Permanent link">&para;</a></h3>
+<p><strong>Deployment Windows</strong>:
+- <strong>Allowed</strong>: Mid-month (Days 10-20 of monthly close cycle), non-close periods
+- <strong>Prohibited</strong>: Close period (Days -5 to 7), quarter-end +7 days, year-end +15 days</p>
+<p><strong>Pre-Deployment Checklist</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>□ UAT completed and approved (Finance Manager sign-off)
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>□ Production deployment plan reviewed and approved (Finance Director)
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>□ Rollback plan tested in UAT environment (successful rollback verified)
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>□ Production database backup completed (within 24 hours of deployment)
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>□ User communication sent (notification of change, training materials, support contact)
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>□ IT support team briefed (aware of change, ready to respond to issues)
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>□ Deployment scheduled during low-usage window (e.g., Saturday 6AM-12PM)
+</code></pre></div></p>
+<p><strong>Deployment Steps</strong> (IT Manager):
+1. <strong>Final backup</strong>: Snapshot production database and configurations
+2. <strong>Deployment execution</strong>: Apply change per deployment plan (scripts, configuration files, code releases)
+3. <strong>Smoke testing</strong>: Validate core functionality post-deployment:
+   - User authentication (login successful)
+   - Critical workflows (create invoice, post journal entry, reconcile bank)
+   - Reports generation (trial balance, income statement)
+4. <strong>Monitoring</strong>: Monitor system for ≥2 hours post-deployment:
+   - Error logs (no new critical errors)
+   - Performance metrics (response time, database load)
+   - User feedback (no widespread complaints)
+5. <strong>Rollback decision</strong>: If critical issues detected, execute rollback plan immediately</p>
+<p><strong>Post-Deployment Validation</strong> (Finance Manager, within 2 business days):
+- Re-execute subset of UAT test cases in production (confirm functionality)
+- Review first close cycle after deployment (validate no disruption)
+- Document post-deployment validation results</p>
+<h3 id="43-rollback-planning-and-execution">4.3 Rollback Planning and Execution<a class="headerlink" href="#43-rollback-planning-and-execution" title="Permanent link">&para;</a></h3>
+<p><strong>Rollback Plan Requirements</strong> (mandatory for all System and Emergency changes):
+1. <strong>Rollback Trigger Conditions</strong>:
+   - Critical defect discovered in production (blocks close process)
+   - Data corruption or loss detected
+   - Performance degradation &gt;30% vs. baseline
+   - Security vulnerability introduced
+   - Finance Director decision to rollback (for any reason)</p>
+<ol>
+<li><strong>Rollback Procedure</strong>:</li>
+<li><strong>Database rollback</strong>: Restore from pre-deployment backup (tested recovery time &lt;1 hour)</li>
+<li><strong>Configuration rollback</strong>: Revert system configurations to prior state (version-controlled)</li>
+<li><strong>Code rollback</strong>: Revert application code to prior version (git revert)</li>
+<li>
+<p><strong>User notification</strong>: Inform users of rollback and temporary unavailability</p>
+</li>
+<li>
+<p><strong>Rollback Testing</strong> (required during UAT):</p>
+</li>
+<li>Simulate rollback in UAT environment</li>
+<li>Validate data integrity after rollback (no data loss)</li>
+<li>Measure rollback execution time</li>
+<li>Document rollback procedure with screenshots/commands</li>
+</ol>
+<p><strong>Rollback Authorization</strong>:
+- <strong>Planned rollback</strong> (during deployment window): IT Manager decision
+- <strong>Emergency rollback</strong> (after deployment window): Finance Director authorization required</p>
+<p><strong>Post-Rollback Actions</strong>:
+- Root cause analysis (why did change fail?)
+- Defect resolution in UAT environment
+- Re-UAT with fixes
+- Reschedule production deployment (only after successful re-UAT)</p>
+<hr />
+<h2 id="5-communication-and-training">5. Communication and Training<a class="headerlink" href="#5-communication-and-training" title="Permanent link">&para;</a></h2>
+<h3 id="51-stakeholder-communication-plan">5.1 Stakeholder Communication Plan<a class="headerlink" href="#51-stakeholder-communication-plan" title="Permanent link">&para;</a></h3>
+<p><strong>Communication Triggers</strong>:
+- Change request submitted (notify Finance Manager)
+- Change approved (notify requester, implementation owner, affected users)
+- UAT scheduled (notify UAT participants)
+- Production deployment scheduled (notify all finance team, external auditor if control-relevant)
+- Change implemented (notify all stakeholders, provide training materials)
+- Change rolled back (notify all stakeholders, explain reason)</p>
+<p><strong>Communication Channels</strong>:
+- <strong>Email</strong>: Formal notifications (approvals, deployment schedules, training invitations)
+- <strong>Mattermost</strong>: Real-time updates (deployment in progress, issues detected, rollback decisions)
+- <strong>Monthly Team Meeting</strong>: Change portfolio review (upcoming changes, lessons learned)</p>
+<p><strong>Communication Templates</strong>:</p>
+<p><strong>Template 1: Change Approval Notification</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Subject: [CHG-2025-XX] Change Request Approved - [Change Title]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Dear [Affected Users],
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Your change request [CHG-2025-XX: Change Title] has been approved by [Finance Director / Board].
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Summary: [1-2 sentence description of change]
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>Expected Benefits: [Key benefits]
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Implementation Schedule:
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>- UAT: [Start Date] - [End Date]
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>- Production Deployment: [Date and Time]
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>- Training Session: [Date and Time] (optional, register here: [Link])
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>Impact on Your Role: [Specific impact, e.g., &quot;You will now approve vendor bills up to ₱1.5M instead of ₱1M&quot;]
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>Action Required:
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>- Participate in UAT testing (test cases assigned: [Link])
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>- Attend training session (if applicable)
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>- Review updated procedures: [Link to documentation]
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>Support Contact: [Implementation Owner Name and Email]
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>Thank you,
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>[Finance Manager]
+</code></pre></div></p>
+<p><strong>Template 2: Production Deployment Notification</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Subject: [DEPLOYMENT] [Change Title] - Scheduled for [Date/Time]
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Dear Finance Team,
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>We will deploy [Change Title] to production on [Date] at [Time].
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>System Downtime: [Expected downtime duration, e.g., &quot;30 minutes&quot; or &quot;No downtime expected&quot;]
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>What&#39;s Changing: [Brief description]
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>What You Need to Do:
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>- [Action 1, e.g., &quot;Log out of Odoo by 5:45 PM on Friday&quot;]
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>- [Action 2, e.g., &quot;Review updated procedure before Monday: [Link]&quot;]
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Support During Deployment: [IT Support contact, Mattermost channel]
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>Rollback Plan: If critical issues are detected, we will rollback to prior version. You will be notified via Mattermost.
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>Questions: Contact [Implementation Owner] at [Email]
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>Thank you,
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>[Finance Manager]
+</code></pre></div></p>
+<h3 id="52-training-requirements">5.2 Training Requirements<a class="headerlink" href="#52-training-requirements" title="Permanent link">&para;</a></h3>
+<p><strong>Training Triggers</strong>:
+- <strong>Operational changes</strong>: If change affects &gt;3 users OR modifies critical workflow (e.g., bank reconciliation process)
+- <strong>Control changes</strong>: All changes (users must understand new approval authorities, SoD boundaries)
+- <strong>System changes</strong>: All changes (users must learn new features, workflows, UI changes)</p>
+<p><strong>Training Delivery Methods</strong>:
+1. <strong>Formal Training Session</strong> (for complex changes):
+   - Duration: 1-2 hours
+   - Format: Live demonstration + hands-on practice in UAT environment
+   - Participants: All affected users
+   - Materials: Training slides, step-by-step guides, FAQ document
+   - Recording: Session recorded and archived for future reference</p>
+<ol>
+<li><strong>Self-Paced Training</strong> (for simple changes):</li>
+<li>Format: Written guide with screenshots, video tutorial (5-10 minutes)</li>
+<li>Delivery: Email to affected users with link to training materials</li>
+<li>
+<p>Support: Office hours for questions (Finance Manager available for 1 week post-deployment)</p>
+</li>
+<li>
+<p><strong>On-the-Job Training</strong> (for minor changes):</p>
+</li>
+<li>Format: Updated procedure documentation, quick reference guide</li>
+<li>Delivery: Email notification with link to updated docs</li>
+<li>Support: Email support from implementation owner</li>
+</ol>
+<p><strong>Training Materials Repository</strong>:
+- Location: Supabase Storage <code>training_materials/</code> or shared drive
+- Structure: <code>training_materials/[change_number]/[material_type]</code>
+  - Example: <code>training_materials/CHG-2025-01/slides.pdf</code>, <code>training_materials/CHG-2025-01/demo_video.mp4</code></p>
+<p><strong>Training Effectiveness Measurement</strong>:
+- Post-training quiz (for formal sessions, passing score ≥80%)
+- User survey (satisfaction rating, clarity rating)
+- Helpdesk ticket volume (track post-deployment support requests, target: &lt;5 tickets per change)</p>
+<h3 id="53-documentation-update-requirements">5.3 Documentation Update Requirements<a class="headerlink" href="#53-documentation-update-requirements" title="Permanent link">&para;</a></h3>
+<p><strong>Documentation Scope</strong>:
+- All changes MUST update relevant documentation before implementation
+- Documentation review is part of UAT sign-off (Finance Manager validates documentation accuracy)</p>
+<p><strong>Affected Documents</strong> (by change type):
+- <strong>Administrative</strong>: Procedure documents, glossaries, templates
+- <strong>Operational</strong>: Close calendar (<code>04-close-calendar-and-phases.md</code>), close checklists, task assignments
+- <strong>Control</strong>: Roles and SoD matrix (<code>03-roles-and-sod-matrix.md</code>), approval authorities, RLS policies
+- <strong>System</strong>: Technical documentation (data dictionary <code>99-appendix-data-dictionary.md</code>, integration guides, API specs)</p>
+<p><strong>Documentation Standards</strong>:
+- <strong>Version Control</strong>: All documents version-controlled (Git or document management system)
+- <strong>Change Tracking</strong>: Use track changes or version comparison (highlight what changed)
+- <strong>Revision History</strong>: Update revision history table at end of document (version, date, author, changes summary)
+- <strong>Cross-References</strong>: Update cross-references (if change affects multiple documents)</p>
+<p><strong>Example Revision History Entry</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>| Version | Date | Author | Changes |
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>|---------|------|--------|---------|
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>| 1.1 | 2025-02-15 | Finance Manager | Updated Finance Manager vendor bill approval authority from ₱1M to ₱1.5M (CHG-2025-05) |
+</code></pre></div></p>
+<hr />
+<h2 id="6-audit-trail-and-compliance">6. Audit Trail and Compliance<a class="headerlink" href="#6-audit-trail-and-compliance" title="Permanent link">&para;</a></h2>
+<h3 id="61-change-log-requirements">6.1 Change Log Requirements<a class="headerlink" href="#61-change-log-requirements" title="Permanent link">&para;</a></h3>
+<p><strong>Mandatory Change Logging</strong>:
+- All changes MUST be logged in <code>change_request</code> table (Supabase)
+- Administrative changes CAN be logged retrospectively (within 7 days)
+- All other change types MUST be logged before implementation</p>
+<p><strong>Change Log Data Retention</strong>:
+- Retention period: 10 years (aligns with BIR statute of limitations)
+- Archive location: Supabase (live data) + annual export to secure storage</p>
+<p><strong>Change Log Accessibility</strong>:
+- <strong>Finance Team</strong>: Read-only access to all change requests
+- <strong>External Auditor</strong>: Read-only access to all change requests (via Supabase RLS policy)
+- <strong>Board Audit Committee</strong>: Quarterly change report (summary of all changes by type, risk level, status)</p>
+<h3 id="62-audit-trail-completeness">6.2 Audit Trail Completeness<a class="headerlink" href="#62-audit-trail-completeness" title="Permanent link">&para;</a></h3>
+<p><strong>Required Audit Trail Elements</strong> (for each change):
+1. <strong>Request Documentation</strong>:
+   - Change request form (all fields completed)
+   - Business justification (documented rationale)
+   - Risk assessment (completed risk evaluation matrix)</p>
+<ol>
+<li><strong>Approval Documentation</strong>:</li>
+<li>Approval emails or electronic signatures</li>
+<li>Board meeting minutes (for control changes requiring board approval)</li>
+<li>
+<p>External auditor notification (if applicable)</p>
+</li>
+<li>
+<p><strong>Implementation Documentation</strong>:</p>
+</li>
+<li>Implementation plan (task breakdown, timeline)</li>
+<li>UAT test cases and results (test log with pass/fail status)</li>
+<li>Deployment checklist (signed off by IT Manager)</li>
+<li>
+<p>Rollback plan (tested and documented)</p>
+</li>
+<li>
+<p><strong>Validation Documentation</strong>:</p>
+</li>
+<li>Post-implementation validation results (benefits achieved?)</li>
+<li>User training completion log (who attended, quiz scores)</li>
+<li>
+<p>Updated documentation (procedure documents, technical specs)</p>
+</li>
+<li>
+<p><strong>Closure Documentation</strong>:</p>
+</li>
+<li>Lessons learned summary</li>
+<li>Process improvement recommendations</li>
+<li>Change request closure sign-off (Finance Manager or Finance Director)</li>
+</ol>
+<p><strong>Audit Trail Storage</strong>:
+- Primary: Supabase <code>change_request</code> table + related tables (<code>uat_test_log</code>, <code>training_log</code>)
+- Secondary: Shared drive folder <code>change_management/[year]/[change_number]/</code>
+  - All supporting documents (emails, meeting minutes, test results, training materials)</p>
+<h3 id="63-regulatory-compliance">6.3 Regulatory Compliance<a class="headerlink" href="#63-regulatory-compliance" title="Permanent link">&para;</a></h3>
+<p><strong>BIR Compliance</strong>:
+- Changes to tax calculation logic, BIR form generation, or withholding tax workflows require <strong>pre-approval from Tax Compliance Officer</strong>
+- Tax-related changes must be documented with supporting references to BIR regulations (Revenue Regulations, Revenue Memorandum Circulars)
+- External tax consultant review recommended for complex tax changes</p>
+<p><strong>Audit Compliance</strong>:
+- <strong>Control-relevant changes</strong> (affecting financial data integrity, approval workflows, audit trail) require <strong>external auditor notification within 10 business days</strong>
+- Auditor may request:
+  - Change request documentation
+  - UAT results and defect log
+  - Post-implementation control testing results
+- Auditor feedback incorporated into lessons learned</p>
+<p><strong>Data Privacy Compliance</strong> (if applicable):
+- Changes affecting personal data (employee information, customer data) require <strong>Data Protection Officer review</strong>
+- Privacy impact assessment conducted for changes introducing new data collection or processing
+- Data subject consent obtained if required</p>
+<hr />
+<h2 id="7-continuous-improvement-and-metrics">7. Continuous Improvement and Metrics<a class="headerlink" href="#7-continuous-improvement-and-metrics" title="Permanent link">&para;</a></h2>
+<h3 id="71-change-management-kpis">7.1 Change Management KPIs<a class="headerlink" href="#71-change-management-kpis" title="Permanent link">&para;</a></h3>
+<p><strong>Success Metrics</strong>:
+- <strong>Change Success Rate</strong>: (Changes implemented without rollback / Total changes implemented) × 100
+  - Target: ≥95%
+- <strong>Change Cycle Time</strong>: Average days from request submission to implementation completion
+  - Target: ≤10 business days (operational changes), ≤30 days (control/system changes)
+- <strong>UAT Defect Escape Rate</strong>: (Defects found in production / Total defects found) × 100
+  - Target: ≤5% (i.e., 95% of defects caught in UAT)
+- <strong>Training Effectiveness</strong>: Post-training quiz average score
+  - Target: ≥85%
+- <strong>User Satisfaction</strong>: Post-implementation survey rating (1-5 scale)
+  - Target: ≥4.0 average</p>
+<p><strong>Efficiency Metrics</strong>:
+- <strong>Time to Value</strong>: Days from implementation to expected benefits realized
+- <strong>Rework Rate</strong>: (Changes requiring post-implementation fixes / Total changes) × 100
+  - Target: ≤10%
+- <strong>Documentation Accuracy</strong>: (Documentation updates completed before implementation / Total changes) × 100
+  - Target: 100%</p>
+<p><strong>Compliance Metrics</strong>:
+- <strong>Audit Finding Closure Rate</strong>: (Audit findings remediated by target date / Total audit findings) × 100
+  - Target: 100%
+- <strong>Regulatory Compliance</strong>: Number of BIR penalties or audit qualifications due to change management failures
+  - Target: 0</p>
+<h3 id="72-change-portfolio-management">7.2 Change Portfolio Management<a class="headerlink" href="#72-change-portfolio-management" title="Permanent link">&para;</a></h3>
+<p><strong>Quarterly Change Review</strong> (Finance Director):
+- Review all changes implemented in quarter (aggregate metrics, trends)
+- Identify high-impact changes (delivered expected benefits?)
+- Identify failed changes (rolled back or required significant rework)
+- Assess change capacity (are we overwhelming users with too many changes?)
+- Adjust change approval thresholds or processes based on learnings</p>
+<p><strong>Change Portfolio Dashboard</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">-- Quarterly change summary view</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">quarterly_change_summary</span><span class="w"> </span><span class="k">AS</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">SELECT</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;quarter&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">actual_implementation_date</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">quarter</span><span class="p">,</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="n">change_type</span><span class="p">,</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_changes</span><span class="p">,</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="k">COUNT</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;implemented&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">implemented</span><span class="p">,</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="k">COUNT</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;rolled_back&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rolled_back</span><span class="p">,</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="n">ROUND</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="k">EXTRACT</span><span class="p">(</span><span class="k">DAY</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="n">actual_implementation_date</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">request_date</span><span class="p">)))::</span><span class="nb">NUMERIC</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_cycle_time_days</span><span class="p">,</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="n">ROUND</span><span class="p">(</span><span class="k">COUNT</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;implemented&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">END</span><span class="p">)::</span><span class="nb">NUMERIC</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)::</span><span class="nb">NUMERIC</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">success_rate_pct</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="k">FROM</span><span class="w"> </span><span class="n">change_request</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">actual_implementation_date</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;quarter&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">actual_implementation_date</span><span class="p">),</span><span class="w"> </span><span class="n">change_type</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">quarter</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">change_type</span><span class="p">;</span>
+</code></pre></div></p>
+<h3 id="73-lessons-learned-repository">7.3 Lessons Learned Repository<a class="headerlink" href="#73-lessons-learned-repository" title="Permanent link">&para;</a></h3>
+<p><strong>Purpose</strong>: Capture learnings from each change to improve future change management</p>
+<p><strong>Lessons Learned Template</strong> (captured in <code>change_request.lessons_learned</code> field):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>What Went Well:
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>- [Aspect 1, e.g., &quot;UAT identified critical defect before production&quot;]
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>- [Aspect 2, e.g., &quot;Training materials were clear and comprehensive&quot;]
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>What Could Be Improved:
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>- [Issue 1, e.g., &quot;Rollback plan not tested thoroughly, took longer than expected&quot;]
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>- [Issue 2, e.g., &quot;Communication timeline too short, users felt rushed&quot;]
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>Recommendations for Future Changes:
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>- [Recommendation 1, e.g., &quot;Allocate 1 day for rollback plan testing in UAT phase&quot;]
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>- [Recommendation 2, e.g., &quot;Send deployment notification 10 days in advance, not 5 days&quot;]
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>Root Causes of Issues:
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>- [Root cause 1, e.g., &quot;Incomplete impact assessment (missed affected workflow)&quot;]
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>- [Root cause 2, e.g., &quot;Insufficient UAT test case coverage (edge cases not tested)&quot;]
+</code></pre></div></p>
+<p><strong>Lessons Learned Review Cadence</strong>:
+- <strong>Immediate</strong> (within 48 hours of implementation): Capture lessons while fresh
+- <strong>Monthly</strong>: Finance Manager reviews all lessons learned, identifies recurring themes
+- <strong>Quarterly</strong>: Finance Director reviews aggregated lessons, approves process improvements</p>
+<p><strong>Process Improvement Loop</strong>:
+1. Lessons learned captured for each change
+2. Monthly review identifies recurring issues (e.g., "UAT consistently finds issues with bank reconciliation changes")
+3. Root cause analysis conducted (e.g., "Insufficient technical expertise in UAT team")
+4. Corrective action defined (e.g., "Engage IT specialist in UAT for technical changes")
+5. Corrective action implemented and validated
+6. This change management document updated with new best practice</p>
+<hr />
+<h2 id="8-special-scenarios-and-exceptions">8. Special Scenarios and Exceptions<a class="headerlink" href="#8-special-scenarios-and-exceptions" title="Permanent link">&para;</a></h2>
+<h3 id="81-period-unlock-procedures">8.1 Period Unlock Procedures<a class="headerlink" href="#81-period-unlock-procedures" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger</strong>: Material error discovered in closed period requiring correction</p>
+<p><strong>Authorization Hierarchy</strong>:
+- <strong>Non-material error</strong> (&lt;₱50,000 impact): Document as prior period adjustment, correct in current period (no period unlock required)
+- <strong>Material error</strong> (₱50,000-₱500,000): Finance Director authorization required
+- <strong>Highly material error</strong> (&gt;₱500,000): Finance Director + External Auditor notification required</p>
+<p><strong>Period Unlock Process</strong>:
+1. <strong>Error Discovery and Documentation</strong>:
+   - GL Accountant discovers error and documents:
+     - Nature of error (e.g., "Depreciation not recorded for 2 assets in January 2025")
+     - Financial statement impact (affected accounts, amounts)
+     - Root cause (why did error occur?)
+     - Proposed correction (journal entry or transaction reversal)</p>
+<ol>
+<li><strong>Approval Request</strong>:</li>
+<li>GL Accountant submits period unlock request to Finance Manager (via <code>change_request</code> table, type: 'emergency')</li>
+<li>Finance Manager validates error and proposes corrective action</li>
+<li>
+<p>Finance Manager escalates to Finance Director with recommendation</p>
+</li>
+<li>
+<p><strong>Finance Director Review</strong>:</p>
+</li>
+<li>Validates materiality and impact</li>
+<li>Reviews proposed correction for accuracy</li>
+<li>Approves or rejects unlock request</li>
+<li>
+<p>If approved and &gt;₱500,000 impact, notifies external auditor</p>
+</li>
+<li>
+<p><strong>Period Unlock Execution</strong>:</p>
+</li>
+<li>GL Accountant unlocks period in Odoo (Accounting &gt; Configuration &gt; Lock Dates)</li>
+<li>Period unlock logged in audit trail (timestamp, unlocking user, justification)</li>
+<li>Correcting journal entry posted</li>
+<li>Affected financial statements regenerated</li>
+<li>
+<p>Period re-locked immediately after correction</p>
+</li>
+<li>
+<p><strong>Validation and Documentation</strong>:</p>
+</li>
+<li>Finance Manager reviews corrected financial statements (validate error resolved)</li>
+<li>Updated financial statements distributed to stakeholders (with disclosure of prior period adjustment)</li>
+<li>Root cause analysis conducted and preventive measures identified</li>
+<li>Lessons learned documented</li>
+</ol>
+<p><strong>Audit Trail Requirements</strong>:
+- Period unlock justification (detailed explanation of error and correction)
+- Finance Director approval email archived
+- Before/after financial statements (comparison showing impact)
+- External auditor notification (if applicable)</p>
+<p><strong>Frequency Monitoring</strong>: Track period unlocks per year (target: ≤2 unlocks per year for material errors)</p>
+<h3 id="82-control-deficiency-remediation">8.2 Control Deficiency Remediation<a class="headerlink" href="#82-control-deficiency-remediation" title="Permanent link">&para;</a></h3>
+<p><strong>Trigger</strong>: Audit finding or internal control assessment identifies control deficiency</p>
+<p><strong>Severity Classification</strong>:
+- <strong>Material Weakness</strong>: Significant deficiency or combination of significant deficiencies creating reasonable possibility of material misstatement not prevented or detected
+- <strong>Significant Deficiency</strong>: Control deficiency or combination of deficiencies less severe than material weakness but important enough to merit attention
+- <strong>Deficiency</strong>: Control design or operation shortcoming that does not rise to significant deficiency level</p>
+<p><strong>Remediation Process</strong>:
+1. <strong>Deficiency Documentation</strong> (External Auditor or Finance Director):
+   - Description of control deficiency (what control failed or is missing?)
+   - Impact assessment (financial statement accounts affected, risk of misstatement)
+   - Classification (material weakness / significant deficiency / deficiency)</p>
+<ol>
+<li><strong>Remediation Plan Development</strong> (Finance Manager):</li>
+<li>Root cause analysis (why did deficiency occur?)</li>
+<li>Proposed remediation (control design changes, personnel changes, system changes)</li>
+<li>Implementation timeline (target completion date)</li>
+<li>
+<p>Responsible party (owner of remediation)</p>
+</li>
+<li>
+<p><strong>Approval and Implementation</strong>:</p>
+</li>
+<li>Finance Director approves remediation plan</li>
+<li>If material weakness or significant deficiency, board notification required</li>
+<li>
+<p>Remediation implemented per approved plan (tracked as change request)</p>
+</li>
+<li>
+<p><strong>Control Testing</strong>:</p>
+</li>
+<li>Finance Manager tests remediated control (sample transactions, validate control operating effectively)</li>
+<li>If control test fails, re-remediation required</li>
+<li>
+<p>If control test passes, control deficiency marked as "remediated"</p>
+</li>
+<li>
+<p><strong>External Auditor Validation</strong>:</p>
+</li>
+<li>External auditor re-tests control (typically in next audit cycle)</li>
+<li>Auditor confirms remediation effective</li>
+<li>Deficiency formally closed</li>
+</ol>
+<p><strong>Remediation Timeline Expectations</strong>:
+- <strong>Material Weakness</strong>: ≤90 days from identification to implementation
+- <strong>Significant Deficiency</strong>: ≤120 days
+- <strong>Deficiency</strong>: ≤180 days</p>
+<p><strong>Escalation</strong>: If remediation timeline at risk, Finance Director escalates to board audit committee</p>
+<h3 id="83-disaster-recovery-and-business-continuity">8.3 Disaster Recovery and Business Continuity<a class="headerlink" href="#83-disaster-recovery-and-business-continuity" title="Permanent link">&para;</a></h3>
+<p><strong>Change Management During Disaster Recovery</strong>:
+- Emergency changes required to restore close operations after disaster (system outage, data loss, natural disaster)
+- <strong>Approval</strong>: Finance Director emergency authorization (post-approval review not required if disaster declared)
+- <strong>Process</strong>: Minimal documentation, focus on restoring operations
+- <strong>Post-Recovery</strong>: Full change request submitted retroactively (within 30 days of recovery), audit trail reconstructed</p>
+<p><strong>Business Continuity Plan Integration</strong>:
+- Change management procedures included in BCP documentation (ensure change approvers and implementation owners have alternates)
+- Disaster recovery drills test change management during crisis (e.g., can Finance Director approve emergency change from remote location?)</p>
+<hr />
+<h2 id="9-governance-and-oversight">9. Governance and Oversight<a class="headerlink" href="#9-governance-and-oversight" title="Permanent link">&para;</a></h2>
+<h3 id="91-change-management-committee">9.1 Change Management Committee<a class="headerlink" href="#91-change-management-committee" title="Permanent link">&para;</a></h3>
+<p><strong>Charter</strong>: Oversight body for complex or high-risk changes (optional, recommended for organizations with &gt;20 changes per quarter)</p>
+<p><strong>Membership</strong>:
+- <strong>Chair</strong>: Finance Director
+- <strong>Members</strong>: Finance Manager, IT Manager, Tax Compliance Officer, GL Accountant (senior)
+- <strong>Advisors</strong>: External Auditor (invited for control-relevant changes), Legal Counsel (invited for regulatory changes)</p>
+<p><strong>Responsibilities</strong>:
+- Review and approve high-risk changes (risk level = high, or change amount &gt;₱5M impact)
+- Resolve change conflicts (e.g., competing priorities, resource constraints)
+- Provide strategic guidance on change portfolio (alignment with business objectives)
+- Escalate unresolved issues to board audit committee</p>
+<p><strong>Meeting Frequency</strong>: Monthly (or ad-hoc for urgent changes)</p>
+<h3 id="92-board-audit-committee-reporting">9.2 Board Audit Committee Reporting<a class="headerlink" href="#92-board-audit-committee-reporting" title="Permanent link">&para;</a></h3>
+<p><strong>Reporting Cadence</strong>: Quarterly</p>
+<p><strong>Report Contents</strong>:
+1. <strong>Change Portfolio Summary</strong>:
+   - Total changes by type (administrative, operational, control, system, emergency)
+   - Total changes by status (approved, implemented, rolled back, rejected)
+   - Change success rate and cycle time metrics</p>
+<ol>
+<li><strong>High-Impact Changes</strong>:</li>
+<li>List of control changes approved in quarter (with risk level and mitigation summary)</li>
+<li>List of emergency changes (with justification and post-approval review outcome)</li>
+<li>
+<p>Material weaknesses or significant deficiencies remediated</p>
+</li>
+<li>
+<p><strong>Risk Summary</strong>:</p>
+</li>
+<li>Open high-risk changes (approved but not yet implemented)</li>
+<li>Failed changes (rolled back or requiring significant rework)</li>
+<li>
+<p>Audit findings related to change management</p>
+</li>
+<li>
+<p><strong>Continuous Improvement</strong>:</p>
+</li>
+<li>Key lessons learned</li>
+<li>Process improvements implemented</li>
+<li>Change management KPI trends</li>
+</ol>
+<p><strong>Audit Committee Actions</strong>:
+- Approve material control changes (if not previously approved by board)
+- Escalate concerns to full board (if change management process deficient)
+- Request additional reporting or audits (if high-risk changes increasing)</p>
+<h3 id="93-policy-review-and-updates">9.3 Policy Review and Updates<a class="headerlink" href="#93-policy-review-and-updates" title="Permanent link">&para;</a></h3>
+<p><strong>Review Frequency</strong>: Annual (or upon trigger event)</p>
+<p><strong>Trigger Events</strong>:
+- Audit finding related to change management
+- Regulatory change (new BIR rules, accounting standards)
+- Organizational restructure (new roles, departments)
+- Technology change (new systems, integrations)</p>
+<p><strong>Review Process</strong>:
+1. Finance Director reviews change management policy (this document)
+2. Identifies updates needed based on:
+   - Lessons learned from past year
+   - Audit recommendations
+   - Industry best practices
+3. Proposes policy updates to board audit committee
+4. Board audit committee approves updates
+5. Updated policy communicated to finance team
+6. Policy revision history updated</p>
+<p><strong>Version Control</strong>:
+- Policy version format: <code>[Major].[Minor]</code> (e.g., 1.0, 1.1, 2.0)
+- Major version increment: Significant policy restructure or new approval authorities
+- Minor version increment: Clarifications, template updates, process improvements</p>
+<hr />
+<h2 id="10-appendix">10. Appendix<a class="headerlink" href="#10-appendix" title="Permanent link">&para;</a></h2>
+<h3 id="101-glossary-of-terms">10.1 Glossary of Terms<a class="headerlink" href="#101-glossary-of-terms" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Compensating Control</strong>: Alternative control implemented to mitigate risk when primary control cannot be implemented</li>
+<li><strong>Control Deficiency</strong>: Weakness in internal control design or operation</li>
+<li><strong>Material Weakness</strong>: Severe control deficiency with reasonable possibility of material misstatement</li>
+<li><strong>Rollback</strong>: Reverting system or process to prior state after failed change</li>
+<li><strong>User Acceptance Testing (UAT)</strong>: Testing performed by end users to validate change meets requirements</li>
+</ul>
+<h3 id="102-change-request-form-printable-template">10.2 Change Request Form (Printable Template)<a class="headerlink" href="#102-change-request-form-printable-template" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>============================================================
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>CHANGE REQUEST FORM
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>============================================================
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>REQUEST INFORMATION
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>-----------------------------------------------------------
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Request Number: CHG-______-_____  (Auto-generated)
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>Request Date: _____________________
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>Requester Name: _____________________
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>Requester Role: _____________________
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>CHANGE CLASSIFICATION
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>-----------------------------------------------------------
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>Change Type: □ Administrative  □ Operational  □ Control  □ System  □ Emergency
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>Change Category: _____________________
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>Priority: □ Low  □ Medium  □ High  □ Critical
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>CHANGE DESCRIPTION
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>-----------------------------------------------------------
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>Change Title:
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>_________________________________________________________
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>Current State (Detailed description of current process/configuration):
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>_________________________________________________________
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>_________________________________________________________
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>_________________________________________________________
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>Proposed State (Detailed description of desired future state):
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>_________________________________________________________
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>_________________________________________________________
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>_________________________________________________________
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>Business Justification (Why is this change needed?):
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>_________________________________________________________
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>_________________________________________________________
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>Expected Benefits (Quantifiable benefits):
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>_________________________________________________________
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>_________________________________________________________
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>IMPACT ASSESSMENT
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>-----------------------------------------------------------
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>Affected Roles: _____________________
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a>Affected Systems: _____________________
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>Risk Level: □ Low  □ Medium  □ High
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>Risk Description: _____________________
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>Mitigation Plan: _____________________
+<a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>
+<a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>APPROVALS
+<a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a>-----------------------------------------------------------
+<a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a>Finance Manager Decision: □ Approved  □ Rejected  □ Pending
+<a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a>Finance Manager Comment: _____________________
+<a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a>Finance Manager Signature: ________________  Date: _______
+<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a>
+<a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a>Finance Director Decision: □ Approved  □ Rejected  □ Pending
+<a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a>Finance Director Comment: _____________________
+<a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a>Finance Director Signature: ________________  Date: _______
+<a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a>
+<a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a>Board Decision (if required): □ Approved  □ Rejected  □ Not Required
+<a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a>Board Meeting Date: _____________________
+<a id="__codelineno-10-61" name="__codelineno-10-61" href="#__codelineno-10-61"></a>
+<a id="__codelineno-10-62" name="__codelineno-10-62" href="#__codelineno-10-62"></a>IMPLEMENTATION
+<a id="__codelineno-10-63" name="__codelineno-10-63" href="#__codelineno-10-63"></a>-----------------------------------------------------------
+<a id="__codelineno-10-64" name="__codelineno-10-64" href="#__codelineno-10-64"></a>Implementation Owner: _____________________
+<a id="__codelineno-10-65" name="__codelineno-10-65" href="#__codelineno-10-65"></a>Planned Implementation Date: _____________________
+<a id="__codelineno-10-66" name="__codelineno-10-66" href="#__codelineno-10-66"></a>Rollback Plan Summary: _____________________
+<a id="__codelineno-10-67" name="__codelineno-10-67" href="#__codelineno-10-67"></a>
+<a id="__codelineno-10-68" name="__codelineno-10-68" href="#__codelineno-10-68"></a>============================================================
+<a id="__codelineno-10-69" name="__codelineno-10-69" href="#__codelineno-10-69"></a>FOR OFFICIAL USE ONLY (Finance Manager to complete)
+<a id="__codelineno-10-70" name="__codelineno-10-70" href="#__codelineno-10-70"></a>============================================================
+<a id="__codelineno-10-71" name="__codelineno-10-71" href="#__codelineno-10-71"></a>Status: □ Draft  □ Submitted  □ Under Review  □ Approved  □ Rejected  □ Implemented  □ Closed
+<a id="__codelineno-10-72" name="__codelineno-10-72" href="#__codelineno-10-72"></a>Actual Implementation Date: _____________________
+<a id="__codelineno-10-73" name="__codelineno-10-73" href="#__codelineno-10-73"></a>Validation Results: _____________________
+<a id="__codelineno-10-74" name="__codelineno-10-74" href="#__codelineno-10-74"></a>Lessons Learned: _____________________
+<a id="__codelineno-10-75" name="__codelineno-10-75" href="#__codelineno-10-75"></a>Closure Date: _____________________
+</code></pre></div>
+<h3 id="103-related-documents">10.3 Related Documents<a class="headerlink" href="#103-related-documents" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>03-roles-and-sod-matrix.md</code> - Role definitions and authority limits affected by changes</li>
+<li><code>04-close-calendar-and-phases.md</code> - Close process timeline affected by operational changes</li>
+<li><code>99-appendix-data-dictionary.md</code> - Technical data model for change tracking tables</li>
+</ul>
+<h3 id="104-revision-history">10.4 Revision History<a class="headerlink" href="#104-revision-history" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>2025-01-29</td>
+<td>Finance Director</td>
+<td>Initial change management framework creation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Document Classification</strong>: Internal - Governance
+<strong>Review Frequency</strong>: Annual (or upon trigger event)
+<strong>Next Review Date</strong>: 2026-01-31
+<strong>Approver</strong>: Finance Director (signature required)</p>
+<p><strong>End of Document</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/USERNAME/odoo-financial-close-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

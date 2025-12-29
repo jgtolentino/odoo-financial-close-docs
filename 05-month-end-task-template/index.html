@@ -1,0 +1,3663 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise-grade financial close documentation for Odoo Community Edition + OCA modules">
+      
+      
+        <meta name="author" content="InsightPulse AI Finance Team">
+      
+      
+        <link rel="canonical" href="https://github.com/USERNAME/odoo-financial-close-docs/05-month-end-task-template/">
+      
+      
+        <link rel="prev" href="../11-change-management/">
+      
+      
+        <link rel="next" href="../06-year-end-task-template/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Month-End Tasks - Odoo CE – Advanced Financial Close</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#month-end-close-task-template" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Odoo CE – Advanced Financial Close" class="md-header__button md-logo" aria-label="Odoo CE – Advanced Financial Close" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Odoo CE – Advanced Financial Close
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Month-End Tasks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-current-state-and-target/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03-roles-and-sod-matrix/" class="md-tabs__link">
+          
+  
+  
+  Governance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Operational Templates
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../08-odoo-config-guide/" class="md-tabs__link">
+          
+  
+  
+  Implementation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../HR-Processes/hire-to-retire-overview/" class="md-tabs__link">
+          
+  
+  
+  HR Processes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../it-controls/it-audit-sod-deployment/" class="md-tabs__link">
+          
+  
+  
+  IT Controls & Audit
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../99-appendix-data-dictionary/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Odoo CE – Advanced Financial Close" class="md-nav__button md-logo" aria-label="Odoo CE – Advanced Financial Close" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Odoo CE – Advanced Financial Close
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-current-state-and-target/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current State & Target
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-module-landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-roles-and-sod-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles & SoD Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-close-calendar-and-phases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Close Calendar & Phases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-change-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operational Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month-End Tasks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Month-End Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#document-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#month-end-close-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Month-End Close Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Month-End Close Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-flow-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Flow Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approval-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-checklist-44-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Checklist (44 Tasks)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Checklist (44 Tasks)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-transaction-cut-off-reconciliations-day-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Transaction Cut-off &amp; Reconciliations (Day 1-2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: Transaction Cut-off &amp; Reconciliations (Day 1-2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-month-end-cut-off-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Month-End Cut-off Notification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-expense-report-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2: Expense Report Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-bank-reconciliation-all-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3: Bank Reconciliation (All Accounts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-accounts-receivable-aging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4: Accounts Receivable Aging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-accounts-payable-aging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5: Accounts Payable Aging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-6-intercompany-reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6: Intercompany Reconciliation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-7-inventory-reconciliation-asset-heavy-agencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 7: Inventory Reconciliation (Asset-Heavy Agencies)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-8-prepaid-expense-amortization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 8: Prepaid Expense Amortization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-9-accrued-expense-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 9: Accrued Expense Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-10-fixed-asset-depreciation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 10: Fixed Asset Depreciation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-11-payroll-reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 11: Payroll Reconciliation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-12-revenue-recognition-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 12: Revenue Recognition Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-13-credit-card-reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 13: Credit Card Reconciliation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-14-petty-cash-reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 14: Petty Cash Reconciliation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-15-reconciliation-approval-gate-gate-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 15: Reconciliation Approval Gate (Gate 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-adjusting-entries-reclassifications-day-3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Adjusting Entries &amp; Reclassifications (Day 3-4)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Adjusting Entries &amp; Reclassifications (Day 3-4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-16-accrual-journal-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 16: Accrual Journal Entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-17-prepaid-amortization-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 17: Prepaid Amortization Entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-18-depreciation-journal-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 18: Depreciation Journal Entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-19-revenue-adjustment-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 19: Revenue Adjustment Entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-20-intercompany-elimination-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 20: Intercompany Elimination Entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-21-reclassification-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 21: Reclassification Entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-22-foreign-exchange-revaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 22: Foreign Exchange Revaluation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-23-bad-debt-provision-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 23: Bad Debt Provision Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-24-tax-provision-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 24: Tax Provision Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-25-journal-entry-approval-gate-gate-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 25: Journal Entry Approval Gate (Gate 2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-financial-reporting-analysis-day-4-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Financial Reporting &amp; Analysis (Day 4-5)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Financial Reporting &amp; Analysis (Day 4-5)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-26-trial-balance-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 26: Trial Balance Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-27-balance-sheet-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 27: Balance Sheet Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-28-income-statement-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 28: Income Statement Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-29-cash-flow-statement-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 29: Cash Flow Statement Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-30-financial-statement-consolidation-multi-agency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 30: Financial Statement Consolidation (Multi-Agency)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-31-variance-analysis-actual-vs-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 31: Variance Analysis (Actual vs. Budget)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-32-key-performance-indicator-kpi-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 32: Key Performance Indicator (KPI) Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-33-management-commentary-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 33: Management Commentary Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-34-financial-package-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 34: Financial Package Assembly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-35-financial-statements-approval-gate-gate-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 35: Financial Statements Approval Gate (Gate 3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-review-approval-bir-preparation-day-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Review, Approval &amp; BIR Preparation (Day 5)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: Review, Approval &amp; BIR Preparation (Day 5)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-36-bir-1601-c-preparation-withholding-tax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 36: BIR 1601-C Preparation (Withholding Tax)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-37-multi-employee-bir-consolidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 37: Multi-Employee BIR Consolidation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-38-bir-filing-preparation-payment-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 38: BIR Filing Preparation (Payment &amp; Submission)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-39-bir-submission-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 39: BIR Submission Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-40-closing-checklist-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 40: Closing Checklist Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-41-supabase-data-sync-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 41: Supabase Data Sync Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-42-month-end-close-summary-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 42: Month-End Close Summary Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-43-stakeholder-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 43: Stakeholder Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-44-bir-compliance-approval-gate-gate-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 44: BIR Compliance Approval Gate (Gate 4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acceptance Criteria Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critical-success-factors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Success Factors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues &amp; Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues &amp; Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-1-reconciliation-variance-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 1: Reconciliation Variance &gt;0.1%
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-2-bir-calculation-accuracy-98" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 2: BIR Calculation Accuracy &lt;98%
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-3-missed-approval-gate-deadline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 3: Missed Approval Gate Deadline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-task-dependency-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A: Task Dependency Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-role-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B: Role Assignments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-revision-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Revision History
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-year-end-task-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Year-End Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-bir-tax-filing-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BIR Tax Filing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-odoo-config-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Odoo Configuration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-runbook-monthly-close/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook - Monthly Close
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-runbook-bir-filing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbook - BIR Filing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HR Processes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    HR Processes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/hire-to-retire-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hire-to-Retire Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/final-pay-calculation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Pay Calculation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/clearance-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearance Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HR-Processes/coe-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COE Generation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT Controls & Audit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IT Controls & Audit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../it-controls/it-audit-sod-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IT Audit & SoD Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../99-appendix-data-dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="month-end-close-task-template">Month-End Close Task Template<a class="headerlink" href="#month-end-close-task-template" title="Permanent link">&para;</a></h1>
+<h2 id="document-control">Document Control<a class="headerlink" href="#document-control" title="Permanent link">&para;</a></h2>
+<p><strong>Version</strong>: 1.0
+<strong>Last Updated</strong>: 2025-12-29
+<strong>Owner</strong>: Finance SSC Manager
+<strong>Approvers</strong>: Finance Manager, Finance Director
+<strong>Review Cycle</strong>: Monthly (post-close retrospective)</p>
+<hr />
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This document provides a comprehensive 44-task checklist for month-end financial close operations at TBWA Finance SSC. The template ensures systematic execution, evidence-based validation, and timely completion of all closing activities within the 5-business-day target.</p>
+<p><strong>Target Timeline</strong>: 5 business days from month-end
+<strong>Critical Success Factors</strong>:
+- Task sequencing adherence (dependencies honored)
+- Evidence completeness (all supporting documents attached)
+- Approval gates passed (Finance Manager and Finance Director sign-offs)
+- BIR compliance validation (withholding tax accuracy ≥98%)</p>
+<hr />
+<h2 id="month-end-close-architecture">Month-End Close Architecture<a class="headerlink" href="#month-end-close-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="process-flow-overview">Process Flow Overview<a class="headerlink" href="#process-flow-overview" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Day 1-2: Transaction Cut-off &amp; Reconciliations (Tasks 1-15)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   ↓
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Day 2-3: Adjusting Entries &amp; Reclassifications (Tasks 16-25)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   ↓
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Day 3-4: Financial Reporting &amp; Analysis (Tasks 26-35)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   ↓
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Day 4-5: Review, Approval &amp; BIR Preparation (Tasks 36-44)
+</code></pre></div>
+<h3 id="approval-gates">Approval Gates<a class="headerlink" href="#approval-gates" title="Permanent link">&para;</a></h3>
+<p><strong>Gate 1 - Reconciliation Approval</strong> (End of Day 2)
+- <strong>Approver</strong>: Finance Manager
+- <strong>Criteria</strong>: All bank/GL reconciliations complete with variance ≤0.1%
+- <strong>Evidence</strong>: Reconciliation reports with variance analysis</p>
+<p><strong>Gate 2 - Journal Entry Approval</strong> (End of Day 3)
+- <strong>Approver</strong>: Finance Manager
+- <strong>Criteria</strong>: All adjusting entries posted and balanced
+- <strong>Evidence</strong>: JE summary report with supporting documentation</p>
+<p><strong>Gate 3 - Financial Statements Approval</strong> (End of Day 4)
+- <strong>Approver</strong>: Finance Director
+- <strong>Criteria</strong>: Trial balance balanced, variances explained, commentary complete
+- <strong>Evidence</strong>: Full financial package with variance analysis</p>
+<p><strong>Gate 4 - BIR Compliance Approval</strong> (End of Day 5)
+- <strong>Approver</strong>: Finance Director
+- <strong>Criteria</strong>: BIR 1601-C prepared with accuracy ≥98%, ready for submission
+- <strong>Evidence</strong>: BIR form PDF with supporting schedules</p>
+<hr />
+<h2 id="task-checklist-44-tasks">Task Checklist (44 Tasks)<a class="headerlink" href="#task-checklist-44-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-transaction-cut-off-reconciliations-day-1-2">Phase 1: Transaction Cut-off &amp; Reconciliations (Day 1-2)<a class="headerlink" href="#phase-1-transaction-cut-off-reconciliations-day-1-2" title="Permanent link">&para;</a></h3>
+<h4 id="task-1-month-end-cut-off-notification">Task 1: Month-End Cut-off Notification<a class="headerlink" href="#task-1-month-end-cut-off-notification" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance SSC Manager
+<strong>Duration</strong>: 15 minutes
+<strong>Dependencies</strong>: None
+<strong>Timing</strong>: Last business day of month, 4:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Send cut-off notification to all stakeholders via Mattermost
+2. Specify cut-off time (5:00 PM Philippine time)
+3. Remind teams of document submission deadlines
+4. Highlight critical deliverables (expense reports, invoices, timesheets)</p>
+<p><strong>Evidence Required</strong>:
+- Screenshot of Mattermost notification
+- Stakeholder acknowledgment confirmations</p>
+<p><strong>Acceptance Criteria</strong>:
+- All 8 agencies acknowledged receipt
+- No late submissions flagged in system</p>
+<hr />
+<h4 id="task-2-expense-report-validation">Task 2: Expense Report Validation<a class="headerlink" href="#task-2-expense-report-validation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 1 (cut-off notification)
+<strong>Timing</strong>: Day 1, 9:00 AM - 11:00 AM</p>
+<p><strong>Procedure</strong>:
+1. Query Odoo for all expense reports submitted in closing month
+2. Validate OCR confidence scores (minimum 0.60 threshold)
+3. Flag reports with missing receipts or policy violations
+4. Route flagged reports to employees for correction via n8n workflow
+5. Verify all corrections completed before proceeding</p>
+<p><strong>SQL Query</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">expense_report</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">e</span><span class="p">.</span><span class="n">employee_id</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">e</span><span class="p">.</span><span class="n">total_amount</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="n">e</span><span class="p">.</span><span class="k">state</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="k">COUNT</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">line_count</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="k">AVG</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">ocr_confidence</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_confidence</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">FROM</span><span class="w"> </span><span class="n">hr_expense_sheet</span><span class="w"> </span><span class="n">e</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">hr_expense</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">sheet_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">CURRENT_DATE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="s1">&#39;1 month&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">CURRENT_DATE</span><span class="p">)</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">HAVING</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">ocr_confidence</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">60</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Expense report validation log (CSV export from Odoo)
+- OCR confidence score summary
+- Flagged report list with resolution status</p>
+<p><strong>Acceptance Criteria</strong>:
+- Zero reports with OCR confidence &lt;0.60
+- All policy violations resolved or escalated
+- Total expense amount matches bank statement deductions</p>
+<hr />
+<h4 id="task-3-bank-reconciliation-all-accounts">Task 3: Bank Reconciliation (All Accounts)<a class="headerlink" href="#task-3-bank-reconciliation-all-accounts" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 4 hours
+<strong>Dependencies</strong>: Task 2 (expense validation)
+<strong>Timing</strong>: Day 1, 11:00 AM - 3:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Download bank statements for all 12 accounts (8 agencies × 1-2 accounts each)
+2. Import statements to Odoo via Supabase ETL pipeline
+3. Auto-match transactions using fuzzy matching (threshold: 0.80)
+4. Manually investigate unmatched items (variance tolerance: PHP 100)
+5. Book adjusting entries for bank charges, interest, errors
+6. Generate reconciliation report per account</p>
+<p><strong>Reconciliation Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GL Balance (per Odoo)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>+ Outstanding Deposits
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>- Outstanding Checks
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>+ Bank Adjustments
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>= Bank Statement Balance
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Bank statement PDFs (12 files)
+- Reconciliation reports (12 reports, one per account)
+- Adjusting journal entries (if any)
+- Variance analysis (for variances &gt;PHP 100)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All accounts reconciled with variance ≤0.1% or PHP 1,000 (whichever lower)
+- Outstanding items aged &lt;30 days (older items escalated)
+- Finance Manager approval obtained</p>
+<hr />
+<h4 id="task-4-accounts-receivable-aging">Task 4: Accounts Receivable Aging<a class="headerlink" href="#task-4-accounts-receivable-aging" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 3 (bank reconciliation)
+<strong>Timing</strong>: Day 1, 3:00 PM - 5:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Generate AR aging report from Odoo (0-30, 31-60, 61-90, 90+ days)
+2. Validate customer balances against project management system
+3. Identify overdue invoices requiring collection action
+4. Flag disputed invoices for management review
+5. Calculate bad debt provision (5% for 90+ days, 10% for 180+ days)</p>
+<p><strong>SQL Query</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">customer</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="n">ai</span><span class="p">.</span><span class="n">date_invoice</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="n">ai</span><span class="p">.</span><span class="n">date_due</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="n">ai</span><span class="p">.</span><span class="n">residual</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">outstanding_balance</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="k">CASE</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="k">WHEN</span><span class="w"> </span><span class="k">CURRENT_DATE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_due</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;0-30 days&#39;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="k">WHEN</span><span class="w"> </span><span class="k">CURRENT_DATE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_due</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;31-60 days&#39;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="k">WHEN</span><span class="w"> </span><span class="k">CURRENT_DATE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_due</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">90</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;61-90 days&#39;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;90+ days&#39;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aging_bucket</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="k">FROM</span><span class="w"> </span><span class="n">account_move</span><span class="w"> </span><span class="n">ai</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">res_partner</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">partner_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">move_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;out_invoice&#39;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="k">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;posted&#39;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">residual</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ai</span><span class="p">.</span><span class="n">date_due</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- AR aging report (Excel with pivot table)
+- Overdue invoice list with collection status
+- Bad debt provision calculation worksheet</p>
+<p><strong>Acceptance Criteria</strong>:
+- Total AR balance ties to GL control account
+- Aging bucket totals reconciled to subsidiary ledger
+- Bad debt provision reviewed by Finance Manager</p>
+<hr />
+<h4 id="task-5-accounts-payable-aging">Task 5: Accounts Payable Aging<a class="headerlink" href="#task-5-accounts-payable-aging" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 3 (bank reconciliation)
+<strong>Timing</strong>: Day 2, 9:00 AM - 11:00 AM</p>
+<p><strong>Procedure</strong>:
+1. Generate AP aging report from Odoo (0-30, 31-60, 61-90, 90+ days)
+2. Validate vendor balances against purchase order system
+3. Identify overdue payables requiring payment prioritization
+4. Flag disputed invoices or delivery issues for resolution
+5. Verify accruals for goods received not invoiced (GRNI)</p>
+<p><strong>Evidence Required</strong>:
+- AP aging report (Excel with pivot table)
+- Overdue payable list with payment schedule
+- GRNI accrual calculation worksheet</p>
+<p><strong>Acceptance Criteria</strong>:
+- Total AP balance ties to GL control account
+- Aging bucket totals reconciled to subsidiary ledger
+- GRNI accruals reviewed by Finance Manager</p>
+<hr />
+<h4 id="task-6-intercompany-reconciliation">Task 6: Intercompany Reconciliation<a class="headerlink" href="#task-6-intercompany-reconciliation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 3 hours
+<strong>Dependencies</strong>: Task 3, Task 4, Task 5
+<strong>Timing</strong>: Day 2, 11:00 AM - 2:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Extract intercompany balances from all 8 agency GL accounts
+2. Prepare intercompany reconciliation matrix (8×8 grid)
+3. Identify mismatches between receivable and payable balances
+4. Investigate timing differences (in-transit invoices, FX differences)
+5. Book adjusting entries to eliminate reconciling items
+6. Obtain confirmations from each agency Finance lead</p>
+<p><strong>Reconciliation Matrix Example</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>         CKVC    BOM     JPAL    JLI     ...
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>CKVC     -       50K    (30K)    0       ...
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>BOM     (50K)    -       0       20K     ...
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>JPAL     30K     0       -      (10K)    ...
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>JLI      0      (20K)    10K     -       ...
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Intercompany reconciliation matrix (Excel)
+- Confirmation emails from all agencies
+- Adjusting journal entries (if any)
+- Variance analysis for mismatches &gt;PHP 10,000</p>
+<p><strong>Acceptance Criteria</strong>:
+- All intercompany balances reconciled (variance ≤PHP 5,000)
+- Net intercompany position per agency confirmed
+- Finance Manager approval obtained</p>
+<hr />
+<h4 id="task-7-inventory-reconciliation-asset-heavy-agencies">Task 7: Inventory Reconciliation (Asset-Heavy Agencies)<a class="headerlink" href="#task-7-inventory-reconciliation-asset-heavy-agencies" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 3 hours
+<strong>Dependencies</strong>: Task 3 (bank reconciliation)
+<strong>Timing</strong>: Day 2, 2:00 PM - 5:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Extract inventory balances from Odoo per agency (if applicable)
+2. Reconcile to physical count reports from operations team
+3. Calculate inventory variance (physical vs. book)
+4. Investigate significant variances (&gt;5% or PHP 50,000)
+5. Book adjusting entries for shrinkage, damage, obsolescence
+6. Update inventory valuation (FIFO method)</p>
+<p><strong>Inventory Variance Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Variance = Physical Count - Book Balance
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Variance % = (Variance / Book Balance) × 100%
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Physical inventory count sheets (signed by operations manager)
+- Inventory reconciliation report (Excel)
+- Variance investigation notes
+- Adjusting journal entries for material variances</p>
+<p><strong>Acceptance Criteria</strong>:
+- Inventory balance ties to GL control account
+- All variances &gt;5% or PHP 50,000 explained
+- Inventory valuation reviewed by Finance Manager</p>
+<hr />
+<h4 id="task-8-prepaid-expense-amortization">Task 8: Prepaid Expense Amortization<a class="headerlink" href="#task-8-prepaid-expense-amortization" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 3 (bank reconciliation)
+<strong>Timing</strong>: Day 2, 5:00 PM - 7:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Review prepaid expense register for all agencies
+2. Calculate monthly amortization per prepaid item (straight-line)
+3. Book amortization journal entries in Odoo
+4. Update prepaid balance schedule for next month
+5. Flag fully amortized items for reclassification to expense</p>
+<p><strong>Amortization Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Monthly Amortization = Prepaid Balance / Remaining Months
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Prepaid expense register (Excel with amortization schedule)
+- Amortization journal entries
+- Supporting documents for new prepaid items (invoices, contracts)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All prepaid items amortized per policy
+- Prepaid balance schedule updated
+- Zero prepaid items with negative balances</p>
+<hr />
+<h4 id="task-9-accrued-expense-review">Task 9: Accrued Expense Review<a class="headerlink" href="#task-9-accrued-expense-review" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 5 (AP aging)
+<strong>Timing</strong>: Day 2, 7:00 PM - 9:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Review accrued expense accounts (utilities, rent, salaries, professional fees)
+2. Validate accrual calculations against contracts and historical trends
+3. Book adjusting entries for under/over-accrued amounts
+4. Reverse prior month accruals (if reversing entry method used)
+5. Update accrual tracking schedule</p>
+<p><strong>Common Accruals</strong>:
+- <strong>Utilities</strong>: Estimate based on last 3-month average
+- <strong>Rent</strong>: Per lease agreement (monthly rent ÷ days in month × days consumed)
+- <strong>Salaries</strong>: Unpaid salaries for last few days of month
+- <strong>Professional Fees</strong>: Retainer fees not yet invoiced</p>
+<p><strong>Evidence Required</strong>:
+- Accrued expense calculation worksheet (Excel)
+- Supporting documents (contracts, invoices, historical data)
+- Adjusting journal entries</p>
+<p><strong>Acceptance Criteria</strong>:
+- All material accruals booked (threshold: PHP 10,000)
+- Accrual methodology documented and consistent
+- Finance Manager approval obtained</p>
+<hr />
+<h4 id="task-10-fixed-asset-depreciation">Task 10: Fixed Asset Depreciation<a class="headerlink" href="#task-10-fixed-asset-depreciation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 3 (bank reconciliation)
+<strong>Timing</strong>: Day 3, 9:00 AM - 11:00 AM</p>
+<p><strong>Procedure</strong>:
+1. Run Odoo fixed asset depreciation batch job for closing month
+2. Validate depreciation calculations (straight-line method)
+3. Review newly capitalized assets (additions in closing month)
+4. Flag fully depreciated assets for disposal consideration
+5. Post depreciation journal entries</p>
+<p><strong>Depreciation Formula (Straight-Line)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Monthly Depreciation = (Cost - Salvage Value) / Useful Life (months)
+</code></pre></div></p>
+<p><strong>Useful Life Standards</strong>:
+- Computer equipment: 3 years (36 months)
+- Furniture and fixtures: 5 years (60 months)
+- Vehicles: 5 years (60 months)
+- Leasehold improvements: Lesser of lease term or 10 years</p>
+<p><strong>Evidence Required</strong>:
+- Fixed asset register with depreciation schedule
+- Depreciation journal entry summary
+- New asset capitalization forms (if any)</p>
+<p><strong>Acceptance Criteria</strong>:
+- Depreciation expense matches asset register calculation
+- All new assets capitalized with proper approval
+- Fixed asset balance ties to GL control account</p>
+<hr />
+<h4 id="task-11-payroll-reconciliation">Task 11: Payroll Reconciliation<a class="headerlink" href="#task-11-payroll-reconciliation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 3 hours
+<strong>Dependencies</strong>: Task 9 (accrued expenses)
+<strong>Timing</strong>: Day 3, 11:00 AM - 2:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Extract payroll summary from payroll system (8 employees)
+2. Reconcile gross salaries to GL payroll expense accounts
+3. Validate payroll deductions (SSS, PhilHealth, Pag-IBIG, withholding tax)
+4. Verify employer contributions and book accrual if unpaid
+5. Reconcile net pay to bank disbursements
+6. Book adjusting entries for timing differences</p>
+<p><strong>Payroll Reconciliation Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Gross Salaries
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>- Employee Deductions (SSS, PhilHealth, Pag-IBIG, WHT)
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>= Net Pay (must equal bank disbursement)
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Employer Contributions:
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>+ SSS Employer Share
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>+ PhilHealth Employer Share
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>+ Pag-IBIG Employer Share
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>= Total Employer Liability (accrue if unpaid)
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Payroll register (PDF from payroll system)
+- Payroll reconciliation worksheet (Excel)
+- Bank disbursement confirmations
+- Employer contribution calculation worksheet</p>
+<p><strong>Acceptance Criteria</strong>:
+- Payroll expense ties to payroll register
+- Net pay matches bank disbursements
+- All payroll taxes and contributions accrued
+- Finance Manager approval obtained</p>
+<hr />
+<h4 id="task-12-revenue-recognition-review">Task 12: Revenue Recognition Review<a class="headerlink" href="#task-12-revenue-recognition-review" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 3 hours
+<strong>Dependencies</strong>: Task 4 (AR aging)
+<strong>Timing</strong>: Day 3, 2:00 PM - 5:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Review project revenue recognition per agency (percentage of completion method)
+2. Validate project billing milestones against contracts
+3. Calculate unbilled revenue (work performed but not yet invoiced)
+4. Book deferred revenue for advance billings
+5. Reconcile revenue to project management system</p>
+<p><strong>Revenue Recognition Formula (Percentage of Completion)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Revenue Recognized = Contract Value × (Actual Costs / Total Estimated Costs)
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Unbilled Revenue = Revenue Recognized - Billed to Date
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Project revenue schedule (Excel with percentage completion)
+- Contract milestone documentation
+- Unbilled/deferred revenue calculation worksheet
+- Reconciliation to project management system</p>
+<p><strong>Acceptance Criteria</strong>:
+- Revenue recognized per policy (percentage of completion)
+- Unbilled/deferred revenue balances validated
+- Revenue variance to budget explained
+- Finance Manager approval obtained</p>
+<hr />
+<h4 id="task-13-credit-card-reconciliation">Task 13: Credit Card Reconciliation<a class="headerlink" href="#task-13-credit-card-reconciliation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 2 (expense validation)
+<strong>Timing</strong>: Day 3, 5:00 PM - 7:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Download credit card statements for all corporate cards (8 employees)
+2. Match transactions to expense reports in Odoo
+3. Identify unmatched transactions and request employee clarification
+4. Verify all personal charges have been reimbursed by employees
+5. Book adjusting entries for timing differences (charges posted after month-end)</p>
+<p><strong>Evidence Required</strong>:
+- Credit card statements (8 PDFs)
+- Credit card reconciliation report (Excel)
+- Unmatched transaction list with resolution notes
+- Employee reimbursement confirmations (for personal charges)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All credit card charges matched to expense reports
+- Personal charges reimbursed or deducted from payroll
+- Credit card liability balance ties to statements
+- Finance Manager approval obtained</p>
+<hr />
+<h4 id="task-14-petty-cash-reconciliation">Task 14: Petty Cash Reconciliation<a class="headerlink" href="#task-14-petty-cash-reconciliation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Task 3 (bank reconciliation)
+<strong>Timing</strong>: Day 3, 7:00 PM - 8:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Count physical petty cash per agency (if applicable)
+2. Reconcile to petty cash GL account balance
+3. Review petty cash vouchers for closing month
+4. Book replenishment journal entry
+5. Update petty cash custodian log</p>
+<p><strong>Petty Cash Reconciliation Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Beginning Balance
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>+ Replenishments
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>- Disbursements (per vouchers)
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>= Ending Balance (must equal physical count)
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Petty cash count sheet (signed by custodian)
+- Petty cash vouchers (receipts attached)
+- Replenishment journal entry</p>
+<p><strong>Acceptance Criteria</strong>:
+- Physical count matches GL balance
+- All disbursements supported by receipts
+- Petty cash limit not exceeded (PHP 10,000 per agency)</p>
+<hr />
+<h4 id="task-15-reconciliation-approval-gate-gate-1">Task 15: Reconciliation Approval Gate (Gate 1)<a class="headerlink" href="#task-15-reconciliation-approval-gate-gate-1" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Manager
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Tasks 3-14 (all reconciliations)
+<strong>Timing</strong>: Day 3, 8:00 PM - 9:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Review all reconciliation reports (bank, AR, AP, inventory, etc.)
+2. Validate variance analyses and explanations
+3. Approve or reject reconciliations based on materiality thresholds
+4. Document approval decision in Odoo task record
+5. Escalate material issues to Finance Director if needed</p>
+<p><strong>Approval Criteria</strong>:
+- All reconciliations complete with variance ≤0.1%
+- Material variances (&gt;PHP 10,000 or &gt;5%) explained
+- Supporting evidence attached to each reconciliation</p>
+<p><strong>Evidence Required</strong>:
+- Approval sign-off in Odoo (digital signature)
+- Reconciliation summary report (all accounts)
+- Escalation notes (if any)</p>
+<p><strong>Outcome</strong>:
+- <strong>Approved</strong>: Proceed to Phase 2 (adjusting entries)
+- <strong>Rejected</strong>: Return to respective tasks for correction</p>
+<hr />
+<h3 id="phase-2-adjusting-entries-reclassifications-day-3-4">Phase 2: Adjusting Entries &amp; Reclassifications (Day 3-4)<a class="headerlink" href="#phase-2-adjusting-entries-reclassifications-day-3-4" title="Permanent link">&para;</a></h3>
+<h4 id="task-16-accrual-journal-entries">Task 16: Accrual Journal Entries<a class="headerlink" href="#task-16-accrual-journal-entries" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 15 (Gate 1 approval)
+<strong>Timing</strong>: Day 3, 9:00 PM - 11:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Prepare accrual journal entries for all accrued expenses (from Task 9)
+2. Validate account codes and cost center allocations
+3. Post entries in Odoo with supporting documentation
+4. Update accrual tracking schedule
+5. Generate JE summary report for Finance Manager review</p>
+<p><strong>Standard Journal Entry Format</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Debit: Expense Account (6xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>  Credit: Accrued Liability (2xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Narration: &quot;To accrue [expense type] for [month/year] per [supporting doc]&quot;
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Journal entry listing (from Odoo)
+- Supporting documentation per entry (contracts, calculations)
+- Accrual tracking schedule (updated)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All material accruals booked (threshold: PHP 10,000)
+- Journal entries balanced (debits = credits)
+- Supporting documentation attached in Odoo</p>
+<hr />
+<h4 id="task-17-prepaid-amortization-entries">Task 17: Prepaid Amortization Entries<a class="headerlink" href="#task-17-prepaid-amortization-entries" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Task 8 (prepaid amortization)
+<strong>Timing</strong>: Day 4, 9:00 AM - 10:00 AM</p>
+<p><strong>Procedure</strong>:
+1. Post prepaid amortization journal entries (from Task 8)
+2. Validate amortization calculations and allocations
+3. Update prepaid balance schedule in Odoo
+4. Generate amortization summary report</p>
+<p><strong>Standard Journal Entry Format</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Debit: Expense Account (6xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  Credit: Prepaid Asset (1xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Narration: &quot;To amortize prepaid [expense type] for [month/year]&quot;
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Amortization journal entries (from Odoo)
+- Prepaid balance schedule (updated)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All prepaid items amortized per schedule
+- Prepaid balances reduced correctly</p>
+<hr />
+<h4 id="task-18-depreciation-journal-entries">Task 18: Depreciation Journal Entries<a class="headerlink" href="#task-18-depreciation-journal-entries" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Task 10 (depreciation calculation)
+<strong>Timing</strong>: Day 4, 10:00 AM - 11:00 AM</p>
+<p><strong>Procedure</strong>:
+1. Post depreciation journal entries (from Task 10)
+2. Validate depreciation expense allocation to cost centers
+3. Update fixed asset register in Odoo
+4. Generate depreciation summary report</p>
+<p><strong>Standard Journal Entry Format</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Debit: Depreciation Expense (6xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  Credit: Accumulated Depreciation (1xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Narration: &quot;To record depreciation for [month/year] per fixed asset register&quot;
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Depreciation journal entries (from Odoo)
+- Fixed asset register (updated)</p>
+<p><strong>Acceptance Criteria</strong>:
+- Depreciation expense matches asset register
+- Accumulated depreciation balances updated</p>
+<hr />
+<h4 id="task-19-revenue-adjustment-entries">Task 19: Revenue Adjustment Entries<a class="headerlink" href="#task-19-revenue-adjustment-entries" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 12 (revenue recognition review)
+<strong>Timing</strong>: Day 4, 11:00 AM - 1:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Post unbilled revenue and deferred revenue entries (from Task 12)
+2. Validate revenue recognition per contract terms
+3. Reconcile to project management system
+4. Generate revenue adjustment summary report</p>
+<p><strong>Unbilled Revenue Entry</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Debit: Unbilled Revenue (1xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  Credit: Service Revenue (4xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Narration: &quot;To recognize unbilled revenue for [project] per POC method&quot;
+</code></pre></div></p>
+<p><strong>Deferred Revenue Entry</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Debit: Cash/AR (1xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>  Credit: Deferred Revenue (2xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Narration: &quot;To defer advance billing for [project] pending delivery&quot;
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Revenue adjustment journal entries
+- Project revenue schedule (from Task 12)
+- Contract milestone documentation</p>
+<p><strong>Acceptance Criteria</strong>:
+- Revenue recognized per policy
+- Unbilled/deferred balances validated</p>
+<hr />
+<h4 id="task-20-intercompany-elimination-entries">Task 20: Intercompany Elimination Entries<a class="headerlink" href="#task-20-intercompany-elimination-entries" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 6 (intercompany reconciliation)
+<strong>Timing</strong>: Day 4, 1:00 PM - 3:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Prepare elimination journal entries for intercompany balances
+2. Validate elimination amounts against reconciliation matrix (Task 6)
+3. Post entries in consolidated GL (if applicable)
+4. Generate elimination summary report</p>
+<p><strong>Standard Elimination Entry</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Debit: Intercompany Payable (2xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>  Credit: Intercompany Receivable (1xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Narration: &quot;To eliminate intercompany balance between [Agency A] and [Agency B]&quot;
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Elimination journal entries
+- Intercompany reconciliation matrix (from Task 6)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All intercompany balances eliminated in consolidation
+- Net intercompany position per agency confirmed</p>
+<hr />
+<h4 id="task-21-reclassification-entries">Task 21: Reclassification Entries<a class="headerlink" href="#task-21-reclassification-entries" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Tasks 4, 5 (AR/AP aging)
+<strong>Timing</strong>: Day 4, 3:00 PM - 5:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Review aging reports for reclassification needs (current vs. non-current)
+2. Reclassify long-term debt due within 12 months to current liability
+3. Reclassify long-term receivables due within 12 months to current asset
+4. Post reclassification journal entries
+5. Update balance sheet classification schedule</p>
+<p><strong>Standard Reclassification Entry</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Debit: Current Portion of Long-Term Debt (2xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  Credit: Long-Term Debt (2xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>Narration: &quot;To reclassify debt maturing within 12 months per loan agreement&quot;
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Reclassification journal entries
+- Loan amortization schedules
+- Balance sheet classification schedule</p>
+<p><strong>Acceptance Criteria</strong>:
+- All debt/receivables properly classified (current vs. non-current)
+- Supporting documentation attached</p>
+<hr />
+<h4 id="task-22-foreign-exchange-revaluation">Task 22: Foreign Exchange Revaluation<a class="headerlink" href="#task-22-foreign-exchange-revaluation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 3 (bank reconciliation)
+<strong>Timing</strong>: Day 4, 5:00 PM - 7:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Identify foreign currency balances (USD, EUR, JPY, etc.)
+2. Obtain month-end exchange rates from BSP (Bangko Sentral ng Pilipinas)
+3. Calculate unrealized FX gain/loss per currency balance
+4. Post revaluation journal entries
+5. Update FX revaluation schedule</p>
+<p><strong>FX Revaluation Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Unrealized Gain/Loss = (Month-End Rate - Book Rate) × Foreign Currency Balance
+</code></pre></div></p>
+<p><strong>Standard Revaluation Entry</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Debit: Foreign Currency Asset/Liability   PHP XXX,XXX.XX
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>  Credit: Unrealized FX Gain (4xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>(or reverse if loss)
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>Narration: &quot;To revalue [currency] balances at BSP rate of [rate] as of [date]&quot;
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- BSP exchange rate confirmation (screenshot from BSP website)
+- FX revaluation calculation worksheet
+- Revaluation journal entries</p>
+<p><strong>Acceptance Criteria</strong>:
+- All foreign currency balances revalued at month-end rates
+- FX gain/loss properly classified (realized vs. unrealized)</p>
+<hr />
+<h4 id="task-23-bad-debt-provision-entry">Task 23: Bad Debt Provision Entry<a class="headerlink" href="#task-23-bad-debt-provision-entry" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Task 4 (AR aging)
+<strong>Timing</strong>: Day 4, 7:00 PM - 8:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Calculate bad debt provision per aging analysis (Task 4)
+2. Compare to existing allowance for doubtful accounts balance
+3. Book adjusting entry for under/over-provision
+4. Update bad debt provision schedule</p>
+<p><strong>Provision Rates</strong>:
+- 0-60 days: 0% (fully collectible)
+- 61-90 days: 5% (management estimate)
+- 91-180 days: 10% (management estimate)
+- 180+ days: 50% (likely uncollectible)</p>
+<p><strong>Standard Provision Entry</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Debit: Bad Debt Expense (6xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>  Credit: Allowance for Doubtful Accounts (1xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>Narration: &quot;To record bad debt provision for [month/year] per aging analysis&quot;
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Bad debt provision calculation (from Task 4)
+- Journal entry
+- Bad debt provision schedule (updated)</p>
+<p><strong>Acceptance Criteria</strong>:
+- Provision calculation methodology documented
+- Provision rates approved by Finance Manager</p>
+<hr />
+<h4 id="task-24-tax-provision-calculation">Task 24: Tax Provision Calculation<a class="headerlink" href="#task-24-tax-provision-calculation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 19 (revenue adjustment)
+<strong>Timing</strong>: Day 4, 8:00 PM - 10:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Calculate taxable income per agency (accounting income ± tax adjustments)
+2. Apply income tax rate (25% regular corporate tax or 20% OSD)
+3. Calculate quarterly income tax provision
+4. Book tax provision journal entry
+5. Update tax provision schedule</p>
+<p><strong>Tax Provision Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Taxable Income = Accounting Income + Non-Deductible Expenses - Tax-Exempt Income
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Income Tax Provision = Taxable Income × Tax Rate
+</code></pre></div></p>
+<p><strong>Standard Tax Provision Entry</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Debit: Income Tax Expense (6xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>  Credit: Income Tax Payable (2xxxx)   PHP XXX,XXX.XX
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>Narration: &quot;To record income tax provision for [quarter/year] at [rate]%&quot;
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Tax provision calculation worksheet
+- Tax adjustment schedule
+- Journal entry</p>
+<p><strong>Acceptance Criteria</strong>:
+- Tax provision calculated per BIR regulations
+- Tax rate validated (regular vs. OSD)
+- Finance Manager approval obtained</p>
+<hr />
+<h4 id="task-25-journal-entry-approval-gate-gate-2">Task 25: Journal Entry Approval Gate (Gate 2)<a class="headerlink" href="#task-25-journal-entry-approval-gate-gate-2" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Manager
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Tasks 16-24 (all adjusting entries)
+<strong>Timing</strong>: Day 4, 10:00 PM - 11:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Review all journal entries posted in closing month
+2. Validate account codes, amounts, and supporting documentation
+3. Verify all entries balanced (debits = credits)
+4. Approve or reject entries based on materiality and policy compliance
+5. Document approval decision in Odoo</p>
+<p><strong>Approval Criteria</strong>:
+- All entries balanced and properly coded
+- Supporting documentation attached
+- Material entries (&gt;PHP 50,000) reviewed in detail</p>
+<p><strong>Evidence Required</strong>:
+- Journal entry summary report (from Odoo)
+- Approval sign-off (digital signature)</p>
+<p><strong>Outcome</strong>:
+- <strong>Approved</strong>: Proceed to Phase 3 (financial reporting)
+- <strong>Rejected</strong>: Return to respective tasks for correction</p>
+<hr />
+<h3 id="phase-3-financial-reporting-analysis-day-4-5">Phase 3: Financial Reporting &amp; Analysis (Day 4-5)<a class="headerlink" href="#phase-3-financial-reporting-analysis-day-4-5" title="Permanent link">&para;</a></h3>
+<h4 id="task-26-trial-balance-generation">Task 26: Trial Balance Generation<a class="headerlink" href="#task-26-trial-balance-generation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Task 25 (Gate 2 approval)
+<strong>Timing</strong>: Day 5, 9:00 AM - 10:00 AM</p>
+<p><strong>Procedure</strong>:
+1. Generate trial balance report from Odoo for closing month
+2. Validate trial balance balanced (total debits = total credits)
+3. Compare to prior month trial balance for reasonableness
+4. Flag unusual account balances for investigation
+5. Export trial balance to Excel for financial statement preparation</p>
+<p><strong>Trial Balance Validation Checks</strong>:
+- Total debits = Total credits (must balance)
+- No negative balances in asset/expense accounts (investigate if found)
+- No negative balances in liability/equity/revenue accounts (investigate if found)</p>
+<p><strong>Evidence Required</strong>:
+- Trial balance report (PDF from Odoo)
+- Trial balance comparison (current vs. prior month)
+- Investigation notes for unusual balances</p>
+<p><strong>Acceptance Criteria</strong>:
+- Trial balance balanced (zero variance)
+- All account balances reasonable and explainable</p>
+<hr />
+<h4 id="task-27-balance-sheet-preparation">Task 27: Balance Sheet Preparation<a class="headerlink" href="#task-27-balance-sheet-preparation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 26 (trial balance)
+<strong>Timing</strong>: Day 5, 10:00 AM - 12:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Prepare balance sheet from trial balance data
+2. Apply standard balance sheet format (assets, liabilities, equity)
+3. Classify accounts (current vs. non-current)
+4. Calculate key financial ratios (current ratio, debt-to-equity, etc.)
+5. Add footnotes for significant balances</p>
+<p><strong>Balance Sheet Format</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>ASSETS
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>Current Assets
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>  Cash and Cash Equivalents      PHP XXX,XXX
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>  Accounts Receivable (net)      PHP XXX,XXX
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>  Inventory                      PHP XXX,XXX
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>  Prepaid Expenses               PHP XXX,XXX
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>Total Current Assets             PHP XXX,XXX
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>Non-Current Assets
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>  Fixed Assets (net)             PHP XXX,XXX
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>  Intangible Assets              PHP XXX,XXX
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>Total Non-Current Assets         PHP XXX,XXX
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>TOTAL ASSETS                     PHP XXX,XXX
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>LIABILITIES AND EQUITY
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>Current Liabilities
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>  Accounts Payable               PHP XXX,XXX
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>  Accrued Expenses               PHP XXX,XXX
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>  Current Portion of LT Debt     PHP XXX,XXX
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>Total Current Liabilities        PHP XXX,XXX
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>Non-Current Liabilities
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>  Long-Term Debt                 PHP XXX,XXX
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>Total Non-Current Liabilities    PHP XXX,XXX
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>Equity
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>  Share Capital                  PHP XXX,XXX
+<a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a>  Retained Earnings              PHP XXX,XXX
+<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>Total Equity                     PHP XXX,XXX
+<a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a>TOTAL LIABILITIES AND EQUITY     PHP XXX,XXX
+</code></pre></div></p>
+<p><strong>Key Financial Ratios</strong>:
+- Current Ratio = Current Assets / Current Liabilities (target: ≥1.5)
+- Quick Ratio = (Current Assets - Inventory) / Current Liabilities (target: ≥1.0)
+- Debt-to-Equity = Total Liabilities / Total Equity (target: ≤2.0)</p>
+<p><strong>Evidence Required</strong>:
+- Balance sheet (Excel with formulas)
+- Financial ratio calculation worksheet</p>
+<p><strong>Acceptance Criteria</strong>:
+- Balance sheet balanced (assets = liabilities + equity)
+- All accounts properly classified
+- Financial ratios within policy targets</p>
+<hr />
+<h4 id="task-28-income-statement-preparation">Task 28: Income Statement Preparation<a class="headerlink" href="#task-28-income-statement-preparation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 26 (trial balance)
+<strong>Timing</strong>: Day 5, 12:00 PM - 2:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Prepare income statement from trial balance data
+2. Apply standard income statement format (revenue, expenses, net income)
+3. Calculate gross profit, operating profit, net profit margins
+4. Compare to budget and explain significant variances (&gt;10%)
+5. Add footnotes for non-recurring items</p>
+<p><strong>Income Statement Format</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>REVENUE
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>Service Revenue                  PHP XXX,XXX
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>Other Revenue                    PHP XXX,XXX
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>Total Revenue                    PHP XXX,XXX
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>COST OF SERVICES
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>Direct Labor                     PHP XXX,XXX
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>Direct Materials                 PHP XXX,XXX
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>Total Cost of Services           PHP XXX,XXX
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>GROSS PROFIT                     PHP XXX,XXX
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>Gross Profit Margin              XX.X%
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>OPERATING EXPENSES
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>Salaries and Wages               PHP XXX,XXX
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>Rent                             PHP XXX,XXX
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>Utilities                        PHP XXX,XXX
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>Depreciation                     PHP XXX,XXX
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>Other Operating Expenses         PHP XXX,XXX
+<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a>Total Operating Expenses         PHP XXX,XXX
+<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a>
+<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a>OPERATING PROFIT                 PHP XXX,XXX
+<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a>Operating Profit Margin          XX.X%
+<a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a>
+<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a>OTHER INCOME/(EXPENSES)
+<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>Interest Income                  PHP XXX,XXX
+<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a>Interest Expense                 (PHP XXX,XXX)
+<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a>FX Gain/(Loss)                   PHP XXX,XXX
+<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a>Total Other Income/(Expenses)    PHP XXX,XXX
+<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a>
+<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a>NET INCOME BEFORE TAX            PHP XXX,XXX
+<a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a>Income Tax Expense               (PHP XXX,XXX)
+<a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a>NET INCOME                       PHP XXX,XXX
+<a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a>Net Profit Margin                XX.X%
+</code></pre></div></p>
+<p><strong>Key Performance Metrics</strong>:
+- Gross Profit Margin = Gross Profit / Revenue (target: ≥40%)
+- Operating Profit Margin = Operating Profit / Revenue (target: ≥15%)
+- Net Profit Margin = Net Income / Revenue (target: ≥10%)</p>
+<p><strong>Evidence Required</strong>:
+- Income statement (Excel with formulas)
+- Budget variance analysis (actual vs. budget)</p>
+<p><strong>Acceptance Criteria</strong>:
+- Income statement mathematically correct
+- Margins within policy targets
+- Budget variances &gt;10% explained</p>
+<hr />
+<h4 id="task-29-cash-flow-statement-preparation">Task 29: Cash Flow Statement Preparation<a class="headerlink" href="#task-29-cash-flow-statement-preparation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 26, 27, 28 (trial balance, balance sheet, income statement)
+<strong>Timing</strong>: Day 5, 2:00 PM - 4:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Prepare cash flow statement using indirect method
+2. Reconcile net income to operating cash flow
+3. Identify investing and financing activities
+4. Validate ending cash balance to balance sheet
+5. Calculate free cash flow</p>
+<p><strong>Cash Flow Statement Format (Indirect Method)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>OPERATING ACTIVITIES
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>Net Income                       PHP XXX,XXX
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>Adjustments:
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>  Depreciation                   PHP XXX,XXX
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>  Changes in Working Capital:
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>    (Increase)/Decrease in AR    (PHP XXX,XXX)
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>    (Increase)/Decrease in Inv   (PHP XXX,XXX)
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>    Increase/(Decrease) in AP    PHP XXX,XXX
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>Net Cash from Operations         PHP XXX,XXX
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>INVESTING ACTIVITIES
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>Purchase of Fixed Assets         (PHP XXX,XXX)
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>Proceeds from Asset Disposal     PHP XXX,XXX
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>Net Cash from Investing          (PHP XXX,XXX)
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>FINANCING ACTIVITIES
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>Proceeds from Long-Term Debt     PHP XXX,XXX
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>Repayment of Long-Term Debt      (PHP XXX,XXX)
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>Dividends Paid                   (PHP XXX,XXX)
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>Net Cash from Financing          (PHP XXX,XXX)
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>NET CHANGE IN CASH               PHP XXX,XXX
+<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>Cash - Beginning of Period       PHP XXX,XXX
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a>Cash - End of Period             PHP XXX,XXX
+</code></pre></div></p>
+<p><strong>Free Cash Flow Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Free Cash Flow = Operating Cash Flow - Capital Expenditures
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Cash flow statement (Excel with formulas)
+- Cash reconciliation to balance sheet</p>
+<p><strong>Acceptance Criteria</strong>:
+- Cash flow statement reconciles to balance sheet cash balance
+- Operating cash flow positive (target)
+- Free cash flow calculated</p>
+<hr />
+<h4 id="task-30-financial-statement-consolidation-multi-agency">Task 30: Financial Statement Consolidation (Multi-Agency)<a class="headerlink" href="#task-30-financial-statement-consolidation-multi-agency" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Manager
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Tasks 27, 28, 29 (all financial statements)
+<strong>Timing</strong>: Day 5, 4:00 PM - 6:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Consolidate financial statements for all 8 agencies
+2. Eliminate intercompany balances and transactions
+3. Calculate consolidated financial ratios
+4. Prepare consolidation workpaper
+5. Generate consolidated financial package</p>
+<p><strong>Consolidation Adjustments</strong>:
+- Eliminate intercompany receivables/payables (from Task 20)
+- Eliminate intercompany revenue/expenses
+- Adjust for minority interests (if applicable)</p>
+<p><strong>Evidence Required</strong>:
+- Consolidation workpaper (Excel with elimination entries)
+- Consolidated financial statements (balance sheet, income statement, cash flow)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All intercompany balances eliminated
+- Consolidated statements balanced
+- Consolidation methodology documented</p>
+<hr />
+<h4 id="task-31-variance-analysis-actual-vs-budget">Task 31: Variance Analysis (Actual vs. Budget)<a class="headerlink" href="#task-31-variance-analysis-actual-vs-budget" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 28 (income statement)
+<strong>Timing</strong>: Day 5, 6:00 PM - 8:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Prepare variance analysis report (actual vs. budget)
+2. Calculate variances for revenue and expense line items
+3. Classify variances (favorable vs. unfavorable)
+4. Investigate and document variances &gt;10% or PHP 100,000
+5. Prepare management commentary for significant variances</p>
+<p><strong>Variance Analysis Format</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Account          Budget    Actual    Variance   Variance%   F/U
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>Service Revenue  1,000,000 1,100,000 100,000    10.0%       F
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>Direct Labor     400,000   420,000   20,000     5.0%        U
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>Rent             80,000    82,000    2,000      2.5%        U
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>...
+</code></pre></div></p>
+<p><strong>Variance Investigation Thresholds</strong>:
+- Revenue: Variance &gt;10% or PHP 100,000
+- Expenses: Variance &gt;10% or PHP 50,000</p>
+<p><strong>Evidence Required</strong>:
+- Variance analysis report (Excel)
+- Management commentary for significant variances</p>
+<p><strong>Acceptance Criteria</strong>:
+- All material variances (&gt;10%) explained
+- Commentary clear and actionable</p>
+<hr />
+<h4 id="task-32-key-performance-indicator-kpi-dashboard">Task 32: Key Performance Indicator (KPI) Dashboard<a class="headerlink" href="#task-32-key-performance-indicator-kpi-dashboard" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Tasks 27, 28 (balance sheet, income statement)
+<strong>Timing</strong>: Day 5, 8:00 PM - 9:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Calculate KPIs for closing month
+2. Compare to prior month and budget targets
+3. Update KPI dashboard in Apache Superset
+4. Generate KPI summary report
+5. Flag KPIs not meeting targets for management attention</p>
+<p><strong>Key Performance Indicators</strong>:
+- <strong>Revenue Growth</strong>: (Current Month Revenue - Prior Month Revenue) / Prior Month Revenue
+- <strong>Gross Profit Margin</strong>: Gross Profit / Revenue
+- <strong>Operating Profit Margin</strong>: Operating Profit / Revenue
+- <strong>Net Profit Margin</strong>: Net Income / Revenue
+- <strong>Current Ratio</strong>: Current Assets / Current Liabilities
+- <strong>Days Sales Outstanding (DSO)</strong>: (AR / Revenue) × 30 days
+- <strong>Days Payable Outstanding (DPO)</strong>: (AP / COGS) × 30 days
+- <strong>Cash Conversion Cycle</strong>: DSO + DIO - DPO</p>
+<p><strong>Evidence Required</strong>:
+- KPI calculation worksheet (Excel)
+- KPI dashboard screenshot (from Superset)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All KPIs calculated accurately
+- Dashboard updated and accessible
+- KPIs not meeting targets flagged</p>
+<hr />
+<h4 id="task-33-management-commentary-report">Task 33: Management Commentary Report<a class="headerlink" href="#task-33-management-commentary-report" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Manager
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 31 (variance analysis)
+<strong>Timing</strong>: Day 5, 9:00 PM - 11:00 PM (overtime if needed)</p>
+<p><strong>Procedure</strong>:
+1. Draft management commentary for financial statements
+2. Summarize financial performance highlights
+3. Explain significant variances and unusual items
+4. Discuss financial position and liquidity
+5. Outline key risks and opportunities for next month</p>
+<p><strong>Management Commentary Outline</strong>:
+1. <strong>Executive Summary</strong> (1 paragraph)
+2. <strong>Financial Performance</strong> (revenue, expenses, profitability)
+3. <strong>Financial Position</strong> (assets, liabilities, equity)
+4. <strong>Cash Flow and Liquidity</strong> (operating cash flow, free cash flow)
+5. <strong>Key Variances</strong> (actual vs. budget explanations)
+6. <strong>Risks and Opportunities</strong> (forward-looking statements)</p>
+<p><strong>Evidence Required</strong>:
+- Management commentary report (Word document)</p>
+<p><strong>Acceptance Criteria</strong>:
+- Commentary clear, concise, and insightful
+- All significant variances explained
+- Approved by Finance Director</p>
+<hr />
+<h4 id="task-34-financial-package-assembly">Task 34: Financial Package Assembly<a class="headerlink" href="#task-34-financial-package-assembly" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Tasks 27-33 (all financial statements and reports)
+<strong>Timing</strong>: Day 5, 11:00 PM - 12:00 AM (overnight if needed)</p>
+<p><strong>Procedure</strong>:
+1. Assemble complete financial package (PDF)
+2. Include all financial statements (balance sheet, income statement, cash flow)
+3. Include supporting schedules (trial balance, variance analysis, KPI dashboard)
+4. Include management commentary
+5. Add table of contents and executive summary
+6. Generate PDF and upload to shared drive</p>
+<p><strong>Financial Package Contents</strong>:
+1. Cover page (month/year, agency, date prepared)
+2. Table of contents
+3. Executive summary
+4. Balance sheet
+5. Income statement
+6. Cash flow statement
+7. Trial balance
+8. Variance analysis
+9. KPI dashboard
+10. Management commentary
+11. Supporting schedules (reconciliations, aging reports, etc.)</p>
+<p><strong>Evidence Required</strong>:
+- Complete financial package (PDF)
+- Upload confirmation (shared drive link)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All sections included and properly formatted
+- PDF accessible to stakeholders
+- File naming convention followed (YYYYMM_FinancialPackage_[Agency].pdf)</p>
+<hr />
+<h4 id="task-35-financial-statements-approval-gate-gate-3">Task 35: Financial Statements Approval Gate (Gate 3)<a class="headerlink" href="#task-35-financial-statements-approval-gate-gate-3" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Director
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 34 (financial package assembly)
+<strong>Timing</strong>: Day 5, 12:00 AM - 2:00 AM (overnight if needed)</p>
+<p><strong>Procedure</strong>:
+1. Review complete financial package
+2. Validate financial statements for accuracy and completeness
+3. Review management commentary for reasonableness
+4. Assess compliance with accounting standards (PFRS/IFRS)
+5. Approve or reject financial statements
+6. Document approval decision in Odoo</p>
+<p><strong>Approval Criteria</strong>:
+- Financial statements accurate and complete
+- All material variances explained
+- Compliance with accounting standards
+- Management commentary clear and insightful</p>
+<p><strong>Evidence Required</strong>:
+- Approval sign-off (digital signature)
+- Approval memo (Word document)</p>
+<p><strong>Outcome</strong>:
+- <strong>Approved</strong>: Proceed to Phase 4 (BIR preparation)
+- <strong>Rejected</strong>: Return to financial reporting tasks for revision</p>
+<hr />
+<h3 id="phase-4-review-approval-bir-preparation-day-5">Phase 4: Review, Approval &amp; BIR Preparation (Day 5)<a class="headerlink" href="#phase-4-review-approval-bir-preparation-day-5" title="Permanent link">&para;</a></h3>
+<h4 id="task-36-bir-1601-c-preparation-withholding-tax">Task 36: BIR 1601-C Preparation (Withholding Tax)<a class="headerlink" href="#task-36-bir-1601-c-preparation-withholding-tax" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 3 hours
+<strong>Dependencies</strong>: Task 35 (Gate 3 approval)
+<strong>Timing</strong>: Day 5, 2:00 AM - 5:00 AM (overnight if needed)</p>
+<p><strong>Procedure</strong>:
+1. Extract withholding tax data from Odoo for closing month
+2. Classify withholding taxes by type (compensation, professional fees, etc.)
+3. Calculate total withholding tax per BIR tax code
+4. Prepare BIR Form 1601-C using n8n workflow
+5. Generate supporting schedules (alphalist of payees)
+6. Validate accuracy against payroll and vendor payment records</p>
+<p><strong>BIR 1601-C Sections</strong>:
+- <strong>Part I</strong>: Monthly Remittance Return of Income Taxes Withheld
+- <strong>Part II</strong>: Breakdown of taxes withheld by type
+  - WC010: Compensation (salaries)
+  - WC020: Professional fees
+  - WC030: Rentals
+  - WC040: Dividends
+  - ... (other tax codes as applicable)</p>
+<p><strong>Accuracy Validation Formula</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Total WHT per BIR Form = Sum of WHT per Odoo GL Account
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>Accuracy % = (BIR Form Amount / Odoo Amount) × 100%
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>Target: ≥98% accuracy
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- BIR Form 1601-C (PDF)
+- Alphalist of payees (Excel)
+- Withholding tax computation worksheet
+- Reconciliation to Odoo GL (variance report)</p>
+<p><strong>Acceptance Criteria</strong>:
+- BIR form completed with all required fields
+- Accuracy ≥98% (variance ≤2%)
+- Supporting schedules attached
+- Finance Director approval obtained</p>
+<hr />
+<h4 id="task-37-multi-employee-bir-consolidation">Task 37: Multi-Employee BIR Consolidation<a class="headerlink" href="#task-37-multi-employee-bir-consolidation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Manager
+<strong>Duration</strong>: 2 hours
+<strong>Dependencies</strong>: Task 36 (BIR 1601-C preparation)
+<strong>Timing</strong>: Day 5, 5:00 AM - 7:00 AM (overnight if needed)</p>
+<p><strong>Procedure</strong>:
+1. Consolidate BIR 1601-C forms for all 8 employees (RIM, CKVC, BOM, JPAL, JLI, JAP, LAS, RMQB)
+2. Validate each employee's form for completeness and accuracy
+3. Prepare consolidated summary report
+4. Generate individual and consolidated PDFs
+5. Upload to Supabase storage for audit trail</p>
+<p><strong>Consolidation Summary Format</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>Employee  TIN          Total WHT    Status      Validation
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>RIM       XXX-XXX-XXX  PHP XXX,XXX  Approved    ✅
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>CKVC      XXX-XXX-XXX  PHP XXX,XXX  Approved    ✅
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>BOM       XXX-XXX-XXX  PHP XXX,XXX  Approved    ✅
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>...
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>TOTAL                  PHP X,XXX,XXX
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Consolidated BIR summary report (Excel)
+- Individual BIR forms (8 PDFs)
+- Upload confirmation (Supabase storage link)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All 8 employee forms completed and validated
+- Consolidated total matches sum of individual forms
+- All forms uploaded to Supabase</p>
+<hr />
+<h4 id="task-38-bir-filing-preparation-payment-submission">Task 38: BIR Filing Preparation (Payment &amp; Submission)<a class="headerlink" href="#task-38-bir-filing-preparation-payment-submission" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Supervisor
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Task 37 (multi-employee consolidation)
+<strong>Timing</strong>: Day 5, 7:00 AM - 8:00 AM</p>
+<p><strong>Procedure</strong>:
+1. Calculate total BIR tax payable for closing month
+2. Prepare payment instruction for bank (online or over-the-counter)
+3. Generate BIR payment form (if manual payment)
+4. Coordinate with bank for tax remittance
+5. Obtain payment confirmation and reference number</p>
+<p><strong>BIR Payment Methods</strong>:
+- <strong>eBIRForms</strong>: Electronic filing and payment (preferred)
+- <strong>Authorized Agent Banks</strong>: Over-the-counter payment with BIR form
+- <strong>Online Banking</strong>: GCash, BDO Online, BPI Online (select banks)</p>
+<p><strong>Evidence Required</strong>:
+- BIR payment confirmation (screenshot or receipt)
+- Bank transaction reference number</p>
+<p><strong>Acceptance Criteria</strong>:
+- Payment completed on or before BIR deadline (10th of following month)
+- Payment confirmation obtained</p>
+<hr />
+<h4 id="task-39-bir-submission-tracking">Task 39: BIR Submission Tracking<a class="headerlink" href="#task-39-bir-submission-tracking" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Task 38 (BIR filing preparation)
+<strong>Timing</strong>: Day 5, 8:00 AM - 9:00 AM</p>
+<p><strong>Procedure</strong>:
+1. Log BIR submission in tracking system (Odoo or Supabase)
+2. Update BIR schedule table with submission status
+3. Set reminder for BIR filing deadline (10th of following month)
+4. Generate BIR submission summary report
+5. Send Mattermost notification to stakeholders</p>
+<p><strong>BIR Submission Log Fields</strong>:
+- Form type (1601-C)
+- Period covered (YYYY-MM)
+- Employee/Agency
+- Total tax amount
+- Filing status (prepared, filed, paid)
+- Filing date
+- Payment reference number</p>
+<p><strong>Evidence Required</strong>:
+- BIR submission log (screenshot from Odoo)
+- Mattermost notification confirmation</p>
+<p><strong>Acceptance Criteria</strong>:
+- All submissions logged in tracking system
+- Reminder set for filing deadline
+- Stakeholders notified</p>
+<hr />
+<h4 id="task-40-closing-checklist-review">Task 40: Closing Checklist Review<a class="headerlink" href="#task-40-closing-checklist-review" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Manager
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: All prior tasks (1-39)
+<strong>Timing</strong>: Day 5, 9:00 AM - 10:00 AM</p>
+<p><strong>Procedure</strong>:
+1. Review month-end close checklist (all 44 tasks)
+2. Validate completion status and evidence for each task
+3. Identify any incomplete or non-compliant tasks
+4. Escalate issues to Finance Director if needed
+5. Document overall close status and lessons learned</p>
+<p><strong>Checklist Review Criteria</strong>:
+- <strong>Complete</strong>: Task finished with evidence attached
+- <strong>In Progress</strong>: Task started but not yet complete (flag for follow-up)
+- <strong>Not Started</strong>: Task not yet initiated (escalate)
+- <strong>Blocked</strong>: Task waiting on external input (escalate)</p>
+<p><strong>Evidence Required</strong>:
+- Checklist review summary (Excel with task status)
+- Lessons learned notes (Word document)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All 44 tasks reviewed
+- Incomplete tasks escalated
+- Close status documented</p>
+<hr />
+<h4 id="task-41-supabase-data-sync-validation">Task 41: Supabase Data Sync Validation<a class="headerlink" href="#task-41-supabase-data-sync-validation" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Analyst
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Task 34 (financial package)
+<strong>Timing</strong>: Day 5, 10:00 AM - 11:00 AM</p>
+<p><strong>Procedure</strong>:
+1. Verify financial data synced from Odoo to Supabase
+2. Validate ETL pipeline success (Bronze → Silver → Gold)
+3. Check data quality metrics in <code>scout.data_quality_metrics</code>
+4. Run reconciliation queries (Odoo totals vs. Supabase totals)
+5. Generate data sync validation report</p>
+<p><strong>Key Validation Queries</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1">-- Validate revenue sync</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="k">SELECT</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">  </span><span class="k">SUM</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_revenue_supabase</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="k">FROM</span><span class="w"> </span><span class="n">scout</span><span class="p">.</span><span class="n">silver_transactions</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">transaction_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;revenue&#39;</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="k">period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2025-12&#39;</span><span class="p">;</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="c1">-- Compare to Odoo GL total</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="c1">-- Revenue variance = Supabase Total - Odoo Total</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="c1">-- Target: Variance ≤ 0.1%</span>
+</code></pre></div></p>
+<p><strong>Evidence Required</strong>:
+- Data sync validation report (SQL query results)
+- ETL pipeline log (from Supabase)
+- Variance analysis (Odoo vs. Supabase)</p>
+<p><strong>Acceptance Criteria</strong>:
+- All data synced successfully (no ETL errors)
+- Variance between Odoo and Supabase ≤0.1%
+- Data quality metrics green (completeness ≥95%, consistency ≥98%)</p>
+<hr />
+<h4 id="task-42-month-end-close-summary-report">Task 42: Month-End Close Summary Report<a class="headerlink" href="#task-42-month-end-close-summary-report" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Manager
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Task 40 (checklist review)
+<strong>Timing</strong>: Day 5, 11:00 AM - 12:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Prepare month-end close summary report for Finance Director
+2. Summarize key financial results (revenue, expenses, net income)
+3. Highlight significant variances and unusual items
+4. Report on close process efficiency (on-time completion, issues)
+5. Provide recommendations for next month's close</p>
+<p><strong>Close Summary Report Outline</strong>:
+1. <strong>Close Status</strong>: On-time / Delayed (with reason)
+2. <strong>Financial Highlights</strong>: Key results and variances
+3. <strong>Process Efficiency</strong>: Task completion timeline, bottlenecks
+4. <strong>Issues and Resolutions</strong>: Problems encountered and how resolved
+5. <strong>Recommendations</strong>: Process improvements for next close</p>
+<p><strong>Evidence Required</strong>:
+- Month-end close summary report (Word/PDF)</p>
+<p><strong>Acceptance Criteria</strong>:
+- Summary report complete and accurate
+- Recommendations actionable and specific</p>
+<hr />
+<h4 id="task-43-stakeholder-communication">Task 43: Stakeholder Communication<a class="headerlink" href="#task-43-stakeholder-communication" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Director
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Task 42 (close summary report)
+<strong>Timing</strong>: Day 5, 12:00 PM - 1:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Review financial package and close summary report
+2. Prepare stakeholder communication (email or presentation)
+3. Distribute financial package to authorized stakeholders
+4. Schedule finance review meeting with senior management
+5. Send Mattermost notification to all Finance team members</p>
+<p><strong>Stakeholder Communication Content</strong>:
+- Financial performance summary
+- Key achievements and challenges
+- Action items for next month
+- Finance review meeting invitation</p>
+<p><strong>Evidence Required</strong>:
+- Stakeholder communication email/presentation
+- Distribution list confirmation
+- Mattermost notification screenshot</p>
+<p><strong>Acceptance Criteria</strong>:
+- All authorized stakeholders received financial package
+- Finance review meeting scheduled
+- Team notified of close completion</p>
+<hr />
+<h4 id="task-44-bir-compliance-approval-gate-gate-4">Task 44: BIR Compliance Approval Gate (Gate 4)<a class="headerlink" href="#task-44-bir-compliance-approval-gate-gate-4" title="Permanent link">&para;</a></h4>
+<p><strong>Owner</strong>: Finance Director
+<strong>Duration</strong>: 1 hour
+<strong>Dependencies</strong>: Task 36-39 (BIR preparation and submission)
+<strong>Timing</strong>: Day 5, 1:00 PM - 2:00 PM</p>
+<p><strong>Procedure</strong>:
+1. Review all BIR forms (1601-C) for closing month
+2. Validate BIR calculation accuracy (≥98% target)
+3. Verify payment confirmations and reference numbers
+4. Confirm submission tracking and deadline reminders
+5. Approve BIR compliance package or reject for corrections</p>
+<p><strong>Approval Criteria</strong>:
+- BIR forms completed with all required fields
+- Calculation accuracy ≥98%
+- Payment confirmations obtained
+- Submission tracking updated</p>
+<p><strong>Evidence Required</strong>:
+- BIR approval memo (Word document)
+- Approval sign-off (digital signature)</p>
+<p><strong>Outcome</strong>:
+- <strong>Approved</strong>: Month-end close officially complete
+- <strong>Rejected</strong>: Return to BIR preparation tasks for corrections</p>
+<hr />
+<h2 id="acceptance-criteria-summary">Acceptance Criteria Summary<a class="headerlink" href="#acceptance-criteria-summary" title="Permanent link">&para;</a></h2>
+<h3 id="critical-success-factors">Critical Success Factors<a class="headerlink" href="#critical-success-factors" title="Permanent link">&para;</a></h3>
+<p><strong>Timeline Compliance</strong>:
+- ✅ All 44 tasks completed within 5 business days
+- ✅ All approval gates passed on schedule
+- ✅ BIR filing deadline met (10th of following month)</p>
+<p><strong>Quality Standards</strong>:
+- ✅ All reconciliations within variance thresholds (≤0.1%)
+- ✅ Financial statements balanced and accurate
+- ✅ BIR calculation accuracy ≥98%</p>
+<p><strong>Documentation Completeness</strong>:
+- ✅ All evidence requirements met (supporting documents attached)
+- ✅ All approval sign-offs obtained (digital signatures)
+- ✅ All reports generated and distributed</p>
+<p><strong>System Integration</strong>:
+- ✅ Data synced from Odoo to Supabase (variance ≤0.1%)
+- ✅ ETL pipeline success (no errors)
+- ✅ Visual parity maintained (SSIM thresholds met)</p>
+<hr />
+<h2 id="common-issues-troubleshooting">Common Issues &amp; Troubleshooting<a class="headerlink" href="#common-issues-troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="issue-1-reconciliation-variance-01">Issue 1: Reconciliation Variance &gt;0.1%<a class="headerlink" href="#issue-1-reconciliation-variance-01" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom</strong>: Bank or GL reconciliation shows variance exceeding threshold</p>
+<p><strong>Root Causes</strong>:
+- Timing differences (transactions posted after month-end)
+- Data entry errors (incorrect amounts or accounts)
+- Missing transactions (not recorded in system)
+- FX revaluation issues (foreign currency balances)</p>
+<p><strong>Resolution Steps</strong>:
+1. Review reconciliation workpaper for calculation errors
+2. Investigate unmatched items in detail (query Odoo for transaction history)
+3. Book adjusting entries for legitimate variances
+4. Escalate to Finance Manager if variance unexplained</p>
+<p><strong>Prevention</strong>:
+- Daily reconciliation monitoring (don't wait until month-end)
+- Automated reconciliation tools (fuzzy matching in Supabase)
+- Staff training on proper transaction coding</p>
+<hr />
+<h3 id="issue-2-bir-calculation-accuracy-98">Issue 2: BIR Calculation Accuracy &lt;98%<a class="headerlink" href="#issue-2-bir-calculation-accuracy-98" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom</strong>: BIR form totals do not match Odoo GL within 2% tolerance</p>
+<p><strong>Root Causes</strong>:
+- Incorrect tax code classification (wrong withholding rate applied)
+- Missing transactions (not captured in BIR extract)
+- Manual calculation errors (formula errors in Excel)
+- System configuration issues (Odoo tax settings incorrect)</p>
+<p><strong>Resolution Steps</strong>:
+1. Re-run BIR extract query from Odoo
+2. Validate tax code mappings (Odoo → BIR tax codes)
+3. Manually reconcile line-by-line (Odoo transactions vs. BIR form)
+4. Correct errors and regenerate BIR form
+5. Escalate to Finance Director if discrepancy persists</p>
+<p><strong>Prevention</strong>:
+- Automated BIR form generation via n8n workflow
+- Quarterly tax code audit (validate all mappings)
+- Tax calculation testing in UAT environment before month-end</p>
+<hr />
+<h3 id="issue-3-missed-approval-gate-deadline">Issue 3: Missed Approval Gate Deadline<a class="headerlink" href="#issue-3-missed-approval-gate-deadline" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom</strong>: Approval gate not completed on schedule (delays subsequent tasks)</p>
+<p><strong>Root Causes</strong>:
+- Task dependencies not completed on time
+- Approver unavailable or unresponsive
+- Quality issues requiring rework (rejected tasks)
+- Resource constraints (insufficient staff)</p>
+<p><strong>Resolution Steps</strong>:
+1. Escalate to Finance Director immediately
+2. Reallocate resources to critical path tasks
+3. Request approval override if justified
+4. Adjust timeline for subsequent tasks (communicate impact)</p>
+<p><strong>Prevention</strong>:
+- Daily status updates during close period
+- Early warning system (Mattermost alerts for at-risk tasks)
+- Backup approver designation (if primary approver unavailable)
+- Monthly close retrospective (identify process bottlenecks)</p>
+<hr />
+<h2 id="appendix-a-task-dependency-matrix">Appendix A: Task Dependency Matrix<a class="headerlink" href="#appendix-a-task-dependency-matrix" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>Task   Depends On   Blocking
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>1      -            2
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>2      1            3, 13
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>3      2            4, 5, 6, 7, 8, 14, 15
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>4      3            12, 15
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>5      3            15
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>6      3,4,5        15, 20
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>7      3            15
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>8      3            15, 17
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>9      5            15, 16
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>10     3            15, 18
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>11     9            15
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>12     4            15, 19
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>13     2            15
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a>14     3            15
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>15     3-14         16-25
+<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a>16     15           25
+<a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>17     8            25
+<a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a>18     10           25
+<a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a>19     12           25
+<a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a>20     6            25
+<a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a>21     4,5          25
+<a id="__codelineno-31-23" name="__codelineno-31-23" href="#__codelineno-31-23"></a>22     3            25
+<a id="__codelineno-31-24" name="__codelineno-31-24" href="#__codelineno-31-24"></a>23     4            25
+<a id="__codelineno-31-25" name="__codelineno-31-25" href="#__codelineno-31-25"></a>24     19           25
+<a id="__codelineno-31-26" name="__codelineno-31-26" href="#__codelineno-31-26"></a>25     16-24        26-35
+<a id="__codelineno-31-27" name="__codelineno-31-27" href="#__codelineno-31-27"></a>26     25           27-35
+<a id="__codelineno-31-28" name="__codelineno-31-28" href="#__codelineno-31-28"></a>27     26           30, 31, 32, 34, 35
+<a id="__codelineno-31-29" name="__codelineno-31-29" href="#__codelineno-31-29"></a>28     26           30, 31, 32, 34, 35
+<a id="__codelineno-31-30" name="__codelineno-31-30" href="#__codelineno-31-30"></a>29     26,27,28     34, 35
+<a id="__codelineno-31-31" name="__codelineno-31-31" href="#__codelineno-31-31"></a>30     27,28,29     34, 35
+<a id="__codelineno-31-32" name="__codelineno-31-32" href="#__codelineno-31-32"></a>31     28           32, 33, 34, 35
+<a id="__codelineno-31-33" name="__codelineno-31-33" href="#__codelineno-31-33"></a>32     27,28        34, 35
+<a id="__codelineno-31-34" name="__codelineno-31-34" href="#__codelineno-31-34"></a>33     31           34, 35
+<a id="__codelineno-31-35" name="__codelineno-31-35" href="#__codelineno-31-35"></a>34     27-33        35
+<a id="__codelineno-31-36" name="__codelineno-31-36" href="#__codelineno-31-36"></a>35     34           36-44
+<a id="__codelineno-31-37" name="__codelineno-31-37" href="#__codelineno-31-37"></a>36     35           37, 44
+<a id="__codelineno-31-38" name="__codelineno-31-38" href="#__codelineno-31-38"></a>37     36           38, 44
+<a id="__codelineno-31-39" name="__codelineno-31-39" href="#__codelineno-31-39"></a>38     37           39, 44
+<a id="__codelineno-31-40" name="__codelineno-31-40" href="#__codelineno-31-40"></a>39     38           44
+<a id="__codelineno-31-41" name="__codelineno-31-41" href="#__codelineno-31-41"></a>40     1-39         42
+<a id="__codelineno-31-42" name="__codelineno-31-42" href="#__codelineno-31-42"></a>41     34           42
+<a id="__codelineno-31-43" name="__codelineno-31-43" href="#__codelineno-31-43"></a>42     40           43
+<a id="__codelineno-31-44" name="__codelineno-31-44" href="#__codelineno-31-44"></a>43     42           44
+<a id="__codelineno-31-45" name="__codelineno-31-45" href="#__codelineno-31-45"></a>44     36-43        (Close Complete)
+</code></pre></div>
+<hr />
+<h2 id="appendix-b-role-assignments">Appendix B: Role Assignments<a class="headerlink" href="#appendix-b-role-assignments" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Primary Tasks</th>
+<th>Backup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Finance SSC Manager</td>
+<td>1, 40, 42</td>
+<td>Finance Manager</td>
+</tr>
+<tr>
+<td>Finance Supervisor</td>
+<td>2, 3, 6, 9, 11, 16, 19, 20, 24, 27, 28, 34, 36, 38</td>
+<td>Finance Manager</td>
+</tr>
+<tr>
+<td>Finance Analyst</td>
+<td>4, 5, 7, 8, 10, 13, 17, 18, 21, 22, 23, 26, 29, 31, 32, 39, 41</td>
+<td>Finance Supervisor</td>
+</tr>
+<tr>
+<td>Finance Manager</td>
+<td>15, 25, 30, 33, 37, 40</td>
+<td>Finance Director</td>
+</tr>
+<tr>
+<td>Finance Director</td>
+<td>35, 43, 44</td>
+<td>(None - final approver)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="document-revision-history">Document Revision History<a class="headerlink" href="#document-revision-history" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>2025-12-29</td>
+<td>Finance SSC Manager</td>
+<td>Initial template creation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>End of Month-End Close Task Template</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/USERNAME/odoo-financial-close-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
