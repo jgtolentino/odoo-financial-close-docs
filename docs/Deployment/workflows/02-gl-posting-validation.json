@@ -1,0 +1,409 @@
+{
+  "name": "GL Posting Validation & Posting",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "gl-posting-webhook",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "id": "webhook-trigger",
+      "name": "Odoo Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [250, 300],
+      "webhookId": "gl-posting-webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "// GL Entry Balance Validation\n// Ensures debit = credit (SOX 404 requirement)\n\nconst items = $input.all();\nconst entry = items[0].json;\n\nlet totalDebit = 0;\nlet totalCredit = 0;\n\n// Calculate totals from line items\nfor (const line of (entry.line_ids || [])) {\n  totalDebit += parseFloat(line.debit) || 0;\n  totalCredit += parseFloat(line.credit) || 0;\n}\n\n// Check balance (tolerance of 0.01 for rounding)\nconst isBalanced = Math.abs(totalDebit - totalCredit) < 0.01;\nconst balanceDiff = Math.abs(totalDebit - totalCredit);\n\nreturn [{\n  json: {\n    ...entry,\n    validation: {\n      total_debit: totalDebit.toFixed(2),\n      total_credit: totalCredit.toFixed(2),\n      is_balanced: isBalanced,\n      balance_diff: balanceDiff.toFixed(2),\n      validated_at: new Date().toISOString()\n    }\n  }\n}];"
+      },
+      "id": "validate-balance",
+      "name": "Validate Balance",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "balance-check",
+              "leftValue": "={{ $json.validation.is_balanced }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-balanced",
+      "name": "Is Balanced?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/afc.sod.check",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"user_id\": {{ $json.create_uid }},\n  \"action\": \"post_journal_entry\",\n  \"document_id\": {{ $json.id }},\n  \"document_model\": \"account.move\",\n  \"amount\": {{ $json.validation.total_debit }}\n}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "check-sod",
+      "name": "Check SoD Conflicts",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [850, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "sod-clear",
+              "leftValue": "={{ $json.has_conflict }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "false"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-sod-clear",
+      "name": "SoD Clear?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1050, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/account.move/{{$json.document_id}}/action_post",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "post-entry",
+      "name": "Post GL Entry",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1250, 100],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": "#afc-production-support",
+        "text": ":x: *SoD VIOLATION DETECTED*\n\nGL Entry: {{$json.document_name}}\nUser: {{$json.user_name}} (ID: {{$json.user_id}})\nConflict: {{$json.conflict_description}}\nRule: {{$json.rule_code}}\n\n*Action Required:* Assign a different user to post this entry.\n\nThis incident has been logged for SOX 404 compliance.",
+        "otherOptions": {
+          "includeLinkToWorkflow": true
+        }
+      },
+      "id": "alert-sod",
+      "name": "Alert SoD Violation",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1250, 300],
+      "credentials": {
+        "slackApi": {
+          "id": "slack-bot",
+          "name": "Slack Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": "#afc-production-support",
+        "text": ":x: *GL ENTRY REJECTED - UNBALANCED*\n\nEntry: {{$json.name}}\nDebit Total: PHP {{$json.validation.total_debit}}\nCredit Total: PHP {{$json.validation.total_credit}}\nDifference: PHP {{$json.validation.balance_diff}}\n\n*Action Required:* Correct the entry in Odoo before resubmitting.",
+        "otherOptions": {
+          "includeLinkToWorkflow": true
+        }
+      },
+      "id": "alert-unbalanced",
+      "name": "Alert Unbalanced Entry",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [850, 400],
+      "credentials": {
+        "slackApi": {
+          "id": "slack-bot",
+          "name": "Slack Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": "#afc-finance",
+        "text": ":white_check_mark: GL Entry *{{$json.name}}* posted successfully!\n\nAmount: PHP {{$json.amount_total}}\nPosted At: {{$now.format('YYYY-MM-DD HH:mm:ss')}} (Manila)\nPosted By: {{$json.posted_by}}",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "id": "notify-posted",
+      "name": "Notify Posted",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1450, 100],
+      "credentials": {
+        "slackApi": {
+          "id": "slack-bot",
+          "name": "Slack Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"GL Entry posted successfully\",\n  \"entry_id\": {{ $json.id }},\n  \"posted_at\": \"{{ $now.toISO() }}\"\n}",
+        "options": {}
+      },
+      "id": "respond-success",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1650, 100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": false,\n  \"error\": \"sod_violation\",\n  \"message\": \"Separation of Duties conflict detected\",\n  \"conflict\": \"{{ $json.conflict_description }}\"\n}",
+        "options": {
+          "responseCode": 403
+        }
+      },
+      "id": "respond-sod-error",
+      "name": "Respond SoD Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1450, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": false,\n  \"error\": \"unbalanced_entry\",\n  \"message\": \"Debit and Credit totals do not match\",\n  \"debit\": {{ $json.validation.total_debit }},\n  \"credit\": {{ $json.validation.total_credit }},\n  \"difference\": {{ $json.validation.balance_diff }}\n}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "respond-balance-error",
+      "name": "Respond Balance Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1050, 400]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/afc.audit.log",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"action\": \"sod_violation\",\n  \"user_id\": {{ $json.user_id }},\n  \"model_name\": \"account.move\",\n  \"record_id\": {{ $json.document_id }},\n  \"details\": {\n    \"rule_code\": \"{{ $json.rule_code }}\",\n    \"conflict\": \"{{ $json.conflict_description }}\"\n  }\n}",
+        "options": {}
+      },
+      "id": "log-sod-violation",
+      "name": "Log SoD Violation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1250, 450],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Odoo Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Validate Balance",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Balance": {
+      "main": [
+        [
+          {
+            "node": "Is Balanced?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Balanced?": {
+      "main": [
+        [
+          {
+            "node": "Check SoD Conflicts",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Alert Unbalanced Entry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check SoD Conflicts": {
+      "main": [
+        [
+          {
+            "node": "SoD Clear?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SoD Clear?": {
+      "main": [
+        [
+          {
+            "node": "Post GL Entry",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Alert SoD Violation",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log SoD Violation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post GL Entry": {
+      "main": [
+        [
+          {
+            "node": "Notify Posted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notify Posted": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Alert SoD Violation": {
+      "main": [
+        [
+          {
+            "node": "Respond SoD Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Alert Unbalanced Entry": {
+      "main": [
+        [
+          {
+            "node": "Respond Balance Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Asia/Manila",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "error-handler-workflow"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "afc",
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "name": "gl",
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "name": "sod",
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    }
+  ],
+  "triggerCount": 1,
+  "active": false,
+  "meta": {
+    "instanceId": "afc-odoo-n8n-production"
+  }
+}

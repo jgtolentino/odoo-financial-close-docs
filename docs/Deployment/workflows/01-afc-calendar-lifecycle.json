@@ -1,0 +1,329 @@
+{
+  "name": "AFC Calendar Lifecycle Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 2 * * *"
+            }
+          ]
+        }
+      },
+      "id": "trigger-daily-2am",
+      "name": "Daily 2AM Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/afc.close.calendar",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 30000
+        },
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "filter",
+              "value": "[[\"state\",\"=\",\"active\"],[\"end_date\",\"<=\",\"{{$now.format('YYYY-MM-DD')}}\"]]"
+            }
+          ]
+        }
+      },
+      "id": "fetch-calendars",
+      "name": "Fetch Active Calendars Due",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [450, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-has-data",
+              "leftValue": "={{ $json.length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-has-calendars",
+      "name": "Has Calendars to Process?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "split-batches",
+      "name": "Process Each Calendar",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [850, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/afc.close.calendar/{{$json.id}}/action_validate_close",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "validate-calendar",
+      "name": "Validate Calendar Completion",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1050, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-can-close",
+              "leftValue": "={{ $json.can_close }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-can-close",
+      "name": "Can Close?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1250, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/afc.close.calendar/{{$json.id}}/action_close",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "close-calendar",
+      "name": "Close Calendar",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1450, 100],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": "#afc-production-support",
+        "text": ":warning: Calendar {{$json.name}} cannot close.\n\nPending Tasks: {{$json.pending_tasks}}\nBlocking Issues: {{$json.blocking_issues}}\n\nPlease review and resolve before next automation run.",
+        "otherOptions": {
+          "includeLinkToWorkflow": true
+        }
+      },
+      "id": "alert-cannot-close",
+      "name": "Alert Slack - Cannot Close",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1450, 300],
+      "credentials": {
+        "slackApi": {
+          "id": "slack-bot",
+          "name": "Slack Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": "#afc-production-support",
+        "text": ":white_check_mark: Calendar *{{$json.name}}* closed successfully!\n\nClosed At: {{$now.format('YYYY-MM-DD HH:mm:ss')}} (Manila Time)\nPeriod: {{$json.period_name}}\nTotal Tasks Completed: {{$json.completed_tasks}}",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "id": "notify-closed",
+      "name": "Notify Slack - Closed",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1650, 100],
+      "credentials": {
+        "slackApi": {
+          "id": "slack-bot",
+          "name": "Slack Bot"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "no-calendars",
+      "name": "No Calendars Due",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [850, 400]
+    }
+  ],
+  "connections": {
+    "Daily 2AM Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch Active Calendars Due",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Active Calendars Due": {
+      "main": [
+        [
+          {
+            "node": "Has Calendars to Process?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Calendars to Process?": {
+      "main": [
+        [
+          {
+            "node": "Process Each Calendar",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Calendars Due",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Each Calendar": {
+      "main": [
+        [
+          {
+            "node": "Validate Calendar Completion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Calendar Completion": {
+      "main": [
+        [
+          {
+            "node": "Can Close?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Can Close?": {
+      "main": [
+        [
+          {
+            "node": "Close Calendar",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Alert Slack - Cannot Close",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Close Calendar": {
+      "main": [
+        [
+          {
+            "node": "Notify Slack - Closed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Asia/Manila",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "error-handler-workflow"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "afc",
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "name": "production",
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    }
+  ],
+  "triggerCount": 1,
+  "active": false,
+  "meta": {
+    "instanceId": "afc-odoo-n8n-production"
+  }
+}

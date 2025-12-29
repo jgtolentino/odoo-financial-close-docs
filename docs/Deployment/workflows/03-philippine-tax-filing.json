@@ -1,0 +1,650 @@
+{
+  "name": "Philippine Tax Form Filing (BIR)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 15 25 * *"
+            }
+          ]
+        }
+      },
+      "id": "trigger-monthly-25th",
+      "name": "Monthly 25th 3PM Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/afc.bir.filing/get_pending_filings",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"period\": \"{{ $now.minus({months: 1}).format('YYYY-MM') }}\",\n  \"company_id\": {{ $env.ODOO_COMPANY_ID || 1 }}\n}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "get-pending-filings",
+      "name": "Get Pending BIR Filings",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [450, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has-filings",
+              "leftValue": "={{ $json.filings?.length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-has-filings",
+      "name": "Has Pending Filings?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "process-each-form",
+      "name": "Process Each Form",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [850, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.form_type }}",
+              "operation": "equals",
+              "value2": "1601-C"
+            },
+            {
+              "value1": "={{ $json.form_type }}",
+              "operation": "equals",
+              "value2": "2550Q"
+            },
+            {
+              "value1": "={{ $json.form_type }}",
+              "operation": "equals",
+              "value2": "1700"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "id": "form-type-router",
+      "name": "Form Type Router",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [1050, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/afc.bir.1601c/{{$json.id}}/compute_tax",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "compute-1601c",
+      "name": "Compute 1601-C Withholding",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1250, 100],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/afc.bir.2550q/{{$json.id}}/compute_tax",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "compute-2550q",
+      "name": "Compute 2550Q VAT",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1250, 250],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/afc.bir.1700/{{$json.id}}/compute_tax",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "compute-1700",
+      "name": "Compute 1700 Income Tax",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1250, 400],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "id": "merge-computed",
+      "name": "Merge Computed",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [1450, 250]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/afc.bir.filing/{{$json.id}}/generate_xml",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"include_attachments\": true,\n  \"validate_tin\": true\n}",
+        "options": {
+          "timeout": 180000
+        }
+      },
+      "id": "generate-xml",
+      "name": "Generate eBIR XML",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1650, 250],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "xml-valid",
+              "leftValue": "={{ $json.xml_valid }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-xml-valid",
+      "name": "XML Valid?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1850, 250]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.EBIR_API_URL}}/submit",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"tin\": \"{{ $env.EBIR_TIN }}\",\n  \"form_type\": \"{{ $json.form_type }}\",\n  \"period\": \"{{ $json.period }}\",\n  \"xml_content\": \"{{ $json.xml_content }}\",\n  \"attachments\": {{ JSON.stringify($json.attachments || []) }}\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "submit-ebir",
+      "name": "Submit to eBIR",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2050, 150],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ebir-api-key",
+          "name": "eBIR API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": "#afc-tax-compliance",
+        "text": ":x: *BIR XML VALIDATION FAILED*\n\nForm: {{$json.form_type}}\nPeriod: {{$json.period}}\nErrors:\n{{$json.validation_errors}}\n\n*Action Required:* Review and correct the tax data in Odoo.",
+        "otherOptions": {
+          "includeLinkToWorkflow": true
+        }
+      },
+      "id": "alert-xml-invalid",
+      "name": "Alert XML Invalid",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [2050, 350],
+      "credentials": {
+        "slackApi": {
+          "id": "slack-bot",
+          "name": "Slack Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "submission-success",
+              "leftValue": "={{ $json.success }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-submission",
+      "name": "Submission Success?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [2250, 150]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ODOO_API_URL}}/api/v2/afc.bir.filing/{{$json.filing_id}}/mark_filed",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"confirmation_number\": \"{{ $json.confirmation_number }}\",\n  \"filed_at\": \"{{ $now.toISO() }}\",\n  \"ebir_reference\": \"{{ $json.ebir_reference }}\"\n}",
+        "options": {}
+      },
+      "id": "log-filing",
+      "name": "Log Filing in Odoo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2450, 50],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "odoo-api-key",
+          "name": "Odoo API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": "#afc-tax-compliance",
+        "text": ":x: *eBIR SUBMISSION FAILED*\n\nForm: {{$json.form_type}}\nPeriod: {{$json.period}}\nError: {{$json.error_message}}\nError Code: {{$json.error_code}}\n\n*Action Required:* Manual submission may be needed via eBIR portal.",
+        "otherOptions": {
+          "includeLinkToWorkflow": true
+        }
+      },
+      "id": "alert-submission-failed",
+      "name": "Alert Submission Failed",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [2450, 250],
+      "credentials": {
+        "slackApi": {
+          "id": "slack-bot",
+          "name": "Slack Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": "#afc-tax-compliance",
+        "text": ":white_check_mark: *BIR TAX FILING SUCCESSFUL*\n\n*Form:* {{$json.form_type}}\n*Period:* {{$json.period}}\n*Tax Amount:* PHP {{$json.tax_amount}}\n*Confirmation #:* `{{$json.confirmation_number}}`\n*Filed At:* {{$now.format('YYYY-MM-DD HH:mm:ss')}} (Manila)\n\n_This filing has been recorded in Odoo for SOX 404 compliance._",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "id": "notify-success",
+      "name": "Notify Tax Team",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [2650, 50],
+      "credentials": {
+        "slackApi": {
+          "id": "slack-bot",
+          "name": "Slack Bot"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "no-filings",
+      "name": "No Pending Filings",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [850, 400]
+    },
+    {
+      "parameters": {
+        "channel": "#afc-tax-compliance",
+        "text": ":information_source: No pending BIR filings for period {{ $now.minus({months: 1}).format('MMMM YYYY') }}.",
+        "otherOptions": {}
+      },
+      "id": "notify-no-filings",
+      "name": "Notify No Filings",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1050, 400],
+      "credentials": {
+        "slackApi": {
+          "id": "slack-bot",
+          "name": "Slack Bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Monthly 25th 3PM Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Pending BIR Filings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Pending BIR Filings": {
+      "main": [
+        [
+          {
+            "node": "Has Pending Filings?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Pending Filings?": {
+      "main": [
+        [
+          {
+            "node": "Process Each Form",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Pending Filings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Each Form": {
+      "main": [
+        [
+          {
+            "node": "Form Type Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Form Type Router": {
+      "main": [
+        [
+          {
+            "node": "Compute 1601-C Withholding",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Compute 2550Q VAT",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Compute 1700 Income Tax",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compute 1601-C Withholding": {
+      "main": [
+        [
+          {
+            "node": "Merge Computed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compute 2550Q VAT": {
+      "main": [
+        [
+          {
+            "node": "Merge Computed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compute 1700 Income Tax": {
+      "main": [
+        [
+          {
+            "node": "Merge Computed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Computed": {
+      "main": [
+        [
+          {
+            "node": "Generate eBIR XML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate eBIR XML": {
+      "main": [
+        [
+          {
+            "node": "XML Valid?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML Valid?": {
+      "main": [
+        [
+          {
+            "node": "Submit to eBIR",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Alert XML Invalid",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Submit to eBIR": {
+      "main": [
+        [
+          {
+            "node": "Submission Success?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Submission Success?": {
+      "main": [
+        [
+          {
+            "node": "Log Filing in Odoo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Alert Submission Failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Filing in Odoo": {
+      "main": [
+        [
+          {
+            "node": "Notify Tax Team",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Pending Filings": {
+      "main": [
+        [
+          {
+            "node": "Notify No Filings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Asia/Manila",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "error-handler-workflow"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "afc",
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "name": "bir",
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "name": "tax",
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "name": "philippines",
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    }
+  ],
+  "triggerCount": 1,
+  "active": false,
+  "meta": {
+    "instanceId": "afc-odoo-n8n-production"
+  }
+}
