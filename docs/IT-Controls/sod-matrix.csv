@@ -1,0 +1,23 @@
+process,risk,role_code,role_name,system,allowed_permissions,forbidden_combinations,compensating_control,review_frequency
+GL Journals,Post unapproved journal entries,R1,AP Clerk,Odoo,"Create draft vendor bills, attach receipts","Cannot post JE, Cannot approve bills >50K","Finance Manager review of all bills",Quarterly
+GL Journals,Post unapproved journal entries,R2,AR Clerk,Odoo,"Create customer invoices, record payments","Cannot write off bad debts, Cannot create customers","Finance Manager approval for credit memos >25K",Quarterly
+GL Journals,Post unapproved journal entries,R3,GL Accountant,Odoo,"Post JE, reconcile accounts, manage CoA","Cannot approve own JE >100K, Cannot initiate payments","Finance Manager approval for high-value JE",Quarterly
+GL Journals,Unauthorized period modifications,R7,Finance Manager,Odoo,"Approve transactions, review statements","Cannot unlock closed periods without FD approval","Finance Director override with audit trail",Quarterly
+GL Journals,Unauthorized period modifications,R8,Finance Director,Odoo,"Approve all transactions, unlock periods","Cannot execute transactions without subordinate prep","Audit trail for all period unlocks",Annually
+Vendor Master,Fictitious vendor creation,R1,AP Clerk,Odoo,"View vendors, create draft bills","Cannot create vendors, Cannot modify vendor bank details","Vendor creation by Finance Manager only",Quarterly
+Vendor Master,Fictitious vendor creation,R7,Finance Manager,Odoo,"Create/modify vendors with dual approval",N/A,"Dual approval requirement, monthly vendor review",Quarterly
+Customer Master,Revenue manipulation via fake customers,R2,AR Clerk,Odoo,"View customers, create invoices","Cannot create customers, Cannot modify payment terms","Customer creation by Finance Manager only",Quarterly
+Customer Master,Revenue manipulation via fake customers,R7,Finance Manager,Odoo,"Create/modify customers with credit check",N/A,"Credit check requirement, monthly customer review",Quarterly
+Payroll,Ghost employee fraud,R5,Payroll Specialist,Odoo/HRIS,"Process payroll, calculate deductions","Cannot create employees, Cannot approve >1M payroll","HR creates employees, Finance Manager approves runs",Monthly
+Payroll,Ghost employee fraud,R7,Finance Manager,Odoo/HRIS,"Approve payroll runs, initiate bank transfers",N/A,"Dual sign-off for transfers, HR roster reconciliation",Monthly
+Fixed Assets,Unauthorized asset acquisition,R4,Fixed Asset Accountant,Odoo,"Create/edit assets, calculate depreciation","Cannot approve acquisitions >500K","Finance Director approval for high-value assets",Quarterly
+Fixed Assets,Unauthorized asset disposal,R4,Fixed Asset Accountant,Odoo,"Propose disposals, run impairment tests","Cannot post disposal gains/losses","GL Accountant review, Finance Manager approval",Quarterly
+Tax Filing,Unapproved tax positions,R6,Tax Compliance Officer,Odoo/eFPS,"Prepare tax returns, compute withholding","Cannot approve/sign tax returns","Finance Director signs all returns",Monthly
+Tax Filing,Late filing penalties,R6,Tax Compliance Officer,Odoo/eFPS,"File returns, coordinate with BIR","Cannot modify tax rates","Calendar reminders, Finance Manager oversight",Monthly
+Bank Reconciliation,Unauthorized fund transfer,R3,GL Accountant,Odoo/Banking,"Reconcile bank accounts, review statements","Cannot initiate payments","Finance Manager initiates, dual signature required",Monthly
+Bank Reconciliation,Unauthorized fund transfer,R7,Finance Manager,Odoo/Banking,"Initiate payments, approve transfers","Cannot approve own transactions","Dual signature, audit trail monitoring",Monthly
+User Access,Unauthorized system access,R3,GL Accountant,AD/Odoo,"Manage own workstation access",Cannot provision user accounts,"IT manages accounts, quarterly access review",Quarterly
+User Access,Unauthorized system access,IT,IT Market Director,AD/ServiceNow,"Provision/deprovision accounts",Cannot approve own access changes,"HR validates, Finance Director oversight",Quarterly
+Audit Trail,Evidence tampering,ALL,All Roles,Odoo/Supabase,View own audit logs,Cannot modify audit trail,Immutable logging + external backup,Quarterly
+Period Close,Backdated transactions,R3,GL Accountant,Odoo,"Execute close checklist, lock periods","Cannot unlock periods","Finance Director unlock with justification",Monthly
+Period Close,Backdated transactions,R8,Finance Director,Odoo,"Unlock periods with documented justification",N/A,"Audit trail, external auditor notification for material items",Monthly

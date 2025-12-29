@@ -1,0 +1,13 @@
+role_code,role_name,person_name,email,department,systems_assigned,effective_date,reviewed_date,status
+R1,AP Clerk,Amor Santos,amor.santos@company.ph,Finance,Odoo - AP Module,2024-01-15,2025-01-15,Active
+R2,AR Clerk,Jinky Cruz,jinky.cruz@company.ph,Finance,Odoo - AR Module,2024-02-01,2025-01-15,Active
+R3,GL Accountant,Rey Gonzales,rey.gonzales@company.ph,Finance,"Odoo - GL Module, Bank Portal",2023-06-01,2025-01-15,Active
+R3,GL Accountant,Beng Reyes,beng.reyes@company.ph,Finance,"Odoo - GL Module, Bank Portal",2023-08-15,2025-01-15,Active
+R4,Fixed Asset Accountant,Sally Mendoza,sally.mendoza@company.ph,Finance,Odoo - Asset Module,2024-03-01,2025-01-15,Active
+R5,Payroll Specialist,Cliff Aquino,cliff.aquino@company.ph,Finance,"Odoo - Payroll, HRIS",2023-05-01,2025-01-15,Active
+R6,Tax Compliance Officer,Jake Torres,jake.torres@company.ph,Finance,"Odoo - Accounting, eFPS, BIR Portal",2023-04-01,2025-01-15,Active
+R7,Finance Manager,Jerald Lim,jerald.lim@company.ph,Finance,"Odoo - Full Finance, Bank Portal, ServiceNow",2022-01-15,2025-01-15,Active
+R8,Finance Director,Khalil Ibrahim,khalil.ibrahim@company.ph,Finance,"Odoo - Admin, All Systems",2021-06-01,2025-01-15,Active
+R9,External Auditor,SGV Partner,audit@sgv.ph,External,"Odoo - Read Only, Reports",2025-01-01,2025-01-15,Active
+IT,IT Market Director,Marvin Ramos,marvin.ramos@company.ph,IT,"AD Admin, ServiceNow Admin, CMDB",2022-03-01,2025-01-15,Active
+IT,IT Asset Manager,TBD,tbd@company.ph,IT,"ServiceNow, Asset Tracker",2025-01-01,2025-01-15,Pending Assignment
