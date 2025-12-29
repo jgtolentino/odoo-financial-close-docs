@@ -35,6 +35,7 @@ nav:
       - Odoo Configuration Guide: 08-odoo-config-guide.md
       - Runbook - Monthly Close: 09-runbook-monthly-close.md
       - Runbook - BIR Filing: 10-runbook-bir-filing.md
+      - SAP AFC to Odoo Mapping: 12-sap-afc-odoo-mapping.md
   - HR Processes:
       - Hire-to-Retire Overview: HR-Processes/hire-to-retire-overview.md
       - Final Pay Calculation: HR-Processes/final-pay-calculation.md
