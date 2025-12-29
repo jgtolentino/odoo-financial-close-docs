@@ -38,6 +38,7 @@ nav:
       - SAP AFC to Odoo Mapping: 12-sap-afc-odoo-mapping.md
       - AFC Implementation Blueprint: 13-afc-implementation-blueprint.md
       - AFC Module Source Code: 13-afc-module-source-code.md
+      - AFC Database Schema: 14-afc-database-schema.md
   - HR Processes:
       - Hire-to-Retire Overview: HR-Processes/hire-to-retire-overview.md
       - Final Pay Calculation: HR-Processes/final-pay-calculation.md
