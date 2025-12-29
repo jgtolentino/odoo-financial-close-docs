@@ -272,61 +272,68 @@ psql "$POSTGRES_URL" -c \
 
 ### 3.2 Operating Unit (Agency) Configuration
 
-**Configure 8 agencies as Operating Units:**
+Operating Units represent legal entities / agencies (e.g. TBWA\SMP, OMC, partner studios).
+They must **not** use employee codes (CKVC, RIM, BOM, JPAL, JLI, JAP, LAS, RMQB, etc.) and must not encode people in the OU dimension.
 
-| Agency Code | Agency Name | TIN | Responsible Person |
-|-------------|-------------|-----|-------------------|
-| **RIM** | Rusty's Ice & Mint | 111-111-111-000 | Finance Supervisor |
-| **CKVC** | Cookie Kingdom & Vanilla Castle | 222-222-222-000 | Finance Supervisor |
-| **BOM** | Bakery of Miracles | 333-333-333-000 | Finance Supervisor |
-| **JPAL** | Juice Palace | 444-444-444-000 | Finance Supervisor |
-| **JLI** | Java Lounge International | 555-555-555-000 | Senior Finance Manager |
-| **JAP** | Java Artisan Press | 666-666-666-000 | Senior Finance Manager |
-| **LAS** | Latte Art Studio | 777-777-777-000 | Finance Director |
-| **RMQB** | Rocky Mountain Quick Bites | 888-888-888-000 | Finance Director |
+**Configure Operating Units as follows:**
 
-**Setup Procedure (per agency):**
+| OU Code | Operating Unit Name                 | Legal Entity / TIN        | Default Finance Role       |
+|--------:|-------------------------------------|---------------------------|----------------------------|
+| SMP     | TBWA\Santiago Mangada Puno         | <SMP TIN HERE>            | Finance Director           |
+| OMC     | Omnicom Media Company (Philippines)| <OMC TIN HERE>            | Finance Supervisor         |
+| W9      | W9 / Shared Services Hub           | <W9 TIN HERE>             | Senior Finance Manager     |
+| PROD    | Production / Studio Entity         | <Production TIN HERE>     | Finance Supervisor         |
+| DIGI    | Digital / Tech Unit                | <Digital TIN HERE>        | Senior Finance Manager     |
+| MEDIA   | Media Trading Unit (if any)        | <Media TIN HERE>          | Finance Controller         |
+| INTL    | International / Regional Entity    | <Intl TIN HERE>           | Finance Director           |
+| HOLD    | Holding / Parent Company           | <Holding TIN HERE>        | CFO / Group Finance Head   |
+
+> 📝 **Note**
+> - Employee codes such as `CKVC`, `RIM`, `BOM`, `LAS`, `RMQB`, `JAP`, `JPAL`, `JLI` belong in `hr.employee` / `res.users`.
+> - Their assignment to Operating Units and approval levels is defined in the **Roles & SoD Matrix** (Section 3.3), not in this table.
+
+**Setup Procedure (per Operating Unit):**
 
 ```python
-# Python script for batch agency creation
+# Python script for batch Operating Unit creation
 # Execute via Odoo shell: odoo-bin shell -d production
 
-agencies = [
-    {'code': 'RIM', 'name': "Rusty's Ice & Mint", 'tin': '111-111-111-000'},
-    {'code': 'CKVC', 'name': 'Cookie Kingdom & Vanilla Castle', 'tin': '222-222-222-000'},
-    {'code': 'BOM', 'name': 'Bakery of Miracles', 'tin': '333-333-333-000'},
-    {'code': 'JPAL', 'name': 'Juice Palace', 'tin': '444-444-444-000'},
-    {'code': 'JLI', 'name': 'Java Lounge International', 'tin': '555-555-555-000'},
-    {'code': 'JAP', 'name': 'Java Artisan Press', 'tin': '666-666-666-000'},
-    {'code': 'LAS', 'name': 'Latte Art Studio', 'tin': '777-777-777-000'},
-    {'code': 'RMQB', 'name': 'Rocky Mountain Quick Bites', 'tin': '888-888-888-000'},
+operating_units = [
+    {'code': 'SMP', 'name': 'TBWA\\Santiago Mangada Puno', 'tin': '<SMP TIN HERE>'},
+    {'code': 'OMC', 'name': 'Omnicom Media Company (Philippines)', 'tin': '<OMC TIN HERE>'},
+    {'code': 'W9', 'name': 'W9 / Shared Services Hub', 'tin': '<W9 TIN HERE>'},
+    {'code': 'PROD', 'name': 'Production / Studio Entity', 'tin': '<Production TIN HERE>'},
+    {'code': 'DIGI', 'name': 'Digital / Tech Unit', 'tin': '<Digital TIN HERE>'},
+    {'code': 'MEDIA', 'name': 'Media Trading Unit (if any)', 'tin': '<Media TIN HERE>'},
+    {'code': 'INTL', 'name': 'International / Regional Entity', 'tin': '<Intl TIN HERE>'},
+    {'code': 'HOLD', 'name': 'Holding / Parent Company', 'tin': '<Holding TIN HERE>'},
 ]
 
 env = self.env
-for agency in agencies:
+for ou in operating_units:
     operating_unit = env['operating.unit'].create({
-        'name': agency['name'],
-        'code': agency['code'],
+        'name': ou['name'],
+        'code': ou['code'],
         'company_id': env.ref('base.main_company').id,
         'partner_id': env['res.partner'].create({
-            'name': agency['name'],
-            'vat': agency['tin'],
+            'name': ou['name'],
+            'vat': ou['tin'],
             'is_company': True,
             'company_type': 'company',
         }).id,
     })
-    print(f"✅ Created operating unit: {agency['code']} - {agency['name']}")
+    print(f"✅ Created operating unit: {ou['code']} - {ou['name']}")
 ```
 
 **Manual UI Method (Alternative):**
 
 1. **Navigate to:** Settings → Technical → Operating Units → Create
 2. **Fill fields:**
-   - Name: [Agency Name]
-   - Code: [Agency Code]
+   - Name: [Operating Unit Name]
+   - Code: [OU Code]
    - Company: InsightPulse AI Holdings
    - Partner: Create new → Fill TIN and address
-3. **Save** and repeat for all 8 agencies
+3. **Save** and repeat for all Operating Units
 
 ### 3.3 User Role Assignment
 
