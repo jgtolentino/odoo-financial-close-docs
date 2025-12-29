@@ -868,7 +868,7 @@ The gap analysis reveals that minimal Odoo CE installations (5-10 modules) provi
 
 **Document Metadata**:
 
-- **Author**: Jake Tolentino (Finance SSC Manager / Odoo Developer)
+- **Author**: Jake Tolentino
 - **Last Updated**: 2025-01-12
 - **Odoo Version**: 18.0 (Community Edition)
 - **Current State Assessment Date**: 2024-12-15

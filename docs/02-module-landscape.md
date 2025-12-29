@@ -1121,7 +1121,7 @@ The 42 "Must Have" OCA modules provide comprehensive coverage (80-90% functional
 
 **Document Metadata**:
 
-- **Author**: Jake Tolentino (Finance SSC Manager / Odoo Developer)
+- **Author**: Jake Tolentino
 - **Last Updated**: 2025-01-12
 - **Odoo Version**: 18.0 (Community Edition)
 - **OCA Module Count**: 42 Must Have + 18 Nice to Have

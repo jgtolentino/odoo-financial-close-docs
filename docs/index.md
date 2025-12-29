@@ -431,7 +431,7 @@ This documentation portal reflects those specs and provides the human-readable v
 
 **Document Metadata**:
 
-- **Author**: Jake Tolentino (Finance SSC Manager / Odoo Developer)
+- **Author**: Jake Tolentino
 - **Last Updated**: 2025-01-12
 - **Odoo Version**: 18.0 (Community Edition)
 - **OCA Modules**: 42 Must Have + 18 Nice to Have
