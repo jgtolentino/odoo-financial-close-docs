@@ -45,6 +45,7 @@ nav:
   - Development:
       - AFC Module Architecture: development/afc-module-architecture.md
       - Database Schema (DBML): development/database-schema.md
+      - Seed Data Module: development/seed-data-module.md
       - Error Codes Reference: development/error-codes.md
   - Infrastructure:
       - Docker Deployment: infrastructure/docker-deployment.md
