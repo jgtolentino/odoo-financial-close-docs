@@ -49,6 +49,7 @@ nav:
       - Error Codes Reference: development/error-codes.md
   - Infrastructure:
       - Docker Deployment: infrastructure/docker-deployment.md
+      - Security Hardening: infrastructure/security-hardening.md
   - Automation:
       - N8N Workflows: automation/n8n-workflows.md
   - Reference:
